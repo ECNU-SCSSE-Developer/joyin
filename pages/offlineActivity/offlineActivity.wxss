@@ -1,0 +1,70 @@
+/* pages/offlineActivity/offlineActivity.wxss */
+.page{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 120rpx; 
+  width: 100%;
+}
+
+.back{
+  width:100%;
+  position: fixed;
+  text-align: center;
+  bottom:0;
+  height: 100rpx;
+  background:#557d8a;
+  font-size:50rpx;
+  color:white;
+  box-shadow: 6rpx 6rpx 6rpx 6rpx #aaa;
+}
+
+.hd{
+  align-self: center;
+  width: 130rpx;
+  height: 130rpx;
+}
+
+.ad{
+  width: 90%;
+  align-self: center;
+  border-radius: 10rpx;
+}
+
+.board{
+  margin-top: 20rpx;
+  align-self: center;
+  width: 90%;
+  height: 400rpx;
+  background-color: #f0f9fa;
+  border-radius: 10rpx;
+  border: 3rpx solid #eee;
+  box-shadow: 1rpx 1rpx 1rpx 1rpx #aaa;
+}
+
+.button{
+  background-color: blue;
+  align-items: center;
+}
+
+.left_button{
+  width: 40%;
+  background-color: #7bd6ef;
+  color: white;
+  text-align: center;
+  font-size: 50rpx;
+  margin: 30rpx;
+  height: 100rpx;
+  border-radius: 10rpx;
+  box-shadow: 1rpx 1rpx 1rpx 1rpx #aaa;
+}
+
+.right_button{
+  width: 40%;color: white;
+  text-align: center;
+  font-size: 50rpx;
+  margin: 30rpx;
+  height: 100rpx;
+  border-radius: 10rpx;
+  background-color:#fbb9c9;
+  box-shadow: 1rpx 1rpx 1rpx 1rpx #aaa;
+}

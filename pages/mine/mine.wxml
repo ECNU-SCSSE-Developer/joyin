@@ -1,0 +1,13 @@
+<!--pages/mine/mine.wxml-->
+<import src="../../template/template.wxml" />
+<template is="tabBar" data="{{tabBar:bindData.tabBar}}" />
+<view class='page'>
+  <view>
+
+    <text>pages/mine/mine.wxml</text>
+  </view>
+  <view>
+    <template is="tabBar" data="{{tabBar:bindData.tabBar}}" />
+  </view>
+
+</view>

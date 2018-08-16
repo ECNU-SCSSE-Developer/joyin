@@ -1,0 +1,154 @@
+/* pages/activity/activity.wxss */
+
+.page {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 120rpx; /*解决tabbar遮住部分内容问题*/
+}
+
+/*文字css*/
+
+.nav_text {
+  position: center;
+  width: 100%;
+  color: #5f8591;
+  height: 70rpx;
+  line-height: 70rpx;
+  text-align: center;
+}
+
+.nav1 {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  background-color: #f0f9fa;
+  width: 300rpx;
+  height: 70rpx;
+  margin: 10rpx;
+  border-radius: 10rpx; /*圆角*/
+  border-bottom: 2rpx solid rgb(255, 255, 255);
+}
+
+.area_box {
+  position: relative;
+}
+
+.area_select {
+  margin-top: 0;
+  z-index: 100;
+  position: absolute;
+}
+
+.type_select {
+  margin-top: 0;
+  z-index: 100;
+  position: absolute;
+}
+
+.select_one {
+  text-align: center;
+  background-color: rgb(239, 239, 239);
+  width: 300rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  margin: 0 3%;
+  border-radius: 10rpx;
+  border-bottom: 2rpx solid rgb(255, 255, 255);
+}
+
+.nav_icon_area {
+  z-index: 100;
+  position: absolute;
+  left: 2.5%;
+  width: 34rpx;
+  height: 20rpx;
+  margin: 25rpx 20rpx;
+  transition: All 0.4s ease;
+  -webkit-transition: All 0.4s ease;
+}
+
+.nav_icon_type {
+  z-index: 100;
+  position: absolute;
+  right: 2.5%;
+  width: 34rpx;
+  height: 20rpx;
+  margin: 25rpx 20rpx;
+  transition: All 0.4s ease;
+  -webkit-transition: All 0.4s ease;
+}
+
+/*翻转动画*/
+
+.rotateRight {
+  transform: rotate(180deg);
+}
+
+.add {
+  width: 70rpx;
+  height: 70rpx;
+  margin: 10rpx 22rpx;
+}
+
+.nav {
+  display: flex;
+  width: 100%;
+}
+
+.item {
+  display: flex;
+  background-color: #f0f9fa;
+  width: 100%;
+  height: 180rpx;
+  border-radius: 20rpx;
+  border: 3rpx solid #eee;
+  margin-top: 30rpx;
+  box-shadow: 1rpx 1rpx 1rpx 1rpx #aaa;
+}
+
+.item_image {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.item_title {
+  width: 350rpx;
+  padding: 20rpx 0;
+  align-self: flex-start;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #557d8a;
+}
+
+.item_place {
+  padding: 20rpx 0;
+  position: left, bottom;
+  font-size: 20rpx;
+  color: #557d8a;
+}
+
+.item_date {
+  padding: 20rpx 5rpx;
+  align-self: flex-end;
+  font-size: 20rpx;
+  color: #557d8a;
+}
+
+.triangle_border_left {
+  margin-top: 40rpx;
+  width: 1rpx;
+  height: 1rpx;
+  border-width: 10rpx 15rpx 10rpx 0;
+  border-style: solid;
+  border-color: transparent #fc0 transparent transparent; /*透明 黄 透明 透明 */
+}
+
+.item_type {
+  text-align:right;
+  width: 130rpx;
+  padding: 40rpx 5rpx;
+  align-self: flex-start;
+  font-size: 15rpx;
+  color: #7bd6ef;
+}

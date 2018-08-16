@@ -1,0 +1,106 @@
+/* pages/joyin/joyin.wxss */
+
+.page {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 120rpx; /*解决tabbar遮住部分内容问题*/
+}
+
+.hd {
+  text-align: center;
+  height: 100rpx;
+}
+
+.bd {
+  padding: 10rpx;
+}
+
+.block {
+  float: left;
+  background: #7bd6ef;
+  width: 20rpx;
+  height: 60rpx;
+}
+
+.hd_icon {
+  margin-top: -10rpx;
+  width: 130rpx;
+  height: 130rpx;
+}
+
+.h2 {
+  margin-left: 10rpx;
+  color: #557d8a;
+}
+
+.item {
+  display: flex;
+  background-color: #f0f9fa;
+  width: 100%;
+  height: 180rpx;
+  border-radius: 20rpx;
+  border: 3rpx solid #eee;
+  margin-top: 20rpx;
+  box-shadow: 1rpx 1rpx 1rpx 1rpx #aaa;
+}
+
+.item_image {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.item_title {
+  width: 418rpx;
+  padding: 20rpx 0;
+  align-self: flex-start;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #557d8a;
+}
+
+.item_place {
+  padding: 20rpx 0;
+  position: left, bottom;
+  font-size: 20rpx;
+  color: #557d8a;
+}
+
+.item_date {
+  padding: 20rpx 5rpx;
+  align-self: flex-end;
+  font-size: 20rpx;
+  color: #557d8a;
+}
+
+.triangle_border_left {
+  margin-top: 40rpx;
+  width: 1rpx;
+  height: 1rpx;
+  border-width: 10rpx 15rpx 10rpx 0;
+  border-style: solid;
+  border-color: transparent #fc0 transparent transparent; /*透明 黄 透明 透明 */
+}
+
+.item_type {
+  text-align:right;
+  width: 130rpx;
+  padding: 40rpx 5rpx;
+  align-self: flex-start;
+  font-size: 15rpx;
+  color: #7bd6ef;
+}
+
+.more{
+  margin: 10rpx 0;
+  width: 100%;
+  text-align: right;
+  font-size: 20rpx;
+  color: #7bd6ef;
+}
+
+.line{
+  height: 5rpx;
+  width: 100%;
+  background-color: #f0f9fa;
+}

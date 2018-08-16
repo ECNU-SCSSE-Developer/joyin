@@ -1,0 +1,7 @@
+/* pages/mine/mine.wxss */
+
+.page {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 120rpx; /*解决tabbar遮住部分内容问题*/
+}

@@ -1,0 +1,12 @@
+<!--pages/offlineActivity/offlineActivity.wxml-->
+
+<view class='page'>
+<image src='/image/joyin.png' class='hd'></image>
+<image class='ad' src='http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg'></image>
+<view class='board'></view>
+<view style='display:flex;justify-content:space-between'>
+  <view class='left_button'>报 名</view>
+  <view class='right_button'>收 藏</view>
+</view>
+</view>
+<view class='back'>返 回</view>
