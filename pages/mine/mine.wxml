@@ -2,12 +2,42 @@
 <import src="../../template/template.wxml" />
 <template is="tabBar" data="{{tabBar:bindData.tabBar}}" />
 <view class='page'>
-  <view>
 
-    <text>pages/mine/mine.wxml</text>
-  </view>
-  <view>
-    <template is="tabBar" data="{{tabBar:bindData.tabBar}}" />
+
+  <view class='item'>
+    <view class='box1'>
+      <view class='line1'>
+        <text class='name'>昵称</text>
+        <text>我是猪</text>
+      </view>
+      <view class='line2'>
+        <text class='hd'>年级</text>
+        <text class='bd'>16级</text>
+        <text class='hd'>性别</text>
+        <text class='bd'>男</text>
+        <text class='hd'>校区</text>
+        <text class='bd'>中北</text>
+      </view>
+    </view>
   </view>
 
+  <view class='box2'>
+    我的JoyIn日历
+  </view>
+
+  <view class='item'>
+  </view>
+  <view class='box5'>
+    <text>联系酌盈</text>
+    <text>www.baidu.com</text>
+    <text>使用指南</text>
+    <text>www.baidu.com</text>
+    <text>关于酌盈</text>
+    <text>www.baidu.com</text>
+  </view>
+
+
+</view>
+<view>
+  <template is="tabBar" data="{{tabBar:bindData.tabBar}}" />
 </view>
