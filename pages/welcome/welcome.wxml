@@ -1,0 +1,7 @@
+<!--pages/welcome/welcome.wxml-->
+
+<view class='pages'>
+ <view class='logo'>
+  <image src="/image/joyin.png" class='welcomelogo'></image>
+ </view>
+</view>

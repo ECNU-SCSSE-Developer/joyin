@@ -1,7 +1,10 @@
 {
   "pages":[
-    "pages/joyin/joyin",
+        "pages/joyin/joyin",
+    "pages/welcome/welcome",
+
     "pages/register/register",
+
     "pages/offlineActivity/offlineActivity",
     "pages/activity/activity",
     "pages/index/index",
