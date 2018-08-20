@@ -25,7 +25,75 @@
     我的JoyIn日历
   </view>
 
-  <view class='item'>
+  <view class='box3'>
+    <view class='list' bindtap="showItems1">已收藏</view>
+    <view class="list_item {{open1 ? 'list_item_show' : '' }}">
+      <block wx:for="{{list1}}">
+        <view class="cells {{open1 ? 'cells_show' : ''}}">
+          <view style='display:flex;align-items:center;margin:0 30rpx'>
+            <image src='/image/actDemo.png' class='item_image'></image>
+          </view>
+          <view style='height:100%;display:flex;flex-direction:column;justify-content:space-between;align-items:left;'>
+            <view class='item_title'>
+              {{item.title}}
+            </view>
+            <view class='item_place'>{{item.place}}</view>
+          </view>
+          <view class='item_date'>{{item.date}}</view>
+        </view>
+      </block>
+    </view>
+    <view class='list' bindtap="showItems2">已报名</view>
+    <view class="list_item {{open2 ? 'list_item_show' : '' }}">
+      <block wx:for="{{list2}}">
+        <view class="cells {{open2 ? 'cells_show' : ''}}">
+          <view style='display:flex;align-items:center;margin:0 30rpx'>
+            <image src='/image/actDemo.png' class='item_image'></image>
+          </view>
+          <view style='height:100%;display:flex;flex-direction:column;justify-content:space-between;align-items:left;'>
+            <view class='item_title'>
+              {{item.title}}
+            </view>
+            <view class='item_place'>{{item.place}}</view>
+          </view>
+          <view class='item_date'>{{item.date}}</view>
+        </view>
+      </block>
+    </view>
+    <view class='list' bindtap="showItems3">已发布</view>
+    <view class="list_item {{open3 ? 'list_item_show' : '' }}">
+      <block wx:for="{{list3}}">
+        <view class="cells {{open3 ? 'cells_show' : ''}}">
+          <view style='display:flex;align-items:center;margin:0 30rpx'>
+            <image src='/image/actDemo.png' class='item_image'></image>
+          </view>
+          <view style='height:100%;display:flex;flex-direction:column;justify-content:space-between;align-items:left;'>
+            <view class='item_title'>
+              {{item.title}}
+            </view>
+            <view class='item_place'>{{item.place}}</view>
+          </view>
+          <view class='item_date'>{{item.date}}</view>
+        </view>
+      </block>
+    </view>
+    <view  bindtap="showItems4">已参加</view>
+    <view class="list_item {{open4 ? 'list_item_show' : '' }}">
+      <block wx:for="{{list4}}">
+        <view class="cells {{open4 ? 'cells_show' : ''}}">
+          <view style='display:flex;align-items:center;margin:0 30rpx'>
+            <image src='/image/actDemo.png' class='item_image'></image>
+          </view>
+          <view style='height:100%;display:flex;flex-direction:column;justify-content:space-between;align-items:left;'>
+            <view class='item_title'>
+              {{item.title}}
+            </view>
+            <view class='item_place'>{{item.place}}</view>
+          </view>
+          <view class='item_date'>{{item.date}}</view>
+        </view>
+      </block>
+    </view>
   </view>
   <view class='box5'>
     <text>联系酌盈</text>

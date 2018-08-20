@@ -11,7 +11,6 @@
   display: flex;
   background-color: #f0f9fa;
   width: 100%;
-  height: 180rpx;
   border-radius: 20rpx;
   border: 3rpx solid #eee;
   margin-top: 30rpx;
@@ -20,7 +19,7 @@
 
 .box1{
   align-items: center;
-  padding: 30rpx;
+  padding: 0 30rpx;
 }
 
 .name{
@@ -45,7 +44,17 @@
   border: 3rpx solid #eee;
   margin-top: 30rpx;
   box-shadow: 1rpx 1rpx 1rpx 1rpx #aaa;
-  height: 90rpx;
+  width: 100%;
+  line-height: 90rpx;/*让文字行间距等于height，实现垂直居中*/
+  text-align: center;
+}
+
+.box3{
+  background-color: #f0f9fa;
+  border-radius: 20rpx;
+  border: 3rpx solid #eee;
+  margin-top: 30rpx;
+  box-shadow: 1rpx 1rpx 1rpx 1rpx #aaa;
   width: 100%;
   line-height: 90rpx;/*让文字行间距等于height，实现垂直居中*/
   text-align: center;
@@ -57,10 +66,84 @@
   border: 3rpx solid #eee;
   margin-top: 30rpx;
   box-shadow: 1rpx 1rpx 1rpx 1rpx #aaa;
-  height: 300rpx;
   width: 100%;
   display: flex;
   flex-direction: column;
   text-align: center;
   font-size: 30rpx;
+}
+
+.list{
+  border: 3rpx solid #eee;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+}
+
+.list:last-child{
+ border-bottom: 0;
+}
+
+.list_item{
+  height: 0;
+  overflow: hidden;
+  border-radius: 20rpx;
+  background-color: #f6fbfc;
+}
+
+.list_item_show{
+  height: auto;
+}
+
+.cells {
+  margin-top: 0;
+  opacity: 0;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.cells_show {
+  border: 3rpx solid #eee;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  display: flex;
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+}
+
+
+.cells:last-child{
+  border-bottom: 0;
+}
+
+.item_image {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.item_title {
+  width: 350rpx;
+  padding: 20rpx 0;
+  text-align: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #557d8a;
+}
+
+.item_place {
+  padding: 20rpx 0;
+  position: left, bottom;
+  font-size: 20rpx;
+  color: #557d8a;
+}
+
+.item_date {
+  padding: 20rpx 5rpx;
+  align-self: flex-end;
+  font-size: 20rpx;
+  color: #557d8a;
 }
