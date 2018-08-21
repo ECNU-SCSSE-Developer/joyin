@@ -12,6 +12,7 @@
   text-align: center;
   bottom:0;
   height: 100rpx;
+  line-height: 100rpx;/*实现文字垂直居中*/
   background:#557d8a;
   font-size:50rpx;
   color:white;
@@ -41,10 +42,7 @@
   box-shadow: 1rpx 1rpx 1rpx 1rpx #aaa;
 }
 
-.button{
-  background-color: blue;
-  align-items: center;
-}
+
 
 .left_button{
   width: 40%;
@@ -54,6 +52,7 @@
   font-size: 50rpx;
   margin: 30rpx;
   height: 100rpx;
+  line-height: 100rpx;
   border-radius: 10rpx;
   box-shadow: 1rpx 1rpx 1rpx 1rpx #aaa;
 }
@@ -64,6 +63,7 @@
   font-size: 50rpx;
   margin: 30rpx;
   height: 100rpx;
+  line-height: 100rpx;
   border-radius: 10rpx;
   background-color:#fbb9c9;
   box-shadow: 1rpx 1rpx 1rpx 1rpx #aaa;

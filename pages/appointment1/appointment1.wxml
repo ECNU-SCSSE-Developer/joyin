@@ -1,0 +1,104 @@
+<!--pages/appointment1/appointment1.wxml-->
+<view class='page'>
+  <view>开始出行！</view>
+  <view>已阅读填写须知</view>
+  <view>
+    <view class='item_hd'>
+      <text style='color:red'>★</text>邀约主题</view>
+    <view class='item_bd'>
+      <input placeholder="请输入主题" />
+    </view>
+  </view>
+  <view>
+    <view class='item_hd'>
+      <text style='color:red'>★</text>邀约开始时间</view>
+    <view class='item_bd' style='padding:0'>
+      <picker-view indicator-style="height:50px;" style='height:50px;text-align: center;' value="{{value}}" bindchange="bindChange">
+        <picker-view-column>
+          <view wx:for="{{years}}" style="line-height: 50px">{{item}}年</view>
+        </picker-view-column>
+        <picker-view-column>
+          <view wx:for="{{months}}" style="line-height: 50px">{{item}}月</view>
+        </picker-view-column>
+        <picker-view-column>
+          <view wx:for="{{days}}" style="line-height: 50px">{{item}}日</view>
+        </picker-view-column>
+        <picker-view-column>
+          <view wx:for="{{hours}}" style="line-height: 50px">{{item}}时</view>
+        </picker-view-column>
+        <picker-view-column>
+          <view wx:for="{{minutes}}" style="line-height: 50px">{{item}}分</view>
+        </picker-view-column>
+      </picker-view>
+    </view>
+  </view>
+  <view>
+    <view class='item_hd'>
+      <text style='color:red'>★</text>邀约结束时间</view>
+    <view class='item_bd' style='padding:0'>
+      <picker-view indicator-style="height:50px;" style='height:50px;text-align: center;' value="{{value}}" bindchange="bindChange">
+        <picker-view-column>
+          <view wx:for="{{years}}" style="line-height: 50px">{{item}}年</view>
+        </picker-view-column>
+        <picker-view-column>
+          <view wx:for="{{months}}" style="line-height: 50px">{{item}}月</view>
+        </picker-view-column>
+        <picker-view-column>
+          <view wx:for="{{days}}" style="line-height: 50px">{{item}}日</view>
+        </picker-view-column>
+        <picker-view-column>
+          <view wx:for="{{hours}}" style="line-height: 50px">{{item}}时</view>
+        </picker-view-column>
+        <picker-view-column>
+          <view wx:for="{{minutes}}" style="line-height: 50px">{{item}}分</view>
+        </picker-view-column>
+      </picker-view>
+    </view>
+  </view>
+  <view>
+    <view class='item_hd'>
+      <text style='color:red'>★</text>邀约地点</view>
+    <view class='area'>
+      <view class='item_bd' style='padding:0;width:20%'>
+        <picker-view indicator-style="height:50px;" style='height:50px;text-align: center;' value="{{value}}" bindchange="bindChange">
+          <picker-view-column>
+            <view wx:for="{{area}}" style="line-height: 50px">{{item}}</view>
+          </picker-view-column>
+        </picker-view>
+      </view>
+      <view class='item_bd' style='padding:0;width:60%'>
+        <input placeholder="备注"/>
+      </view>
+    </view>
+  </view>
+  <view>
+    <view class='item_hd'>
+      <text style='color:red'>★</text>所需人数(包括发起者)</view>
+    <view class='item_bd'>
+      <input placeholder="备注" />
+    </view>
+  </view>
+  <view>
+    <view class='item_hd'>
+      <text style='color:red'>★</text>预计人均开销</view>
+    <view class='item_bd'>
+      <input placeholder="请输入主题" />
+    </view>
+  </view>
+  <view>
+    <view class='item_hd'>
+      <text style='color:red'>★</text>预计活动时长</view>
+    <view class='item_bd'>
+      <input placeholder="请输入主题" />
+    </view>
+  </view>
+  <view>
+    <view class='item_hd'>其他具体信息</view>
+    <view class='item_bd other'>
+      <input placeholder="其他信息" />
+    </view>
+  </view>
+  <view class='btn'>发布活动邀约</view>
+  <view style='height:20rpx;'></view>
+  <view class='back'>返 回</view>
+</view>

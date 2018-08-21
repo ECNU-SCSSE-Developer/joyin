@@ -97,9 +97,9 @@
   </view>
   <view class='box5'>
     <text>联系酌盈</text>
-    <text>www.baidu.com</text>
+    <text style='border-bottom: 3rpx solid #eee;'>www.baidu.com</text>
     <text>使用指南</text>
-    <text>www.baidu.com</text>
+    <text style='border-bottom: 3rpx solid #eee;'>www.baidu.com</text>
     <text>关于酌盈</text>
     <text>www.baidu.com</text>
   </view>
