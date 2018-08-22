@@ -1,0 +1,60 @@
+<!--pages/appointment3/appointment3.wxml-->
+<view class='page'>
+  <view class='title'>邀约详情</view>
+  <view>
+    <view class='item'>
+      <view class='item_hd'>活动主题</view>
+      <view class='item_bd'></view>
+    </view>
+    <view class='item'>
+      <view class='item_hd'>活动时间</view>
+      <view class='item_bd'></view>
+    </view>
+    <view class='item'>
+      <view class='item_hd'>活动地点</view>
+      <view class='item_bd'></view>
+    </view>
+    <view class='item'>
+      <view class='item_hd'>活动类型</view>
+      <view class='item_bd'></view>
+    </view>
+    <view class='item'>
+      <view class='item_hd'>活动人数</view>
+      <view class='item_bd'></view>
+    </view>
+    <view class='item'>
+      <view class='item_hd'>预计开销</view>
+      <view class='item_bd'></view>
+    </view>
+    <view class='item'>
+      <view class='item_hd'>预计时长</view>
+      <view class='item_bd'></view>
+    </view>
+    <view class='item'>
+      <view class='item_hd'>过期时间</view>
+      <view class='item_bd'></view>
+    </view>
+    <view class='item'>
+      <view class='item_hd'>具体信息</view>
+      <view class='item_bd'></view>
+    </view>
+  </view>
+  <view class='organizer'>
+    <image class='organizer_avatar' src='/image/actDemo.png'></image>
+    <view>
+      <view style='display:flex'>
+        <view>名字</view>
+        <image class='sex' src='/image/female.png'></image>
+      </view>
+      <view style='display:flex;justify-content:space-between;'>
+        <view>16级</view>
+        <view>中北</view>
+      </view>
+    </view>
+  </view>
+  <view style='display:flex;justify-content:space-between'>
+    <view class='left_button'>报 名</view>
+    <view class='right_button'>收 藏</view>
+  </view>
+  <view class='back'>返 回</view>
+</view>

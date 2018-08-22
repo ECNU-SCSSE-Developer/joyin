@@ -1,12 +1,14 @@
 {
   "pages":[
+    "pages/appointment3/appointment3",
+    "pages/appointment2/appointment2",
+    "pages/offlineActivity/offlineActivity",
+    "pages/mine/mine",
     "pages/joyin/joyin",
     "pages/register/register",
-    "pages/offlineActivity/offlineActivity",
     "pages/activity/activity",
     "pages/index/index",
-    "pages/logs/logs",
-    "pages/mine/mine"
+    "pages/logs/logs"
   ],
   "window":{
     "backgroundTextStyle":"light",
