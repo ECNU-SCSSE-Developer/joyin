@@ -53,6 +53,11 @@ Page({
       minute: this.data.minutes[val[4]]
     })
   },
+
+  clickBack: function(){
+    wx.navigateBack({
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

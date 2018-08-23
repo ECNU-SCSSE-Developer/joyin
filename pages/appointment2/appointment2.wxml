@@ -100,5 +100,5 @@
   </view>
   <view class='btn'>发布活动邀约</view>
   <view style='height:20rpx;'></view>
-  <view class='back'>返 回</view>
+  <view class='back' bindtap='clickBack'>返 回</view>
 </view>

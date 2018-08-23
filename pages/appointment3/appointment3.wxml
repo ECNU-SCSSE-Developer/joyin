@@ -40,14 +40,16 @@
     </view>
   </view>
   <view class='organizer'>
-    <image class='organizer_avatar' src='/image/actDemo.png'></image>
     <view>
+    <image class='organizer_avatar' src='/image/actDemo.png'></image>
+    </view>
+    <view class='org_left'>
       <view style='display:flex'>
         <view>名字</view>
         <image class='sex' src='/image/female.png'></image>
       </view>
-      <view style='display:flex;justify-content:space-between;'>
-        <view>16级</view>
+      <view style='display:flex;font-size:30rpx'>
+        <view style='margin-right:50rpx'>16级</view>
         <view>中北</view>
       </view>
     </view>

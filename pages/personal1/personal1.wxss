@@ -1,0 +1,20 @@
+/* pages/personal1/personal1.wxss */
+
+.page {
+  margin-bottom: 100rpx;
+  background-color: #f0f9fa;
+  height: 100vh;
+}
+
+.back {
+  width: 100%;
+  position: fixed;
+  text-align: center;
+  bottom: 0;
+  height: 100rpx;
+  line-height: 100rpx; /*实现文字垂直居中*/
+  background: #557d8a;
+  font-size: 50rpx;
+  color: white;
+  box-shadow: 6rpx 6rpx 6rpx 6rpx #aaa;
+}

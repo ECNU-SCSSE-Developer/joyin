@@ -1,22 +1,23 @@
 {
-  "pages":[
+  "pages": [
     "pages/welcome/welcome",
-    "pages/joyin/joyin",
-
-
-
+    "pages/personal4/personal4",
+    "pages/personal1/personal1",
+    "pages/appointment3/appointment3",
     "pages/register/register",
-
+    "pages/mine/mine",
+    "pages/calendar/calendar",
+    "pages/appointment2/appointment2",
     "pages/offlineActivity/offlineActivity",
+    "pages/joyin/joyin",
     "pages/activity/activity",
     "pages/index/index",
-    "pages/logs/logs",
-    "pages/mine/mine"
+    "pages/logs/logs"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#f0f9fa",
     "navigationBarTitleText": "JoyIn",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
   }
 }

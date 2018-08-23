@@ -1,0 +1,6 @@
+<!--pages/personal1/personal1.wxml-->
+<view class='page'>
+
+  <text>pages/personal1/personal1.wxml</text>
+  <view class='back'>返 回</view>
+</view>

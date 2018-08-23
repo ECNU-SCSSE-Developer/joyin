@@ -17,7 +17,7 @@
       </view>
     </view>
     <view>
-      <image src='/image/add.png' class='add'></image>
+      <image src='/image/add.png' class='add' bindtap='clickAdd'></image>
     </view>
     <view>
       <view class="nav1" bindtap="clickType">

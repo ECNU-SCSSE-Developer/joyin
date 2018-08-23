@@ -71,6 +71,12 @@ Page({
       typeList: false,
     })
   },
+
+  clickAdd: function(){
+    wx.navigateTo({
+      url: '/pages/appointment2/appointment2'
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
