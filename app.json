@@ -1,7 +1,9 @@
 {
   "pages":[
-        "pages/joyin/joyin",
     "pages/welcome/welcome",
+    "pages/joyin/joyin",
+
+
 
     "pages/register/register",
 
