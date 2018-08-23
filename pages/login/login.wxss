@@ -1,0 +1,36 @@
+/* pages/login/login.wxss */
+
+.page{
+  height:100vh;
+  background-color:#f0f9fa;
+  display:flex;
+  flex-direction: column;
+}
+
+.text1{
+  font-size:60rpx;
+  font-weight: 10rpx;
+  letter-spacing: 15rpx;
+  color:#557d8a;
+  padding-top: 350rpx;
+  padding-left: 300rpx;
+}
+
+.text2{
+   text-align: center;
+   background-color: #557d8a;
+   margin-left: 85rpx;
+   margin-right: 85rpx;
+   margin-top: 70rpx;
+   letter-spacing: 20rpx;
+   color: white;
+   line-height: 80rpx;
+   font-size:30rpx;
+}
+
+.text3{
+  color:#557d8a;
+  font-size:20rpx;
+  text-align: center;
+  margin-top: 30rpx;
+}
