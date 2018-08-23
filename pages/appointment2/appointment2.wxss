@@ -1,0 +1,58 @@
+/* pages/appointment1/appointment1.wxss */
+.page{
+  margin-bottom: 100rpx;
+  background-color: #f0f9fa;
+}
+
+.back {
+  width: 100%;
+  position: fixed;
+  text-align: center;
+  bottom: 0;
+  height: 100rpx;
+  line-height: 100rpx; /*实现文字垂直居中*/
+  background: #557d8a;
+  font-size: 50rpx;
+  color: white;
+  box-shadow: 6rpx 6rpx 6rpx 6rpx #aaa;
+}
+
+.btn {
+  width: 50%;
+  background-color: #7bd6ef;
+  color: white;
+  text-align: center;
+  font-size: 50rpx;
+  margin: 30rpx auto;/*margin的左右间距设置成auto可以让控件居中显示*/
+  height: 100rpx;
+  line-height: 100rpx;
+  border-radius: 10rpx;
+  box-shadow: 1rpx 1rpx 1rpx 1rpx #aaa;
+}
+
+.item_hd{
+  margin: 30rpx auto 0 auto;
+  text-align: center;
+}
+
+.item_bd{
+  width: 60%;
+  padding: 10rpx;
+  border-radius: 10rpx;
+  margin: 0rpx auto;
+  border:  3rpx solid #eee;
+  box-shadow: 1rpx 1rpx 1rpx 1rpx #aaa;
+  background-color: white;
+}
+
+.other{
+  padding:10rpx 20rpx;
+  width: 80%;
+  height: 300rpx;
+}
+
+.area{
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+}
