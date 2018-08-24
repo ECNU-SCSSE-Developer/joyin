@@ -42,7 +42,17 @@
 .weui-cells_after-title {
   border: 3rpx solid #557d8a;
 }
+.my{
+  display: flex;
+  flex-direction: column;
+}
+.my1{
+  width:100%;
+}
 
+.my2{
+  align-items: center;
+}
 radio-group label {
   color: gray;
 }

@@ -1,11 +1,11 @@
 {
   "pages": [
+    "pages/register/register",
     "pages/personal1/personal1",
     "pages/login/login",
     "pages/welcome/welcome",
     "pages/personal4/personal4",
     "pages/appointment3/appointment3",
-    "pages/register/register",
     "pages/mine/mine",
     "pages/calendar/calendar",
     "pages/appointment2/appointment2",

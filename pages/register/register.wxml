@@ -73,8 +73,21 @@
           <input class="weui-input" />
         </view>
       </view>
+      <view class="weui-cell weui-cell_input">
+      <view class="my">
+        <view class="weui-cell__hd">
+        <view class="my1">
+          <view class="weui-label">校园卡信息页清晰照</view>
+        </view>
+        </view>
+         <view class="weui-uploader__input-box">
+         <view class="my2">
+          <view class="weui-uploader__input" bindtap="chooseImage"></view>
+        </view>
+        </view>
+        </view>
+      </view>
     </view>
-
 
     <text class='protocol'>第二部分真实信息仅作安全保障使用，我们将严格保护您的隐私安全，请放心填写。联系方式在用户确认后仅活动人员可见，请阅读《xx规定》提交则默认同意</text>
     <view class="btn">
