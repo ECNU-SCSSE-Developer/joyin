@@ -6,6 +6,65 @@
   height: 100vh;
 }
 
+.name {
+  padding-left:90rpx;
+  padding-top: 50rpx;
+  color: #557d8a;
+  font-size:60rpx;
+}
+
+.infor {
+  display: flex;
+  flex-direction: row;
+  margin-top:20rpx;
+}
+
+.sex {
+  padding-left: 90rpx;
+  color:#557d8a;
+}
+
+.grade {
+ padding-left: 110rpx;
+  color:#557d8a;
+}
+
+.area {
+ padding-left: 130rpx;
+  color:#557d8a;  
+}
+
+.number {
+  padding-left: 90rpx;
+  margin-top:20rpx;
+  color:#557d8a;
+}
+
+.times{
+  padding-left: 90rpx;
+  margin-top:20rpx;
+  color:#557d8a;
+}
+
+.comment{
+  padding-left: 90rpx;
+  margin-top:80rpx;
+  color:#557d8a;
+}
+
+.commentlist{
+  margin-top:40rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.detail{
+  margin-left:100rpx;
+  margin-top:10rpx;
+  background:#557d8a;
+  height: 150rpx;
+  width: 70%;
+}
 .back {
   width: 100%;
   position: fixed;
