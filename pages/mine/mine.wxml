@@ -21,7 +21,7 @@
     </view>
   </view>
 
-  <view class='box2'>
+  <view class='box2' bindtap='goToCalendar'>
     我的JoyIn日历
   </view>
 

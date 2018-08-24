@@ -6,7 +6,7 @@
     <view class='item_hd'>
       <text style='color:red'>★</text>邀约主题</view>
     <view class='item_bd'>
-      <input placeholder="请输入主题" />
+      <input/>
     </view>
   </view>
   <view>
@@ -67,7 +67,7 @@
         </picker-view>
       </view>
       <view class='item_bd' style='padding:0;width:60%'>
-        <input placeholder="备注"/>
+        <input/>
       </view>
     </view>
   </view>
@@ -75,27 +75,27 @@
     <view class='item_hd'>
       <text style='color:red'>★</text>所需人数(包括发起者)</view>
     <view class='item_bd'>
-      <input placeholder="备注" />
+      <input/>
     </view>
   </view>
   <view>
     <view class='item_hd'>
       <text style='color:red'>★</text>预计人均开销</view>
     <view class='item_bd'>
-      <input placeholder="请输入主题" />
+      <input />
     </view>
   </view>
   <view>
     <view class='item_hd'>
       <text style='color:red'>★</text>预计活动时长</view>
     <view class='item_bd'>
-      <input placeholder="请输入主题" />
+      <input/>
     </view>
   </view>
   <view>
     <view class='item_hd'>其他具体信息</view>
     <view class='item_bd other'>
-      <input placeholder="其他信息" />
+      <input/>
     </view>
   </view>
   <view class='btn'>发布活动邀约</view>

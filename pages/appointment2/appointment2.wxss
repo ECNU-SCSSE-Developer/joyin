@@ -15,6 +15,7 @@
   font-size: 50rpx;
   color: white;
   box-shadow: 6rpx 6rpx 6rpx 6rpx #aaa;
+  z-index:2;/*解决input在fixed之上的问题*/
 }
 
 .btn {

@@ -3,68 +3,86 @@
 .page {
   margin-bottom: 100rpx;
   background-color: #f0f9fa;
-  height: 100vh;
+}
+
+.top {
+  position: fixed;
+  top: 0;
+  height: 500rpx;
+  width: 100%;
+  background-color: #f0f9fa;
+  z-index: -1;
 }
 
 .name {
-  padding-left:90rpx;
+  padding-left: 90rpx;
   padding-top: 50rpx;
   color: #557d8a;
-  font-size:60rpx;
+  font-size: 60rpx;
 }
 
 .infor {
   display: flex;
   flex-direction: row;
-  margin-top:20rpx;
+  margin-top: 20rpx;
 }
 
 .sex {
   padding-left: 90rpx;
-  color:#557d8a;
+  color: #557d8a;
 }
 
 .grade {
- padding-left: 110rpx;
-  color:#557d8a;
+  padding-left: 110rpx;
+  color: #557d8a;
 }
 
 .area {
- padding-left: 130rpx;
-  color:#557d8a;  
+  padding-left: 130rpx;
+  color: #557d8a;
 }
 
 .number {
   padding-left: 90rpx;
-  margin-top:20rpx;
-  color:#557d8a;
+  margin-top: 20rpx;
+  color: #557d8a;
 }
 
-.times{
+.times {
   padding-left: 90rpx;
-  margin-top:20rpx;
-  color:#557d8a;
+  margin-top: 20rpx;
+  color: #557d8a;
 }
 
-.comment{
-  padding-left: 90rpx;
-  margin-top:80rpx;
-  color:#557d8a;
+.comment {
+  margin: 20rpx auto;
+  color: #557d8a;
 }
 
-.commentlist{
-  margin-top:40rpx;
+.commentlist {
+  border-top: 5rpx solid black;
+  border-top-left-radius: 50rpx;
+  border-top-right-radius: 50rpx;
+  background: white;
+  margin-top: 500rpx;
   display: flex;
   flex-direction: column;
+  z-index: 1;
 }
 
-.detail{
-  margin-left:100rpx;
-  margin-top:10rpx;
-  background:#557d8a;
+.detail {
+  box-shadow: 1rpx 1rpx 1rpx 1rpx #aaa;
+  border-radius: 10rpx;
+  margin: 20rpx auto 0 auto;
+  background: #557d8a;
   height: 150rpx;
   width: 70%;
 }
+
+.detail:last-child {
+  margin-bottom: 20rpx;
+}
+
 .back {
   width: 100%;
   position: fixed;
@@ -76,4 +94,15 @@
   font-size: 50rpx;
   color: white;
   box-shadow: 6rpx 6rpx 6rpx 6rpx #aaa;
+}
+
+.star {
+  margin-left: 20rpx;
+  height: 30rpx;
+  width: 30rpx;
+}
+
+.text {
+  margin: 0 20rpx;
+  width: 7rpx;
 }

@@ -63,12 +63,17 @@
   border-bottom: 5rpx solid #557d8a;
 }
 
+.item_hd{
+  float: left;
+  margin-right: 20rpx;
+  color: #557d8a;
+}
+
 .organizer {
   background-color: rgb(250, 240, 156);
   width: 70%;
   padding: 20rpx;
   margin: 30rpx auto;
-  border: 5rpx solid #557d8a;
   display: flex;
   border-radius: 20rpx;
   box-shadow: 1rpx 1rpx 1rpx 1rpx #aaa;
@@ -85,11 +90,14 @@
   padding: 20rpx;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 }
 
 .sex {
   align-self: center;
   width: 40rpx;
   height: 40rpx;
+}
+
+.org_name{
+  font-size: 50rpx;
 }

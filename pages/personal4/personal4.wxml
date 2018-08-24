@@ -1,3 +1,10 @@
 <!--pages/personal4/personal4.wxml-->
-<text>pages/personal4/personal4.wxml</text>
+<view class='page'>
+  <view class='left_item'>
+    test
+  </view>
+  <view class='right_item'>
+    test
+  </view>
+</view>
 <view class='back'>返 回</view>

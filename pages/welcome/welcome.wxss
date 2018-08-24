@@ -1,14 +1,19 @@
 /* pages/welcome/welcome.wxss */
 .page{
+  
   height:100vh;
   background-color: #f0f9fa
 }
 
 .img {
-  text-align: center;
-  padding-top:175rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
+.imglogo{
+  padding-top:175rpx;
+}
 
 .organizer_avatar {
  width: 128rpx;

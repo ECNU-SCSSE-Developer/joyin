@@ -17,3 +17,11 @@
   color: white;
   box-shadow: 6rpx 6rpx 6rpx 6rpx #aaa;
 }
+
+.left_item{
+  margin: 0rpx auto;
+  width: 80%;
+  border-radius: 15rpx;
+  background-color: #7bd6ef;
+  box-shadow: 1rpx 1rpx 1rpx 1rpx #aaa;
+}

@@ -4,39 +4,39 @@
   <view>
     <view class='item'>
       <view class='item_hd'>活动主题</view>
-      <view class='item_bd'></view>
+      <input placeholder="4-8个汉字" />
     </view>
     <view class='item'>
       <view class='item_hd'>活动时间</view>
-      <view class='item_bd'></view>
+      <input placeholder="4-8个汉字" />
     </view>
     <view class='item'>
       <view class='item_hd'>活动地点</view>
-      <view class='item_bd'></view>
+      <input placeholder="4-8个汉字" />
     </view>
     <view class='item'>
       <view class='item_hd'>活动类型</view>
-      <view class='item_bd'></view>
+      <input placeholder="4-8个汉字" />
     </view>
     <view class='item'>
       <view class='item_hd'>活动人数</view>
-      <view class='item_bd'></view>
+      <input placeholder="4-8个汉字" />
     </view>
     <view class='item'>
       <view class='item_hd'>预计开销</view>
-      <view class='item_bd'></view>
+      <input placeholder="4-8个汉字" />
     </view>
     <view class='item'>
       <view class='item_hd'>预计时长</view>
-      <view class='item_bd'></view>
+      <input placeholder="4-8个汉字" />
     </view>
     <view class='item'>
       <view class='item_hd'>过期时间</view>
-      <view class='item_bd'></view>
+      <input placeholder="4-8个汉字" />
     </view>
     <view class='item'>
       <view class='item_hd'>具体信息</view>
-      <view class='item_bd'></view>
+      <input placeholder="4-8个汉字" />
     </view>
   </view>
   <view class='organizer'>
@@ -45,7 +45,7 @@
     </view>
     <view class='org_left'>
       <view style='display:flex'>
-        <view>名字</view>
+        <view class='org_name'>名字</view>
         <image class='sex' src='/image/female.png'></image>
       </view>
       <view style='display:flex;font-size:30rpx'>

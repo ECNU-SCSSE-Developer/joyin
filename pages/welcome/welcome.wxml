@@ -2,8 +2,7 @@
 
 <view class='page'>
   <view class='img'>
-  <image src="/image/joyin.png" class='imglogo'></image>
-  <image class='organizer_avatar'
-  src='/image/actDemo.png'></image>
+    <image src="/image/joyin.png" class='imglogo'></image>
+    <image class='organizer_avatar' src='/image/actDemo.png'></image>
   </view>
- </view>
+</view>

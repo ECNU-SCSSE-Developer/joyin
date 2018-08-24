@@ -17,6 +17,7 @@
 }
 
 .text2{
+  border-radius: 10rpx;
    text-align: center;
    background-color: #557d8a;
    margin-left: 85rpx;

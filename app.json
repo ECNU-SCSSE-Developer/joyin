@@ -1,17 +1,17 @@
 {
   "pages": [
-    "pages/register/register",
     "pages/personal1/personal1",
-    "pages/login/login",
-    "pages/welcome/welcome",
+    "pages/appointment2/appointment2",
     "pages/personal4/personal4",
-    "pages/appointment3/appointment3",
+    "pages/activity/activity",
     "pages/mine/mine",
     "pages/calendar/calendar",
-    "pages/appointment2/appointment2",
+    "pages/appointment3/appointment3",
     "pages/offlineActivity/offlineActivity",
+    "pages/register/register",
+    "pages/login/login",
+    "pages/welcome/welcome",
     "pages/joyin/joyin",
-    "pages/activity/activity",
     "pages/index/index",
     "pages/logs/logs"
   ],
@@ -20,5 +20,11 @@
     "navigationBarBackgroundColor": "#f0f9fa",
     "navigationBarTitleText": "JoyIn",
     "navigationBarTextStyle": "black"
+  },
+  "plugins": {
+    "calendar": {
+      "version": "1.1.3",
+      "provider": "wx92c68dae5a8bb046"
+    }
   }
 }

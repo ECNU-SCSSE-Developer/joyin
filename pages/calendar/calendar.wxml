@@ -1,2 +1,29 @@
 <!--pages/calendar/calendar.wxml-->
-<text>pages/calendar/calendar.wxml</text>
+<view class='title'>我的JoyIn日历</view>
+<view class='bd'>
+  <calendar weeks-type="full-en" cell-size="45" show-more-days="{{true}}" calendar-style="calendar" header-style="header" board-style="board" days-color="{{days_style}}" />
+</view>
+<view class='bd2'>
+
+  <view class='line'>
+    <view class='item'>
+      <view class='yellow_type'></view>
+      <view class='type'>已报名</view>
+    </view>
+    <view class='item'>
+      <view class='blue_type'></view>
+      <view class='type'>已收藏</view>
+    </view>
+  </view>
+  <view class='line'>
+    <view class='item'>
+      <view class='red_type'></view>
+      <view class='type'>已发布</view>
+    </view>
+    <view class='item'>
+      <view class='green_type'></view>
+      <view class='type'>已参加</view>
+    </view>
+  </view>
+</view>
+<view class='back' bindtap='back'>返 回</view>

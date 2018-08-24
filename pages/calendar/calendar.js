@@ -5,12 +5,17 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    days_style: [{ month: 'current', day: 11, color: 'white', background: 'linear-gradient(to bottom right, red , blue);'}/*当同时有多个事件在同一天时，使用类似渐变色*/]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
+  back: function(){
+    wx.navigateBack({
+      
+    })
+  },
   onLoad: function (options) {
   
   },
