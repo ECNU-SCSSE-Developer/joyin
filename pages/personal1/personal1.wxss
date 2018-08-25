@@ -14,9 +14,18 @@
   z-index: -1;
 }
 
+.top1{
+  width: 80%;
+  border-radius: 20rpx;
+  background-color: white;
+  padding: 20rpx;
+  margin: 20rpx auto;
+  border: 1rpx solid #557d8a;
+  box-shadow: 3rpx 3rpx 3rpx 3rpx #aaa;
+}
+
 .name {
-  padding-left: 90rpx;
-  padding-top: 50rpx;
+  padding-right: 90rpx;
   color: #557d8a;
   font-size: 60rpx;
 }
@@ -28,30 +37,47 @@
 }
 
 .sex {
-  padding-left: 90rpx;
   color: #557d8a;
+}
+
+.sex text{
+  color: black;
 }
 
 .grade {
-  padding-left: 110rpx;
+  padding-left: 20rpx;
   color: #557d8a;
+}
+
+.grade text{
+  color: black;
 }
 
 .area {
-  padding-left: 130rpx;
+  padding-left: 20rpx;
   color: #557d8a;
+}
+
+.area text{
+  color: black;
 }
 
 .number {
-  padding-left: 90rpx;
   margin-top: 20rpx;
   color: #557d8a;
 }
 
+.number text{
+  color: black;
+}
+
 .times {
-  padding-left: 90rpx;
   margin-top: 20rpx;
   color: #557d8a;
+}
+
+.times text{
+  color: black;
 }
 
 .comment {
@@ -60,7 +86,7 @@
 }
 
 .commentlist {
-  border-top: 5rpx solid black;
+  border-top: 5rpx solid #557d8a;
   border-top-left-radius: 50rpx;
   border-top-right-radius: 50rpx;
   background: white;
@@ -75,7 +101,6 @@
   border-radius: 10rpx;
   margin: 20rpx auto 0 auto;
   background: #557d8a;
-  height: 150rpx;
   width: 70%;
 }
 
@@ -104,5 +129,6 @@
 
 .text {
   margin: 0 20rpx;
-  width: 7rpx;
+  width: 10%;
+  white-space:pre-line;
 }

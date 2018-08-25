@@ -70,7 +70,7 @@
 }
 
 .organizer {
-  background-color: rgb(250, 240, 156);
+  background-color: whitesmoke;
   width: 70%;
   padding: 20rpx;
   margin: 30rpx auto;

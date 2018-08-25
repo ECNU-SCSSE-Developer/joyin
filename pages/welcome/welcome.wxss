@@ -1,8 +1,8 @@
 /* pages/welcome/welcome.wxss */
-.page{
-  
-  height:100vh;
-  background-color: #f0f9fa
+
+.page {
+  height: 100vh;
+  background-color: #f0f9fa;
 }
 
 .img {
@@ -11,15 +11,17 @@
   align-items: center;
 }
 
-.imglogo{
-  padding-top:175rpx;
+.imglogo {
+  width: 500rpx;
+  height: 500rpx;
+  padding-top: 50rpx;
 }
 
 .organizer_avatar {
- width: 128rpx;
- height: 128rpx;
- margin: 20rpx;
- border-radius: 50%;
- position:relative;
- top:-100rpx;
+  width: 150rpx;
+  height: 150rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+  position: relative;
+  top: -100rpx;
 }

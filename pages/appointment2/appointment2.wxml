@@ -60,13 +60,13 @@
       <text style='color:red'>★</text>邀约地点</view>
     <view class='area'>
       <view class='item_bd' style='padding:0;width:20%'>
-        <picker-view indicator-style="height:50px;" style='height:50px;text-align: center;' value="{{value}}" bindchange="bindChange">
+        <picker-view indicator-style="height:35px;" style='height:35px;text-align: center;' value="{{value}}" bindchange="bindChange">
           <picker-view-column>
-            <view wx:for="{{area}}" style="line-height: 50px">{{item}}</view>
+            <view wx:for="{{area}}" style="line-height: 35px">{{item}}</view>
           </picker-view-column>
         </picker-view>
       </view>
-      <view class='item_bd' style='padding:0;width:60%'>
+      <view class='item_bd' style='width:60%'>
         <input/>
       </view>
     </view>

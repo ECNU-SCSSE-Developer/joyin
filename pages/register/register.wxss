@@ -30,6 +30,10 @@
   width: 150rpx;
 }
 
+.weui-label_pic{
+  color: #557d8a;
+}
+
 .weui-cell {
   border: 3rpx solid #557d8a;
 }
@@ -43,8 +47,8 @@
   border: 3rpx solid #557d8a;
 }
 .my{
-  display: flex;
-  flex-direction: column;
+  width: 100%;
+  align-items: center;
 }
 .my1{
   width:100%;
@@ -63,3 +67,12 @@ radio-group {
   justify-content: space-between;
 }
 
+.weui-uploader__input-box{
+  width: 100%;
+  margin: 20rpx auto;
+}
+
+.href{
+  font-size: 20rpx;
+  line-height: 20rpx; /*行间距*/
+}

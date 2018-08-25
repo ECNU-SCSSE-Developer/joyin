@@ -1,16 +1,25 @@
-// pages/personal1/personal1.js
+// pages/personal3/personal3.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    star: 5,
-    sex: "男",
-    grade:"16级",
-    area:"中北",
-    phoneNumber:"12345678945",
-    times:"10"
+    /*绑定第一个卡片上的数据 */
+    activity:{
+      title:"三国杀",
+      place:"中北",
+      date:"2018年8月20日",
+      img:"xxx"
+    },
+    /* 绑定第二个卡片上的数据*/
+    organizer:{
+      img:"/image/actDemo.png",
+      sex:2,/*1为男2为女 */
+      name:"名字",
+      grade:"16级",
+      area:"中北"
+    }
   },
 
   /**

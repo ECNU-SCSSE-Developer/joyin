@@ -1,0 +1,54 @@
+<!--pages/personal3/personal3.wxml-->
+<view class='bd'>
+  <view class='act_title'>活动:</view>
+  <view class='item'>
+    <view style='height:100%;display:flex;align-items:center;margin:0 30rpx'>
+      <image src='/image/actDemo.png' class='item_image'></image>
+    </view>
+    <view style='height:100%;display:flex;flex-direction: column;justify-content:space-between'>
+      <view class='item_title'>
+        {{activity.title}}
+      </view>
+      <view class='item_place'>{{activity.place}}</view>
+    </view>
+    <view style='height:100%;display:flex;flex-direction: column;justify-content:flex-end'>
+      <view class='item_date'>{{activity.date}}</view>
+    </view>
+  </view>
+  <view class='org_title'>发起人:</view>
+  <view class='organizer'>
+    <view>
+      <image class='organizer_avatar' src='{{organizer.img}}'></image>
+    </view>
+    <view class='org_left'>
+      <view style='display:flex'>
+        <view class='org_name'>{{organizer.name}}</view>
+        <block wx:if="{{organizer.sex == 1}}">
+          <image class='sex' src='/image/male.png'></image>
+        </block>
+        <block wx:elseif="{{organizer.sex == 2}}">
+          <image class='sex' src='/image/female.png'></image>
+        </block>
+      </view>
+      <view style='display:flex;font-size:30rpx'>
+        <view style='margin-right:50rpx'>{{organizer.grade}}</view>
+        <view>{{organizer.area}}</view>
+      </view>
+    </view>
+  </view>
+  <view class='line'>
+    <span>请评价一下该活动吧</span>
+  </view>
+  <view class='star_box'>
+    <image class='star' src='/image/star.png'></image>
+    <image class='star' src='/image/star.png'></image>
+    <image class='star' src='/image/star.png'></image>
+    <image class='star' src='/image/star.png'></image>
+    <image class='star' src='/image/star.png'></image>
+  </view>
+  <view class='comment'>
+    <input placeholder='说点什么吧'></input>
+  </view>
+  <view class='button'>提交</view>
+</view>
+<view class='back'>返 回</view>

@@ -4,39 +4,39 @@
   <view>
     <view class='item'>
       <view class='item_hd'>活动主题</view>
-      <input placeholder="4-8个汉字" />
+      <view>xxx</view>
     </view>
     <view class='item'>
       <view class='item_hd'>活动时间</view>
-      <input placeholder="4-8个汉字" />
+      <view>xxx</view>
     </view>
     <view class='item'>
       <view class='item_hd'>活动地点</view>
-      <input placeholder="4-8个汉字" />
+      <view>xxx</view>
     </view>
     <view class='item'>
       <view class='item_hd'>活动类型</view>
-      <input placeholder="4-8个汉字" />
+      <view>xxx</view>
     </view>
     <view class='item'>
       <view class='item_hd'>活动人数</view>
-      <input placeholder="4-8个汉字" />
+      <view>xxx</view>
     </view>
     <view class='item'>
       <view class='item_hd'>预计开销</view>
-      <input placeholder="4-8个汉字" />
+      <view>xxx</view>
     </view>
     <view class='item'>
       <view class='item_hd'>预计时长</view>
-      <input placeholder="4-8个汉字" />
+      <view>xxx</view>
     </view>
     <view class='item'>
       <view class='item_hd'>过期时间</view>
-      <input placeholder="4-8个汉字" />
+      <view>xxx</view>
     </view>
     <view class='item'>
       <view class='item_hd'>具体信息</view>
-      <input placeholder="4-8个汉字" />
+      <view>xxx</view>
     </view>
   </view>
   <view class='organizer'>
