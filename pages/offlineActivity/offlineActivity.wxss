@@ -68,3 +68,7 @@
   background-color:#fbb9c9;
   box-shadow: 1rpx 1rpx 1rpx 1rpx #aaa;
 }
+
+.button_hover{
+  background-color: #eee;
+}

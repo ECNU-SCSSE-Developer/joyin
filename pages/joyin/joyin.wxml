@@ -33,7 +33,7 @@
       </view>
       <view>
         <view wx:for="{{myList}}" wx:for-index="idx" wx:for-item="activity">
-          <view class='item'>
+          <view class='item' hover-class='item_hover-class'>
             <view style='height:100%;display:flex;align-items:center;margin:0 30rpx'>
               <image src='/image/actDemo.png' class='item_image'></image>
             </view>
@@ -81,7 +81,7 @@
       </view>
       <view>
         <view wx:for="{{waitList}}" wx:for-index="idx" wx:for-item="activity">
-          <view class='item'>
+          <view class='item' hover-class='item_hover-class'>
             <view style='height:100%;display:flex;align-items:center;margin:0 30rpx'>
               <image src='/image/actDemo.png' class='item_image'></image>
             </view>

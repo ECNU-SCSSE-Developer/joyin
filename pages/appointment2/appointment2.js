@@ -41,7 +41,26 @@ Page({
     hour: 1,
     minutes: minutes,
     minute: 1,
-    area:["中北","闵行","校外"]
+    area:["中北","闵行","校外"],
+    isAgree:false
+  },
+  showProtocol: function () {
+    wx.showModal({
+      content: 'xxx规定',
+      showCancel: false,
+      confirmColor: "#557d8a",
+      confirmText: "知道啦",
+      success: function (res) {
+        if (res.confirm) {
+          console.log('用户点击确定')
+        }
+      }
+    });
+  },
+  bindAgreeChange: function (e) {
+    this.setData({
+      isAgree: !!e.detail.value.length
+    });
   },
   bindChange: function(e) {
     const val = e.detail.value

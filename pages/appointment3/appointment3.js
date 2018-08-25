@@ -5,7 +5,13 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    org:{
+      name:"名字",
+      grade:"16级",
+      area:"中北",
+      img:"xxx",
+      sex:1
+    }
   },
 
   /**

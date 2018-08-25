@@ -50,11 +50,15 @@
   box-shadow: 1rpx 1rpx 1rpx 1rpx #aaa;
 }
 
-.item {
-  background-color: white;
-  padding: 20rpx;
+.item_box{
+  width: 80%;
   margin: 0 auto;
-  width: 70%;
+  box-shadow: 1rpx 1rpx 1rpx 1rpx #aaa;
+}
+
+.item {
+  padding: 20rpx;
+  background-color: white;
   border: 5rpx solid #557d8a;
   border-bottom: 0;
 }
@@ -100,4 +104,8 @@
 
 .org_name{
   font-size: 50rpx;
+}
+
+.button_hover{
+  background-color: #eee;
 }

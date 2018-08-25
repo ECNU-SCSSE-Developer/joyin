@@ -4,7 +4,7 @@
 
   <view class='nav'>
     <view>
-      <view class="nav1" bindtap="clickPlace">
+      <view class="nav1" bindtap="clickPlace" hover-class='nav_hover-class'>
         <view class="nav_text">{{area}}</view>
         <image src="/image/navigation.png" class="nav_icon_area {{selectAreaH ? 'rotateRight' :''}}"></image>
       </view>
@@ -16,11 +16,13 @@
         </view>
       </view>
     </view>
+
     <view>
       <image src='/image/add.png' class='add' bindtap='clickAdd'></image>
     </view>
+    
     <view>
-      <view class="nav1" bindtap="clickType">
+      <view class="nav1" bindtap="clickType" hover-class='nav_hover-class'>
         <view class="nav_text">{{activityType}}</view>
         <image src="/image/navigation.png" class="nav_icon_type {{selectTypeH ? 'rotateRight' :''}}"></image>
       </view>
@@ -34,7 +36,7 @@
     </view>
   </view>
   <view style='padding:0 45rpx' wx:for="{{activities}}" wx:for-index="idx" wx:for-item="activity">
-    <view class='item'>
+    <view class='item' hover-class='item_hover-class'>
       <view style='height:100%;display:flex;align-items:center;margin:0 30rpx'>
         <image src='/image/actDemo.png' class='item_image'></image>
       </view>

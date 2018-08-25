@@ -1,18 +1,18 @@
 {
   "pages": [
+    "pages/appointment2/appointment2",
+    "pages/calendar/calendar",
+    "pages/register/register",
+    "pages/mine/mine",
+    "pages/activity/activity",
+    "pages/joyin/joyin",
     "pages/personal3/personal3",
     "pages/appointment3/appointment3",
-    "pages/appointment2/appointment2",
-    "pages/joyin/joyin",
+    "pages/offlineActivity/offlineActivity",
+    "pages/personal1/personal1",
     "pages/login/login",
     "pages/welcome/welcome",
-    "pages/offlineActivity/offlineActivity",
-    "pages/activity/activity",
-    "pages/mine/mine",
-    "pages/personal1/personal1",
-    "pages/register/register",
     "pages/personal4/personal4",
-    "pages/calendar/calendar",
     "pages/logs/logs"
   ],
   "window": {

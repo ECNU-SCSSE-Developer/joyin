@@ -76,3 +76,7 @@ radio-group {
   font-size: 20rpx;
   line-height: 20rpx; /*行间距*/
 }
+
+.button_hover{
+  background-color: #eee;
+}

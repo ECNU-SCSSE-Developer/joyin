@@ -21,12 +21,12 @@
     </view>
   </view>
 
-  <view class='box2' bindtap='goToCalendar'>
+  <view class='box2' bindtap='goToCalendar' hover-class='box2_hover-class'>
     我的JoyIn日历
   </view>
 
   <view class='box3'>
-    <view class='list' bindtap="showItems1">已收藏</view>
+    <view class='list' bindtap="showItems1" hover-class='list_hover-class'>已收藏</view>
     <view class="list_item {{open1 ? 'list_item_show' : '' }}">
       <block wx:for="{{list1}}">
         <view class="cells {{open1 ? 'cells_show' : ''}}">
@@ -43,7 +43,7 @@
         </view>
       </block>
     </view>
-    <view class='list' bindtap="showItems2">已报名</view>
+    <view class='list' bindtap="showItems2" hover-class='list_hover-class'>已报名</view>
     <view class="list_item {{open2 ? 'list_item_show' : '' }}">
       <block wx:for="{{list2}}">
         <view class="cells {{open2 ? 'cells_show' : ''}}">
@@ -60,7 +60,7 @@
         </view>
       </block>
     </view>
-    <view class='list' bindtap="showItems3">已发布</view>
+    <view class='list' bindtap="showItems3" hover-class='list_hover-class'>已发布</view>
     <view class="list_item {{open3 ? 'list_item_show' : '' }}">
       <block wx:for="{{list3}}">
         <view class="cells {{open3 ? 'cells_show' : ''}}">
@@ -77,7 +77,7 @@
         </view>
       </block>
     </view>
-    <view  bindtap="showItems4">已参加</view>
+    <view bindtap="showItems4" hover-class='list_hover-class' style='color:#557d8a'>已参加</view>
     <view class="list_item {{open4 ? 'list_item_show' : '' }}">
       <block wx:for="{{list4}}">
         <view class="cells {{open4 ? 'cells_show' : ''}}">
@@ -96,12 +96,18 @@
     </view>
   </view>
   <view class='box5'>
-    <text>联系酌盈</text>
-    <text style='border-bottom: 3rpx solid #eee;'>www.baidu.com</text>
-    <text>使用指南</text>
-    <text style='border-bottom: 3rpx solid #eee;'>www.baidu.com</text>
-    <text>关于酌盈</text>
-    <text>www.baidu.com</text>
+    <view class='box5_item' hover-class='box5_hover-class'>
+      <text>联系酌盈</text>
+      <text style='border-bottom: 3rpx solid #eee;'>www.baidu.com</text>
+    </view>
+    <view class='box5_item' hover-class='box5_hover-class'>
+      <text>使用指南</text>
+      <text style='border-bottom: 3rpx solid #eee;'>www.baidu.com</text>
+    </view>
+    <view class='box5_item' hover-class='box5_hover-class'>
+      <text>关于酌盈</text>
+      <text>www.baidu.com</text>
+    </view>
   </view>
 
 

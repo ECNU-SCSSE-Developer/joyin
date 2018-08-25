@@ -26,7 +26,7 @@
         <block wx:if="{{organizer.sex == 1}}">
           <image class='sex' src='/image/male.png'></image>
         </block>
-        <block wx:elseif="{{organizer.sex == 2}}">
+        <block wx:if="{{organizer.sex == 2}}">
           <image class='sex' src='/image/female.png'></image>
         </block>
       </view>

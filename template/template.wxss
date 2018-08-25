@@ -1,29 +1,33 @@
 /* pages/template/template.wxss */
-.icon{
+
+.icon {
   float: left;
-  width:54rpx;
+  width: 54rpx;
   height: 54rpx;
 }
-.title{
+
+.title {
   float: center;
   padding: 0rpx;
 }
-.tabBar{
-  width:100%;
+
+.tabBar {
+  width: 100%;
   position: fixed;
-  bottom:0;
+  bottom: 0;
   height: 50rpx;
-  padding:30rpx;
-  margin-left:-4rpx;
-  background:#557d8a;
-  font-size:30rpx;
-  color:white;
+  padding: 30rpx;
+  margin-left: -4rpx;
+  background: #557d8a;
+  font-size: 30rpx;
+  color: white;
   box-shadow: 6rpx 6rpx 6rpx 6rpx #aaa;
 }
 
- .tabBar-item{
-  float:left;
-  width:33.3%;
+.tabBar-item {
+  float: left;
+  width: 33.3%;
+  height: 50rpx;
   text-align: center;
   overflow: hidden;
 }

@@ -44,6 +44,10 @@
   box-shadow: 1rpx 1rpx 1rpx 1rpx #aaa;
 }
 
+ .item_hover-class{
+   background-color: #eee;
+ }
+ 
 .item_image {
   width: 100rpx;
   height: 100rpx;

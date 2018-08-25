@@ -29,6 +29,10 @@
   border-bottom: 2rpx solid rgb(255, 255, 255);
 }
 
+.nav_hover-class{
+  background-color: #eee;
+}
+
 .area_box {
   position: relative;
 }
@@ -79,7 +83,6 @@
 }
 
 /*翻转动画*/
-
 .rotateRight {
   transform: rotate(180deg);
 }
@@ -104,6 +107,10 @@
   border: 3rpx solid #eee;
   margin-top: 30rpx;
   box-shadow: 1rpx 1rpx 1rpx 1rpx #aaa;
+}
+
+.item_hover-class{
+  background-color: #eee;
 }
 
 .item_image {

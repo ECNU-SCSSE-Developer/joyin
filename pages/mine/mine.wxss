@@ -17,50 +17,55 @@
   box-shadow: 1rpx 1rpx 1rpx 1rpx #aaa;
 }
 
-.box1{
+.box1 {
   align-items: center;
   padding: 0 30rpx;
 }
 
-.name{
+.name {
   font-size: 40rpx;
   color: #557d8a;
   margin-right: 30rpx;
 }
 
-.hd{
+.hd {
   font-size: 40rpx;
   color: #557d8a;
   margin-right: 30rpx;
 }
 
-.bd{
+.bd {
   margin-right: 20rpx;
 }
 
-.box2{
+.box2 {
   background-color: #f0f9fa;
   border-radius: 20rpx;
   border: 3rpx solid #eee;
   margin-top: 30rpx;
   box-shadow: 1rpx 1rpx 1rpx 1rpx #aaa;
   width: 100%;
-  line-height: 90rpx;/*让文字行间距等于height，实现垂直居中*/
+  line-height: 90rpx; /*让文字行间距等于height，实现垂直居中*/
   text-align: center;
+  color: #557d8a;
 }
 
-.box3{
+.box2_hover-class {
+  background-color: #eee;
+}
+
+.box3 {
   background-color: #f0f9fa;
   border-radius: 20rpx;
   border: 3rpx solid #eee;
   margin-top: 30rpx;
   box-shadow: 1rpx 1rpx 1rpx 1rpx #aaa;
   width: 100%;
-  line-height: 90rpx;/*让文字行间距等于height，实现垂直居中*/
+  line-height: 90rpx; /*让文字行间距等于height，实现垂直居中*/
   text-align: center;
 }
 
-.box5{
+.box5 {
   background-color: #f0f9fa;
   border-radius: 20rpx;
   border: 3rpx solid #eee;
@@ -73,25 +78,60 @@
   font-size: 30rpx;
 }
 
-.list{
+.box5_item {
+  display: flex;
+  flex-direction: column;
+  color: #557d8a;
+}
+
+.box5_hover-class {
+  background-color: #eee;
+}
+
+.box5_hover-class:first-child {
+  border-top-left-radius: 20rpx;
+  border-top-right-radius: 20rpx;
+}
+
+.box5_hover-class:last-child {
+  border-bottom-left-radius: 20rpx;
+  border-bottom-right-radius: 20rpx;
+}
+
+.list {
   border: 3rpx solid #eee;
   border-top: 0;
   border-left: 0;
   border-right: 0;
+  color: #557d8a;
 }
 
-.list:last-child{
- border-bottom: 0;
+.list:last-child {
+  border-bottom: 0;
 }
 
-.list_item{
+.list_hover-class {
+  background-color: #eee;
+}
+
+.list_hover-class:first-child {
+  border-top-left-radius: 20rpx;
+  border-top-right-radius: 20rpx;
+}
+
+.list_hover-class:last-child {
+  border-bottom-left-radius: 20rpx;
+  border-bottom-right-radius: 20rpx;
+}
+
+.list_item {
   height: 0;
   overflow: hidden;
   border-radius: 20rpx;
   background-color: #f6fbfc;
 }
 
-.list_item_show{
+.list_item_show {
   height: auto;
 }
 
@@ -115,8 +155,7 @@
   transform: translateY(0);
 }
 
-
-.cells:last-child{
+.cells:last-child {
   border-bottom: 0;
 }
 

@@ -20,7 +20,7 @@ page {
 }
 
 .bd{
-  height: 60%;
+  height: 70%;
   border-bottom:3rpx solid white; 
 }
 
@@ -97,4 +97,8 @@ page {
   display: flex;
   justify-content: space-between;
 
+}
+
+.button_hover{
+  background-color: #eee;
 }

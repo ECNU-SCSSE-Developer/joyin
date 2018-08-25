@@ -4,7 +4,6 @@
   <calendar weeks-type="full-en" cell-size="45" show-more-days="{{true}}" calendar-style="calendar" header-style="header" board-style="board" days-color="{{days_style}}" />
 </view>
 <view class='bd2'>
-
   <view class='line'>
     <view class='item'>
       <view class='yellow_type'></view>
@@ -26,4 +25,4 @@
     </view>
   </view>
 </view>
-<view class='back' bindtap='back'>返 回</view>
+<view class='back' bindtap='back' hover-class='button_hover'>返 回</view>

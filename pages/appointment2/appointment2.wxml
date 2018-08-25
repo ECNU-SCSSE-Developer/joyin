@@ -1,7 +1,18 @@
 <!--pages/appointment1/appointment1.wxml-->
 <view class='page'>
-  <view>开始出行！</view>
-  <view>已阅读填写须知</view>
+  <view style='text-align:center'>JoyIn</view>
+  <checkbox-group bindchange="bindAgreeChange" style='text-align:center'>
+    <label class="weui-agree" for="weuiAgree">
+      <view class="weui-agree__text">
+        <checkbox class="weui-agree__checkbox" id="weuiAgree" value="agree" checked="{{isAgree}}" />
+        <view class="weui-agree__checkbox-icon">
+          <icon class="weui-agree__checkbox-icon-check" type="success_no_circle" size="9" wx:if="{{isAgree}}"></icon>
+        </view>
+        已阅读填写须知
+        <view bindtap="showProtocol" class="weui-agree__link">《开始出行!》</view>
+      </view>
+    </label>
+  </checkbox-group>
   <view>
     <view class='item_hd'>
       <text style='color:red'>★</text>邀约主题</view>
@@ -98,7 +109,7 @@
       <input/>
     </view>
   </view>
-  <view class='btn'>发布活动邀约</view>
+  <view class='btn' hover-class='button_hover'>发布活动邀约</view>
   <view style='height:20rpx;'></view>
-  <view class='back' bindtap='clickBack'>返 回</view>
+  <view class='back' bindtap='clickBack' hover-class='button_hover'>返 回</view>
 </view>

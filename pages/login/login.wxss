@@ -35,3 +35,7 @@
   text-align: center;
   margin-top: 30rpx;
 }
+
+.button_hover{
+  background-color: wheat;
+}
