@@ -1,9 +1,11 @@
 /* pages/personal3/personal3.wxss */
-.org_title{
+
+.org_title {
   margin-top: 50rpx;
   color: gray;
   margin-bottom: 20rpx;
 }
+
 .organizer {
   background-color: whitesmoke;
   width: 100%;
@@ -31,7 +33,7 @@
   height: 40rpx;
 }
 
-.org_name{
+.org_name {
   font-size: 50rpx;
 }
 
@@ -48,7 +50,7 @@
   box-shadow: 6rpx 6rpx 6rpx 6rpx #aaa;
 }
 
-.act_title{
+.act_title {
   color: gray;
   margin-bottom: 20rpx;
 }
@@ -91,25 +93,25 @@
   color: #557d8a;
 }
 
-.bd{
+.bd {
   padding: 50rpx;
   margin-bottom: 100rpx;
   background-color: #f0f9fa;
 }
 
-.star_box{
+.star_box {
   margin: 50rpx auto;
   width: 80%;
   display: flex;
   justify-content: space-between;
 }
 
-.star{
+.star {
   height: 80rpx;
   width: 80rpx;
 }
 
-.comment{
+.comment {
   background-color: white;
   border-radius: 20rpx;
   padding: 20rpx;
@@ -131,16 +133,17 @@
   box-shadow: 1rpx 1rpx 1rpx 1rpx #aaa;
 }
 
-.line{
+.line {
   margin-top: 50rpx;
-    height: 1px;
-    border-top: 1px solid #ddd;
-    text-align: center;
+  height: 1px;
+  border-top: 1px solid #ddd;
+  text-align: center;
 }
-.line span{
-    position: relative;
-    top: -30rpx;
-    color: #ddd;
-    background: #f0f9fa;
-    padding: 0 20px;
+
+.line span {
+  position: relative;
+  top: -30rpx;
+  color: #ddd;
+  background: #f0f9fa;
+  padding: 0 20px;
 }

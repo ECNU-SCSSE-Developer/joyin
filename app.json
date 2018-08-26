@@ -1,8 +1,9 @@
 {
   "pages": [
+    "pages/personal4/personal4",
+    "pages/register/register",
     "pages/appointment2/appointment2",
     "pages/calendar/calendar",
-    "pages/register/register",
     "pages/mine/mine",
     "pages/activity/activity",
     "pages/joyin/joyin",
@@ -12,7 +13,6 @@
     "pages/personal1/personal1",
     "pages/login/login",
     "pages/welcome/welcome",
-    "pages/personal4/personal4",
     "pages/logs/logs"
   ],
   "window": {

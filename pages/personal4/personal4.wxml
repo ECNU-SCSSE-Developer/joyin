@@ -1,10 +1,48 @@
 <!--pages/personal4/personal4.wxml-->
 <view class='page'>
+  <view style='backgroud:#f0f9fa;height:1rpx;'></view>
+
+  <!--活动申请板块-->
   <view class='left_item'>
-    test
+    <view class='item1'>
+      用户
+      <text>xxx</text>申请报名了你的出行活动
+      <text>xxx</text>
+    </view>
   </view>
   <view class='right_item'>
-    test
+    <view class='left_button' hover-class='button_hover'>报 名</view>
+    <view class='right_button' hover-class='button_hover'>收 藏</view>
   </view>
+  <view class='line'></view>
+
+
+  <!--评价提示板块-->
+  <view class='left_item2'>
+    <view class='item1'>
+      您收到了一条评价
+    </view>
+  </view>
+  <view class='left_item3'>
+    <view class='item1'>
+      <text>xxx\n</text>这个活动真有趣
+    </view>
+  </view>
+  <view class='line'></view>
+
+  <!--活动询问板块-->
+  <view class='left_item3'>
+    <view class='item1'>
+      <text>xxx</text>活动进展怎么样啦
+    </view>
+  </view>
+  <view class='right_item3'>
+    <view class='item3'>顺利进行中</view>
+    <view class='item3'>中途取消</view>
+    <view class='item3'>圆满完成</view>
+    <view class='item3'>出现问题</view>
+  </view>
+
+  <view style='backgroud:#f0f9fa;height:1rpx;'></view>
 </view>
-<view class='back'>返 回</view>
+<view class='back' hover-class='button_hover'>返 回</view>
