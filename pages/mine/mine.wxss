@@ -12,9 +12,9 @@
   background-color: #f0f9fa;
   width: 100%;
   border-radius: 20rpx;
-  border: 3rpx solid #eee;
+  /*border: 3rpx solid #eee;*/
   margin-top: 30rpx;
-  box-shadow: 1rpx 1rpx 1rpx 1rpx #aaa;
+  /*box-shadow: 1rpx 1rpx 1rpx 1rpx #aaa;*/
 }
 
 .box1 {
@@ -41,9 +41,9 @@
 .box2 {
   background-color: #f0f9fa;
   border-radius: 20rpx;
-  border: 3rpx solid #eee;
+  /*border: 3rpx solid #eee;*/
   margin-top: 30rpx;
-  box-shadow: 1rpx 1rpx 1rpx 1rpx #aaa;
+  /*box-shadow: 1rpx 1rpx 1rpx 1rpx #aaa;*/
   width: 100%;
   line-height: 90rpx; /*让文字行间距等于height，实现垂直居中*/
   text-align: center;
@@ -57,9 +57,9 @@
 .box3 {
   background-color: #f0f9fa;
   border-radius: 20rpx;
-  border: 3rpx solid #eee;
+  /*border: 3rpx solid #eee;*/
   margin-top: 30rpx;
-  box-shadow: 1rpx 1rpx 1rpx 1rpx #aaa;
+  /*box-shadow: 1rpx 1rpx 1rpx 1rpx #aaa;*/
   width: 100%;
   line-height: 90rpx; /*让文字行间距等于height，实现垂直居中*/
   text-align: center;
@@ -68,9 +68,9 @@
 .box5 {
   background-color: #f0f9fa;
   border-radius: 20rpx;
-  border: 3rpx solid #eee;
+  /*border: 3rpx solid #eee;*/
   margin-top: 30rpx;
-  box-shadow: 1rpx 1rpx 1rpx 1rpx #aaa;
+  /*box-shadow: 1rpx 1rpx 1rpx 1rpx #aaa;*/
   width: 100%;
   display: flex;
   flex-direction: column;
