@@ -14,14 +14,16 @@
 .imglogo {
   width: 500rpx;
   height: 500rpx;
-  padding-top: 50rpx;
+  padding-top: 10%;
 }
 
-.organizer_avatar {
-  width: 150rpx;
-  height: 150rpx;
-  margin: 20rpx;
-  border-radius: 50%;
-  position: relative;
-  top: -100rpx;
+#userinfo{
+  width: 185rpx;
+  height:185rpx;
+  border-radius:50%;
+  display: flex;
+  overflow:hidden;
+  text-align: center;
+  margin: 0 auto;
 }
+

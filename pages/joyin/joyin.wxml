@@ -67,7 +67,7 @@
           </view>
         </view>
       </view>
-      <view class='more'>更多...</view>
+      <view class='more' bindtap="toastmyapp">更多...</view>
       <view class='line'></view>
     </view>
 
@@ -97,7 +97,7 @@
           </view>
         </view>
       </view>
-      <view class='more'>更多...</view>
+      <view class='more' bindtap="toastapp">更多...</view>
       <view class='line'></view>
     </view>
   </view>

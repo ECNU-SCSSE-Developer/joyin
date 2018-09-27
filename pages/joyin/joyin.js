@@ -96,5 +96,29 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+
+  toastmyapp:function(event) {
+    wx.navigateTo({
+      url: '../mine/mine',
+      success: function (res) {
+      },
+      fail: function () {
+      },
+      complete: function () {
+      }
+    })
+  },
+
+  toastapp: function (event) {
+    wx.navigateTo({
+      url: '../activity/activity',
+      success: function (res) {
+      },
+      fail: function () {
+      },
+      complete: function () {
+      }
+    })
   }
 })

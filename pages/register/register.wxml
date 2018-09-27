@@ -4,22 +4,32 @@
   </view>
   <form bindsubmit="formSubmit" bindreset="formReset">
     <view class="weui-cells weui-cells_after-title">
+
       <view class="weui-cell weui-cell_input">
         <view class="weui-cell__hd">
-          <view class="weui-label">昵称</view>
+          <view class="weui-label" type="text" maxlength="8" minlength="4">昵称</view>
         </view>
         <view class="weui-cell__bd">
           <input class="weui-input" placeholder="4-8个汉字，确认后不可修改" />
         </view>
       </view>
+
       <view class="weui-cell weui-cell_input">
         <view class="weui-cell__hd">
           <view class="weui-label">年级</view>
         </view>
         <view class="weui-cell__bd">
-          <input class="weui-input" placeholder="例：2018级" />
+         <view class="row-wrap" >
+     <picker bindchange="bindCasPickerChange" value="{{casIndex1}}" range="{{casArray}}" >
+      <view>
+       <text>{{casArray[casIndex]}}</text>
+      </view>
+     </picker>
+         </view>
         </view>
       </view>
+
+
       <view class="weui-cell weui-cell_input">
         <view class="weui-cell__hd">
           <view class="weui-label">性别</view>
@@ -33,6 +43,7 @@
           </radio-group>
         </view>
       </view>
+
       <view class="weui-cell weui-cell_input">
         <view class="weui-cell__hd">
           <view class="weui-label">校区</view>
@@ -46,12 +57,14 @@
           </radio-group>
         </view>
       </view>
-    </view>
+
+   
+  </view>
 
     <view class="weui-cells weui-cells_after-title">
       <view class="weui-cell weui-cell_input">
         <view class="weui-cell__hd">
-          <view class="weui-label">真实姓名</view>
+          <view class="weui-label" type="text" maxlength="12" value="{{mem_name}}" bindchange="name" name="name2">真实姓名</view>
         </view>
         <view class="weui-cell__bd">
           <input class="weui-input" />
@@ -67,29 +80,31 @@
       </view>
       <view class="weui-cell weui-cell_input">
         <view class="weui-cell__hd">
-          <view class="weui-label">手机</view>
+          <view class="weui-label" type="text" maxlength="11" value="{{mem_num}}" bindchange="num" name="num2">手机</view>
         </view>
         <view class="weui-cell__bd">
           <input class="weui-input" />
         </view>
       </view>
+ 
       <view class="weui-cell weui-cell_input">
         <view class="my">
-          <view class="weui-cell__hd" style='text-align:center'>
+          <view class="weui-cell__hd" >
               <view class="weui-label_pic">校园卡信息页清晰照</view>
           </view>
           <view class="weui-uploader__input-box">
-            <view class="my2">
+
               <view class="weui-uploader__input" bindtap="chooseImage"></view>
-            </view>
+            
           </view>
         </view>
       </view>
+  
     </view>
 
     <text class='protocol'>第二部分真实信息仅作安全保障使用，我们将严格保护您的隐私安全，请放心填写。联系方式在用户确认后仅活动人员可见，请阅读</text><text class="href" bindtap="showProtocol">《xx规定》</text><text class='protocol'>提交则默认同意</text>
     <view class="btn" hover-class='button_hover'>
-      <button formType="submit">注 册</button>
+      <button formType="submit" bindtap="toastin">注 册</button>
     </view>
   </form>
 </view>

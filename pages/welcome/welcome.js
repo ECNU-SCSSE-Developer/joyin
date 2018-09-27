@@ -62,5 +62,17 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+
+  toast:function(event){
+    wx.navigateTo({
+ url: '../register/register',
+ success: function(res){
+ },
+ fail: function() {
+},
+complete: function() {
+ }
+    })
   }
 })
