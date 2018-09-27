@@ -14,6 +14,36 @@ Page({
     }
   },
 
+  // 报名
+  addJoin: function(act_id, acc_id) {
+    const db = wx.cloud.database()
+    db.collection('join').add({
+      data: {
+        act_id: act_id,
+        acc_id: acc_id,
+        is_reply: false,
+        is_agree: false,
+        is_opinion: false,
+      },
+      complete: function (res) {
+        console.log(res)
+      },
+    })
+  },
+
+  //收藏
+  addFavorite: function (act_id, acc_id) {
+    const db = wx.cloud.database()
+    db.collection('join').add({
+      data: {
+        act_id: act_id,
+        acc_id: acc_id,
+      },
+      complete: function (res) {
+        console.log(res)
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

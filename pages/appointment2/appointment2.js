@@ -77,11 +77,33 @@ Page({
     wx.navigateBack({
     })
   },
+
+  // 在数据库中添加活动
+  addActivity: function (name, start_time, end_time, place_type, place, people_num, money, duration, info) {
+    const db = wx.cloud.database()
+    db.collection('activity').add({
+      data: {
+        name: name,
+        start_time: new Date(start_time),
+        end_time: new Date(end_time),
+        palce_type: place_type,
+        palce: place,
+        people_num: people_num,
+        money: money,
+        duration: duration,
+        info: info
+      },
+      complete: function (res) {
+        console.log(res)
+      }
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+    //this.addActivity('狼人杀', '2018-9-27', '2018-9-28', '中北', '华东师范大学中山北路', 6, 2500, 2000, '测试')
   },
 
   /**

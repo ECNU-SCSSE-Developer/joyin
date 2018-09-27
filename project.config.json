@@ -1,18 +1,18 @@
 {
-  "cloudfunctionRoot": "cloudfunctions/",
+	"cloudfunctionRoot": "cloudfunctions/",
 	"description": "项目配置文件。",
 	"packOptions": {
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
 		"newFeature": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.2.2",
+	"libVersion": "2.3.0",
 	"appid": "wx66703fbe4a5323e8",
 	"projectname": "joyin",
 	"isGameTourist": false,
@@ -25,13 +25,30 @@
 			"current": -1,
 			"list": []
 		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
 		"game": {
 			"currentL": -1,
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
-			"list": []
+			"current": 1,
+			"list": [
+				{
+					"id": -1,
+					"name": "注册",
+					"pathName": "pages/register/register",
+					"query": ""
+				},
+				{
+					"id": 1,
+					"name": "活动详情",
+					"pathName": "pages/appointment3/appointment3",
+					"query": ""
+				}
+			]
 		}
 	}
 }

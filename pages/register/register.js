@@ -34,6 +34,25 @@ Page({
       }
     });
   },
+
+  // 在数据库中添加账户信息
+  addAccount: function(nickname, year, gender, place, name, stu_id, phone) {
+    const db = wx.cloud.database()
+    db.collection('account').add({
+      data: {
+        nickname: nickname,
+        year: new Date(year),
+        gender: gender,
+        place: place,
+        name: name,
+        stu_id: stu_id,
+        phone: phone
+      },
+      success: function(res) {
+        console.log(res)
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
