@@ -84,8 +84,8 @@ Page({
     db.collection('activity').add({
       data: {
         name: name,
-        start_time: new Date(start_time),
-        end_time: new Date(end_time),
+        start_time: new Date(start_time).getTime(),
+        end_time: new Date(end_time).getTime(),
         palce_type: place_type,
         palce: place,
         people_num: people_num,
@@ -103,7 +103,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    //this.addActivity('狼人杀', '2018-9-27', '2018-9-28', '中北', '华东师范大学中山北路', 6, 2500, 2000, '测试')
+    // this.addActivity('狼人杀', '2018-9-27', '2018-9-28', '中北', '华东师范大学中山北路', 6, 2500, 2000, '测试1')
+    // this.addActivity('狼人杀', '2018-9-28', '2018-9-29', '中北', '华东师范大学中山北路', 6, 2500, 2000, '测试2')
+    // this.addActivity('狼人杀', '2018-9-29', '2018-9-30', '中北', '华东师范大学中山北路', 6, 2500, 2000, '测试3')
   },
 
   /**
