@@ -14,11 +14,53 @@ Page({
     }
   },
 
+  // 报名
+  addJoin: function(act_id) {
+    const db = wx.cloud.database()
+    db.collection('join').add({
+      data: {
+        act_id: act_id,
+        is_reply: false,
+        is_agree: false,
+        is_opinion: false,
+      },
+      complete: function (res) {
+        console.log(res)
+      },
+    })
+  },
+
+  //收藏
+  addFavorite: function (act_id) {
+    const db = wx.cloud.database()
+    db.collection('join').add({
+      data: {
+        act_id: act_id,
+      },
+      complete: function (res) {
+        console.log(res)
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    // wx.cloud.callFunction({
+    //   name: 'myActivity',
+    //   data: {},
+    //   success: function(res) {
+    //     console.log("云函数")
+    //     console.log(res.result)
+    //   },
+    //   fail: function(res) {
+    //     console.log(res.errMsg)
+    //   }
+    // })
+
+    // this.addJoin("W7HPBN2AWotkUTBh")
+    // this.addJoin("W7HVI92AWotkUT6d")
+    // this.addJoin("W7HVLp25dhqgAKDO")
   },
 
   /**

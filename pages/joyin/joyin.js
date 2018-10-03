@@ -42,6 +42,38 @@ Page({
     }]
   },
 
+  //等你加入
+  waitYouActivity: function(last_date){
+    const db = wx.cloud.database();
+    const _ = db.command;
+    if(last_date == 0){
+      db.collection('activity').where({
+        end_time: _.gt(new Date().getTime())
+      }).orderBy('end_time', 'asc')
+      .limit(10)
+      .get()
+      .then(function(res) {
+        return res.data;
+      })
+      .catch(function(err) {
+        console.error(err);
+      });
+    }else{
+      db.collection('activity').where({
+        end_time: _.gt(last_date)
+      }).orderBy('end_time', 'asc')
+        .limit(10)
+        .get()
+        .then(function (res) {
+          return res.data;
+        })
+        .catch(function (err) {
+          console.error(err);
+        });
+    }
+    
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
