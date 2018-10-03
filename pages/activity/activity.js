@@ -101,7 +101,7 @@ Page({
   },
 
   //获取活动信息
-  activities: function (last_date) {
+  getActivities: function (last_date) {
     const db = wx.cloud.database();
     const _ = db.command;
     if (last_date == 0) {
