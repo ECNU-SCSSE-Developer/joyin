@@ -5,7 +5,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-
     files:[],
     casArray: ['请选择年级','本科2018级', '本科2017级', '本科2016级', '本科2015级', '研究2018级','研究2017级','研究2016级'],
     casIndex: 0,
@@ -130,6 +129,57 @@ Page({
 
   },
 
+  formSubmit:function(e){
+    if(e.detail.value.phone.length==0){
+      wx.showToast({
+        title:'手机号码并不能为空！',
+        icon:'loading',
+        duration:1500
+      })
+      setTimeout(function(){
+        wx.hideToast()
+      },2000)
+    }else if(e.detail.value.phone.length>0&&e.detail.value.phone.length!=11){
+      wx.showToast({
+        title:'请输入11位手机号码!',
+        icon:'loading',
+        duration:1500
+      })
+      setTimeout(function(){
+        wx.hideToast()
+      },2000)
+    } else if (e.detail.value.nickname.length < 4 || e.detail.value.nickname.length>8){
+      wx.showToast({
+        title:'请输入4-8位昵称!',
+        icon:'loading',
+        duration:1500
+      })
+      setTimeout(function(){
+        wx.hideToast()
+      },2000)
+    } else if (!(/^[\u4E00-\u9FA5A-Za-z]+$/.test(e.detail.value.nickname))){
+      wx.showToast({
+        title:'昵称有误!',
+        icon:'loading',
+        duration:1500
+      })
+      setTimeout(function(){
+        wx.hideToast()
+      },2000)
+    }
+    else{
+      this.addAccount({
+        nickname:e.detail.value.nickname,
+        year:e.detail.value.grade,
+        gender:e.detail.value.sex,
+        place:e.detail.value.area,
+        name:e.detail.value.name2,
+        stu_id:e.detail.value.stu_id,
+        phone:e.detail.value.num2,
+      })
+    }
+  },
+//页面跳转
   toastin: function (event) {
     wx.navigateTo({
       url: '../login/login',
