@@ -11,7 +11,8 @@ Page({
       area:"中北",
       img:"xxx",
       sex:1
-    }
+    },
+    dataInfo:{}
   },
 
   // 报名
@@ -61,6 +62,12 @@ Page({
     // this.addJoin("W7HPBN2AWotkUTBh")
     // this.addJoin("W7HVI92AWotkUT6d")
     // this.addJoin("W7HVLp25dhqgAKDO")
+    
+    // 把接收到的字符串转换成json对象
+    var info = JSON.parse(options.info);
+    this.setData({
+      dataInfo : info
+    })
   },
 
   /**
@@ -110,5 +117,14 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+
+  clickBack: function () {
+    wx.navigateBack({
+    })
+  },
+
+  signUp: function (){
+    
   }
 })

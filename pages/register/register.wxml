@@ -10,7 +10,7 @@
           <view class="weui-label" type="text" maxlength="8" minlength="4" name="nickname">昵称</view>
         </view>
         <view class="weui-cell__bd">
-          <input class="weui-input" placeholder="4-8个汉字，确认后不可修改" />
+          <input name='nickname' class="weui-input" placeholder="4-8个汉字，确认后不可修改" />
         </view>
       </view>
 
@@ -49,7 +49,7 @@
           <view class="weui-label">校区</view>
         </view>
         <view class="weui-cell__bd">
-          <radio-group name="area">
+          <radio-group name="place">
             <label class="weui-input">
               <radio value="zhongbei" />中北</label>
             <label>
@@ -67,7 +67,7 @@
           <view class="weui-label" type="text" maxlength="12" value="{{mem_name}}" bindchange="name" name="name2">真实姓名</view>
         </view>
         <view class="weui-cell__bd">
-          <input class="weui-input" />
+          <input name='name' class="weui-input" />
         </view>
       </view>
       <view class="weui-cell weui-cell_input">
@@ -75,7 +75,7 @@
           <view class="weui-label" name="stu_id">学号</view>
         </view>
         <view class="weui-cell__bd">
-          <input class="weui-input" />
+          <input name='stu_id' class="weui-input" />
         </view>
       </view>
       <view class="weui-cell weui-cell_input">
@@ -83,7 +83,7 @@
           <view class="weui-label" type="text" maxlength="11" value="{{mem_num}}" bindchange="num" name="num2">手机</view>
         </view>
         <view class="weui-cell__bd">
-          <input class="weui-input" />
+          <input name='phone' class="weui-input" />
         </view>
       </view>
  
@@ -104,7 +104,7 @@
 
     <text class='protocol'>第二部分真实信息仅作安全保障使用，我们将严格保护您的隐私安全，请放心填写。联系方式在用户确认后仅活动人员可见，请阅读</text><text class="href" bindtap="showProtocol">《xx规定》</text><text class='protocol'>提交则默认同意</text>
     <view class="btn" hover-class='button_hover'>
-      <button formType="submit" bindtap="toastin">注 册</button>
+      <button form-type="submit">注 册</button>
     </view>
   </form>
 </view>

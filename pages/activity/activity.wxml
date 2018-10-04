@@ -35,21 +35,21 @@
       </view>
     </view>
   </view>
-  <view style='padding:0 45rpx' wx:for="{{activities}}" wx:for-index="idx" wx:for-item="activity">
+  <view style='padding:0 45rpx' wx:for="{{activities}}" wx:for-index="idx" wx:for-item="activity" bindtap='toInfo'>
     <view class='item' hover-class='item_hover-class'>
       <view style='height:100%;display:flex;align-items:center;margin:0 30rpx'>
         <image src='/image/actDemo.png' class='item_image'></image>
       </view>
       <view style='height:100%;display:flex;flex-direction: column;justify-content:space-between'>
         <view class='item_title'>
-          {{activity.title}}
+          {{activity.name}}
         </view>
-        <view class='item_place'>{{activity.place}}</view>
+        <view class='item_place'>{{activity.place_type}}</view>
       </view>
       <view style='height:100%;display:flex;flex-direction: column;justify-content:space-between'>
         <view style='height:100%;display:flex;flex-direction: row;'>
-          <view class='item_type' hidden="{{activity.condition < 1}}">已收藏</view>
-          <view class="triangle_border_left" hidden="{{activity.condition < 1}}">
+          <view class='item_type' hidden="true">已收藏</view>
+          <view class="triangle_border_left" hidden="true">
           </view>
         </view>
         <view class='item_date'>{{activity.date}}</view>

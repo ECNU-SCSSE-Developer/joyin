@@ -1,4 +1,5 @@
 // pages/register/register.js
+var year='';
 Page({
 
   /**
@@ -38,13 +39,13 @@ Page({
   },
 
   // 在数据库中添加账户信息
-  addAccount: function(nickname, year, gender, place, name, stu_id, phone) {
+  addAccount: function(nickname, year, sex, place, name, stu_id, phone) {
     const db = wx.cloud.database()
     db.collection('account').add({
       data: {
         nickname: nickname,
-        year: new Date(year),
-        gender: gender,
+        year: year,
+        sex: sex,
         place: place,
         name: name,
         stu_id: stu_id,
@@ -117,20 +118,40 @@ Page({
   },
 
   bindCasPickerChange: function (e) {
-    console.log('用户选的是', this.data.casArray[e.detail.value])
-    if (e.detail.value == 4) {
-      this.setData({ reply: true })
-    } else {
-      this.setData({ reply: false })
+    console.log(e.detail.value);
+    if (e.detail.value == 7){
+      year = this.data.casArray[7];
     }
-    this.setData({
-      casIndex: e.detail.value
-    })
-
+    if (e.detail.value == 6) {
+      year = this.data.casArray[6];
+    }
+    if (e.detail.value == 5) {
+      year = this.data.casArray[5];
+    }
+    if (e.detail.value == 4) {
+      year = this.data.casArray[4];
+    }
+    if (e.detail.value == 3) {
+      year = this.data.casArray[3];
+    }
+    if (e.detail.value == 2) {
+      year = this.data.casArray[2];
+    }
+    if (e.detail.value == 1) {
+      year = this.data.casArray[1];
+    }
+    if (e.detail.value == 0) {
+      year = this.data.casArray[0];
+    }
   },
 
   formSubmit:function(e){
-    if(e.detail.value.phone.length==0){
+    console.log('form发生了submit事件，携带数据为：', e.detail.value);
+    let myear = year;
+    let {nickname, sex, place, name, stu_id, phone} = e.detail.value;
+    console.log(myear);
+    this.addAccount(nickname, myear, sex, place, name, stu_id, phone);
+    /*if(e.detail.value.phone.length==0){
       wx.showToast({
         title:'手机号码并不能为空！',
         icon:'loading',
@@ -177,7 +198,7 @@ Page({
         stu_id:e.detail.value.stu_id,
         phone:e.detail.value.num2,
       })
-    }
+    }*/
   },
 //页面跳转
   toastin: function (event) {

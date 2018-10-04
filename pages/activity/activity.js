@@ -15,37 +15,13 @@ Page({
     activities: [] //一开始是空的
   },
 
-  getData: function() {
-    var that = this;
-    wx.request({
-      url: 'xxx', //需要问后端
-      data: {
-        //发送给后台的参数，如id之类的，需问后端要什么参数
-      },
-      header: { //请求头，不是必须的，默认就是下面这种，返回json数据
-        "Content-Type": "applciation/json"
-      },
-      method: "GET", //同样也不是必须的，默认为GET
-      //以下是关键
-      //当后端成功返回数据时执行success，否则执行fail
-      success: function(res) {
-        console.log(res.data); //意思是在控制台输出返回的数据，这句是用来看返回数据长什么样的，不加也没事，一般都加一下看看成功没有
-        that.setData({
-          activities: res.data.result //把返回的数据放在activities中，然后通过activities去渲染页面
-        })
-      },
-      fail: function(err) {
-        that.setData({//在fail里加上这句，万一返回失败了，至少activities里还有数据
-            activities: [{
-              title: '数据请求失败',
-              place: 'null',
-              date: 'null',
-              image: '',
-              condition: 0,
-            }]
-          }
-        )
-      },
+
+  toInfo: function (e) {
+    console.info(e)
+    // 把要传递的json对象转换成字符串
+    var info = JSON.stringify(this.data.activities[0]);
+    wx.navigateTo({
+      url: "../appointment3/appointment3?info=" + info
     })
   },
 
@@ -63,6 +39,7 @@ Page({
       })
     }
   },
+
   //点击切换
   selectArea: function(e) {
     this.setData({
@@ -71,6 +48,7 @@ Page({
       areaList: false,
     })
   },
+
   clickType: function() {
     var selectTypeH = this.data.selectTypeH;
     if (selectTypeH == true) {
@@ -85,6 +63,7 @@ Page({
       })
     }
   },
+
   //点击切换
   selectType: function(e) {
     this.setData({
@@ -94,6 +73,7 @@ Page({
     })
   },
 
+  //点击加号触发事件
   clickAdd: function() {
     wx.navigateTo({
       url: '/pages/appointment2/appointment2'
@@ -102,6 +82,8 @@ Page({
 
   //获取活动信息
   getActivities: function (last_date) {
+    var that = this;
+
     const db = wx.cloud.database();
     const _ = db.command;
     if (last_date == 0) {
@@ -111,7 +93,10 @@ Page({
         .limit(10)
         .get()
         .then(function (res) {
-          return res.data;
+          console.log(res.data);
+          that.setData({
+            activities: res.data //把返回的数据放在activities中，然后通过activities去渲染页面
+          });
         })
         .catch(function (err) {
           console.error(err);
@@ -123,19 +108,23 @@ Page({
         .limit(10)
         .get()
         .then(function (res) {
-          return res.data;
+          console.log(res.data);
+          that.setData({
+            activities: res.data //把返回的数据放在activities中，然后通过activities去渲染页面
+          });
         })
         .catch(function (err) {
           console.error(err);
         });
     }
   },
+  
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
     template.tabbar("tabBar", 1, this);
-    this.getData();
+    this.getActivities(0);
   },
 
   /**

@@ -13,103 +13,83 @@
       </view>
     </label>
   </checkbox-group>
-  <view>
-    <view class='item_hd'>
-      <text style='color:red'>★</text>邀约主题</view>
-    <view class='item_bd'>
-      <input/>
-    </view>
-  </view>
-  <view>
-    <view class='item_hd'>
-      <text style='color:red'>★</text>邀约开始时间</view>
-    <view class='item_bd' style='padding:0'>
-      <picker-view indicator-style="height:50px;" style='height:50px;text-align: center;' value="{{value}}" bindchange="bindChange">
-        <picker-view-column>
-          <view wx:for="{{years}}" style="line-height: 50px">{{item}}年</view>
-        </picker-view-column>
-        <picker-view-column>
-          <view wx:for="{{months}}" style="line-height: 50px">{{item}}月</view>
-        </picker-view-column>
-        <picker-view-column>
-          <view wx:for="{{days}}" style="line-height: 50px">{{item}}日</view>
-        </picker-view-column>
-        <picker-view-column>
-          <view wx:for="{{hours}}" style="line-height: 50px">{{item}}时</view>
-        </picker-view-column>
-        <picker-view-column>
-          <view wx:for="{{minutes}}" style="line-height: 50px">{{item}}分</view>
-        </picker-view-column>
-      </picker-view>
-    </view>
-  </view>
-  <view>
-    <view class='item_hd'>
-      <text style='color:red'>★</text>邀约结束时间</view>
-    <view class='item_bd' style='padding:0'>
-      <picker-view indicator-style="height:50px;" style='height:50px;text-align: center;' value="{{value}}" bindchange="bindChange">
-        <picker-view-column>
-          <view wx:for="{{years}}" style="line-height: 50px">{{item}}年</view>
-        </picker-view-column>
-        <picker-view-column>
-          <view wx:for="{{months}}" style="line-height: 50px">{{item}}月</view>
-        </picker-view-column>
-        <picker-view-column>
-          <view wx:for="{{days}}" style="line-height: 50px">{{item}}日</view>
-        </picker-view-column>
-        <picker-view-column>
-          <view wx:for="{{hours}}" style="line-height: 50px">{{item}}时</view>
-        </picker-view-column>
-        <picker-view-column>
-          <view wx:for="{{minutes}}" style="line-height: 50px">{{item}}分</view>
-        </picker-view-column>
-      </picker-view>
-    </view>
-  </view>
-  <view>
-    <view class='item_hd'>
-      <text style='color:red'>★</text>邀约地点</view>
-    <view class='area'>
-      <view class='item_bd' style='padding:0;width:20%'>
-        <picker-view indicator-style="height:35px;" style='height:35px;text-align: center;' value="{{value}}" bindchange="bindChange">
-          <picker-view-column>
-            <view wx:for="{{area}}" style="line-height: 35px">{{item}}</view>
-          </picker-view-column>
-        </picker-view>
-      </view>
-      <view class='item_bd' style='width:60%'>
-        <input/>
+
+  <form bindsubmit='formSubmit'>
+    <view>
+      <view class='item_hd'>
+        <text style='color:red'>★</text>邀约主题</view>
+      <view class='item_bd'>
+        <input name='name' />
       </view>
     </view>
-  </view>
-  <view>
-    <view class='item_hd'>
-      <text style='color:red'>★</text>所需人数(包括发起者)</view>
-    <view class='item_bd'>
-      <input/>
+    <view>
+      <view class='item_hd'>
+        <text style='color:red'>★</text>邀约开始时间</view>
+      <view class='item_bd' style='padding:0'>
+        <picker mode="date" start="2018-09-01" end="2100-09-01" bindchange="bindStartTimeChange">
+          <view style='height:50px;text-align: center;'>
+            {{fStartTime}}
+          </view>
+        </picker>
+      </view>
     </view>
-  </view>
-  <view>
-    <view class='item_hd'>
-      <text style='color:red'>★</text>预计人均开销</view>
-    <view class='item_bd'>
-      <input />
+    <view>
+      <view class='item_hd'>
+        <text style='color:red'>★</text>邀约结束时间</view>
+      <view class='item_bd' style='padding:0'>
+        <picker mode="date" start="2018-09-01" end="2100-09-01" bindchange="bindEndTimeChange">
+          <view style='height:50px;text-align: center;'>
+            {{fEndTime}}
+          </view>
+        </picker>
+      </view>
     </view>
-  </view>
-  <view>
-    <view class='item_hd'>
-      <text style='color:red'>★</text>预计活动时长</view>
-    <view class='item_bd'>
-      <input/>
+    <view>
+      <view class='item_hd'>
+        <text style='color:red'>★</text>邀约地点</view>
+      <view class='area'>
+        <view class='item_bd' style='padding:0;width:20%'>
+          <picker-view indicator-style="height:35px;" style='height:35px;text-align: center;' value="{{item}}" bindchange="bindTypeChange">
+            <picker-view-column>
+              <view wx:for="{{area}}" style="line-height: 35px">{{item}}</view>
+            </picker-view-column>
+          </picker-view>
+        </view>
+        <view class='item_bd' style='width:60%'>
+          <input name='place' />
+        </view>
+      </view>
     </view>
-  </view>
-  <view>
-    <view class='item_hd'>其他具体信息</view>
-    <view class='item_bd other'>
-      <input/>
+    <view>
+      <view class='item_hd'>
+        <text style='color:red'>★</text>所需人数(包括发起者)</view>
+      <view class='item_bd'>
+        <input name='people_num' />
+      </view>
     </view>
-  </view>
-  <view class='btn' hover-class='button_hover'>发布活动邀约</view>
+    <view>
+      <view class='item_hd'>
+        <text style='color:red'>★</text>预计人均开销</view>
+      <view class='item_bd'>
+        <input name='money' />
+      </view>
+    </view>
+    <view>
+      <view class='item_hd'>
+        <text style='color:red'>★</text>预计活动时长</view>
+      <view class='item_bd'>
+        <input name='duration' />
+      </view>
+    </view>
+    <view>
+      <view class='item_hd'>其他具体信息</view>
+      <view class='item_bd other'>
+        <input name='info' />
+      </view>
+    </view>
+    <button class='btn' hover-class='button_hover' form-type='submit'>发布活动邀约</button>
+  </form>
+
   <view style='height:20rpx;'></view>
   <view class='back' bindtap='clickBack' hover-class='button_hover'>返 回</view>
 </view>

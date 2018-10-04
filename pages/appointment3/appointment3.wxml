@@ -4,39 +4,39 @@
   <view class='item_box'>
     <view class='item'>
       <view class='item_hd'>活动主题</view>
-      <view>xxx</view>
+      <view>{{dataInfo.name}}</view>
     </view>
     <view class='item'>
       <view class='item_hd'>活动时间</view>
-      <view>xxx</view>
+      <view>{{dataInfo.start_time}}</view>
+    </view>
+    <view class='item'>
+      <view class='item_hd'>活动地区</view>
+      <view>{{dataInfo.place_type}}</view>
     </view>
     <view class='item'>
       <view class='item_hd'>活动地点</view>
-      <view>xxx</view>
-    </view>
-    <view class='item'>
-      <view class='item_hd'>活动类型</view>
-      <view>xxx</view>
+      <view>{{dataInfo.place}}</view>
     </view>
     <view class='item'>
       <view class='item_hd'>活动人数</view>
-      <view>xxx</view>
+      <view>{{dataInfo.people_num}}</view>
     </view>
     <view class='item'>
       <view class='item_hd'>预计开销</view>
-      <view>xxx</view>
+      <view>{{dataInfo.money}}</view>
     </view>
     <view class='item'>
       <view class='item_hd'>预计时长</view>
-      <view>xxx</view>
+      <view>{{dataInfo.duration}}</view>
     </view>
     <view class='item'>
       <view class='item_hd'>过期时间</view>
-      <view>xxx</view>
+      <view>{{dataInfo.end_time}}</view>
     </view>
     <view class='item'>
       <view class='item_hd'>具体信息</view>
-      <view>xxx</view>
+      <view>{{dataInfo.info}}</view>
     </view>
   </view>
   <view class='organizer'>
@@ -60,8 +60,8 @@
     </view>
   </view>
   <view style='display:flex;justify-content:space-between'>
-    <view class='left_button' hover-class='button_hover'>报 名</view>
+    <view class='left_button' hover-class='button_hover' bindtap='signUp'>报 名</view>
     <view class='right_button' hover-class='button_hover'>收 藏</view>
   </view>
-  <view class='back' hover-class='button_hover'>返 回</view>
+  <view class='back' hover-class='button_hover' bindtap='clickBack'>返 回</view>
 </view>
