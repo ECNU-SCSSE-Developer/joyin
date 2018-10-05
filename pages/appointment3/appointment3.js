@@ -61,6 +61,20 @@ Page({
     // this.addJoin("W7HPBN2AWotkUTBh")
     // this.addJoin("W7HVI92AWotkUT6d")
     // this.addJoin("W7HVLp25dhqgAKDO")
+
+    // wx.cloud.callFunction({
+    //   // 云函数名称
+    //   name: 'activityInfo',
+    //   // 传给云函数的参数
+    //   data: {
+    //     act_id: 'W7M0mp25dhqgA2io'
+    //   },
+    //   success: function (res) {
+    //     console.log(res.result) // 3
+    //   },
+    //   fail: console.error
+    // })
+
   },
 
   /**

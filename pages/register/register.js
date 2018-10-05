@@ -44,7 +44,7 @@ Page({
     db.collection('account').add({
       data: {
         nickname: nickname,
-        year: new Date(year),
+        year: year,
         gender: gender,
         place: place,
         name: name,

@@ -84,8 +84,8 @@ Page({
     db.collection('activity').add({
       data: {
         name: name,
-        start_time: new Date(start_time).getTime(),
-        end_time: new Date(end_time).getTime(),
+        start_time: start_time,
+        end_time: end_time,
         palce_type: place_type,
         palce: place,
         people_num: people_num,

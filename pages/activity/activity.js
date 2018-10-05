@@ -111,6 +111,7 @@ Page({
         .limit(10)
         .get()
         .then(function (res) {
+          console.log(res.data);
           return res.data;
         })
         .catch(function (err) {
@@ -123,6 +124,7 @@ Page({
         .limit(10)
         .get()
         .then(function (res) {
+          console.log(res.data);
           return res.data;
         })
         .catch(function (err) {
