@@ -179,7 +179,7 @@ Page({
     wx.cloud.callFunction({
       name: 'myInfo',
       success: function (res) {
-        console.log(res.result)
+        //console.log(res.result)
         that.setData({
           my: res.result
         });

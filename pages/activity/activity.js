@@ -17,7 +17,7 @@ Page({
 
 
   toInfo: function (e) {
-    console.info(e.currentTarget.dataset.name)
+    //console.info(e.currentTarget.dataset.name)
     // 把要传递的json对象转换成字符串
     var info = JSON.stringify(this.data.activities[e.currentTarget.dataset.name]);
     wx.navigateTo({
@@ -93,7 +93,7 @@ Page({
         .limit(10)
         .get()
         .then(function (res) {
-          console.log(res.data);
+          //console.log(res.data);
           that.setData({
             activities: res.data //把返回的数据放在activities中，然后通过activities去渲染页面
           });
@@ -108,7 +108,7 @@ Page({
         .limit(10)
         .get()
         .then(function (res) {
-          console.log(res.data);
+          //console.log(res.data);
           that.setData({
             activities: res.data //把返回的数据放在activities中，然后通过activities去渲染页面
           });

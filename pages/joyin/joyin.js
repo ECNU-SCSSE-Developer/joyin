@@ -32,7 +32,7 @@ Page({
       .limit(10)
       .get()
       .then(function(res) {
-        console.info(res.data)
+        //console.info(res.data)
         that.setData({
           waitList: res.data
         });
@@ -47,7 +47,7 @@ Page({
         .limit(10)
         .get()
         .then(function (res) {
-          console.info(res.data)
+          //console.info(res.data)
           that.setData({
             waitList: res.data
           });
@@ -59,7 +59,30 @@ Page({
     
   },
 
-  toInfo: function (e) {
+  toInfo1: function (e) {
+    console.info(e.currentTarget.dataset.name)
+    // 把要传递的json对象转换成字符串
+    var info = JSON.stringify(this.data.myList[e.currentTarget.dataset.name]);
+
+    if (this.data.myList[e.currentTarget.dataset.name].type == "已收藏")
+    wx.navigateTo({
+      url: "../type1/type1?info=" + info
+    })
+    if (this.data.myList[e.currentTarget.dataset.name].type == "已报名")
+      wx.navigateTo({
+        url: "../type2/type2?info=" + info
+      })
+    if (this.data.myList[e.currentTarget.dataset.name].type == "已发布")
+      wx.navigateTo({
+        url: "../type3/type3?info=" + info
+      })
+    if (this.data.myList[e.currentTarget.dataset.name].type == "已参加")
+      wx.navigateTo({
+        url: "../type4/type4?info=" + info
+      })
+  },
+
+  toInfo2: function (e) {
     console.info(e.currentTarget.dataset.name)
     // 把要传递的json对象转换成字符串
     var info = JSON.stringify(this.data.waitList[e.currentTarget.dataset.name]);
@@ -77,13 +100,10 @@ Page({
     
     //获取等你加入
     this.waitYouActivity(0);
-  /*  
+    
     //获取我的邀约
     wx.cloud.callFunction({
       name: 'myActivity',
-      data:{
-        applyed_count: 2,
-      },
       success: function (res) {
         console.log(res.result)
         that.setData({
@@ -92,7 +112,6 @@ Page({
       },
       fail: console.error
     });
-*/
   },
 
   /**

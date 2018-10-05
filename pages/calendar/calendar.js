@@ -5,18 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    /*当同时有多个事件在同一天时，使用类似渐变色*/
-    days_style: [{
-      month: 'current',
-      day: 11,
-      color: 'white',
-      background: 'radial-gradient(#ff2366 50%, #2f97fc 50%);'
-    },{
-        month: 'current',
-        day: 10,
-        color: 'white',
-        background: 'radial-gradient( #ff2366 , #7ed321 , #face15, #2f97fc );'
-    }]
+    my:[],
+    days_style: [],
   },
 
   /**
@@ -28,14 +18,36 @@ Page({
     })
   },
   onLoad: function(options) {
-
+    var that = this;
+    wx.cloud.callFunction({
+      name: 'myCalendar',
+      success: function (res) {
+        that.setData({
+          my: res.result,
+        });
+      },
+      fail: console.error
+    });
+    
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function() {
-
+    var that = this
+    for (var i = 0; i < that.data.my.length; i++) {
+      var month = 'days_style[' + i + '].month'
+      var day = 'days_style[' + i + '].day'
+      var color = 'days_style[' + i + '].color'
+      var background = 'days_style[' + i + '].background'
+      that.setData({
+        [month]: "current",
+        [day]: new Date(that.data.my[i].start_time).getDate(),
+        [color]: "white",
+        [background]: "#ff2366"
+      })
+    }
   },
 
   /**

@@ -81,5 +81,5 @@
     </view>
 
   </view>
-  <view class='back'>返 回</view>
+  <view class='back' bindtap='clickBack'>返 回</view>
 </view>

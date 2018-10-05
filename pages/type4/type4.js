@@ -101,6 +101,9 @@ Page({
 
   //评价按钮
   comment: function () {
-    console.info("点击评价按钮")
+    console.info("点击评价按钮");
+    wx.navigateTo({
+      url: '/pages/personal3/personal3',
+    })
   }
 })
