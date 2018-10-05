@@ -32,10 +32,12 @@
 
 .weui-label_pic{
   color: #557d8a;
+  margin: 20rpx auto
 }
 
 .weui-cell {
   border: 3rpx solid #557d8a;
+
 }
 
 .weui-cells {
@@ -47,16 +49,13 @@
   border: 3rpx solid #557d8a;
 }
 .my{
-  width: 100%;
-  align-items: center;
-}
-.my1{
-  width:100%;
+   margin: 0 auto
 }
 
-.my2{
-  align-items: center;
-}
+
+
+
+
 radio-group label {
   color: gray;
 }
@@ -69,7 +68,7 @@ radio-group {
 
 .weui-uploader__input-box{
   width: 100%;
-  margin: 20rpx auto;
+  margin: 20rpx auto
 }
 
 .href{
@@ -79,4 +78,25 @@ radio-group {
 
 .button_hover{
   background-color: #eee;
+}
+
+.section{
+   font-size:28rpx;
+   margin-left: 30rpx;
+   margin-top: 50rpx;
+  }
+ 
+  .on{display: block}
+  .off{display: none}
+
+.row-wrap{
+  width:200rpx;
+  height: 100rpx;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.weui-cell_input{
+  text-align: center;
 }

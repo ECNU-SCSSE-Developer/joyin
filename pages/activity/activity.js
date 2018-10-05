@@ -20,7 +20,7 @@ Page({
     wx.request({
       url: 'xxx', //需要问后端
       data: {
-        //发送给后台的参数，如id之类的，需问后端他要什么参数
+        //发送给后台的参数，如id之类的，需问后端要什么参数
       },
       header: { //请求头，不是必须的，默认就是下面这种，返回json数据
         "Content-Type": "applciation/json"

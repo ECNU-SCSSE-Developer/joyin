@@ -5,7 +5,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-    files:[]
+
+    files:[],
+    casArray: ['请选择年级','本科2018级', '本科2017级', '本科2016级', '本科2015级', '研究2018级','研究2017级','研究2016级'],
+    casIndex: 0,
   },
   chooseImage: function (e) {
     var that = this;
@@ -41,7 +44,7 @@ Page({
     db.collection('account').add({
       data: {
         nickname: nickname,
-        year: new Date(year),
+        year: year,
         gender: gender,
         place: place,
         name: name,
@@ -111,6 +114,31 @@ Page({
   toSchool: function () {
     wx.navigateTo({
       url: '/pages/school/school'
+    })
+  },
+
+  bindCasPickerChange: function (e) {
+    console.log('用户选的是', this.data.casArray[e.detail.value])
+    if (e.detail.value == 4) {
+      this.setData({ reply: true })
+    } else {
+      this.setData({ reply: false })
+    }
+    this.setData({
+      casIndex: e.detail.value
+    })
+
+  },
+
+  toastin: function (event) {
+    wx.navigateTo({
+      url: '../login/login',
+      success: function (res) {
+      },
+      fail: function () {
+      },
+      complete: function () {
+      }
     })
   }
 })

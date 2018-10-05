@@ -36,7 +36,11 @@ exports.main = async (event, context) => {
     }).orderBy('end_time', 'asc').limit(limited_num).get();
     joined_activities.data.forEach(function(item){
       console.log(item);
+<<<<<<< HEAD
       item.type = 'joined';
+=======
+      item.type = '已确认';
+>>>>>>> yzd
       my_activities.push(item);
     });
   }
@@ -54,8 +58,13 @@ exports.main = async (event, context) => {
     if (published_count > 0) {
       const published_activities = await published.orderBy('end_time', 'asc').limit(limited_num-num).get()
       published_activities.data.forEach(function (item) {
+<<<<<<< HEAD
         item.type = 'published'
         my_activities.push(item)
+=======
+        item.type = '已发布';
+        my_activities.push(item);
+>>>>>>> yzd
       })
     }
 
@@ -84,7 +93,11 @@ exports.main = async (event, context) => {
       }).orderBy('end_time', 'asc').limit(limited_num-num).get();
       applyed_activities.data.forEach(function (item) {
         console.log(item);
+<<<<<<< HEAD
         item.type = 'applyed';
+=======
+        item.type = '已报名';
+>>>>>>> yzd
         my_activities.push(item);
       });
     }
@@ -111,7 +124,11 @@ exports.main = async (event, context) => {
       }).orderBy('end_time', 'asc').limit(limited_num - num).get();
       favorited_activities.data.forEach(function (item) {
         console.log(item);
+<<<<<<< HEAD
         item.type = 'favorited';
+=======
+        item.type = '已收藏';
+>>>>>>> yzd
         my_activities.push(item);
       });
     }

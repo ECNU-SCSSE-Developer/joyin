@@ -8,13 +8,13 @@
     <view class='box1'>
       <view class='line1'>
         <text class='name'>昵称</text>
-        <text>我是猪</text>
+        <text>test</text>
       </view>
       <view class='line2'>
         <text class='hd'>年级</text>
         <text class='bd'>16级</text>
         <text class='hd'>性别</text>
-        <text class='bd'>男</text>
+        <text class='bd'>女</text>
         <text class='hd'>校区</text>
         <text class='bd'>中北</text>
       </view>

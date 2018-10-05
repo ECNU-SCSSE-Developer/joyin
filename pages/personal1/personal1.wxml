@@ -3,7 +3,7 @@
   <view class='top'>
   <view class='top1'>
     <text class='name'>昵称</text>
-    <text>大猪蹄子</text>
+    <text>需要后端</text>
     <view class='infor'>
       <view class='sex'>性别：<text>{{sex}}</text></view>
       <view class='grade'>年级: <text>{{grade}}</text></view>

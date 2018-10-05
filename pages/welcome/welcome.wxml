@@ -1,8 +1,8 @@
 <!--pages/welcome/welcome.wxml-->
 
-<view class='page'>
+<view class='page' bindtap='toast'>
   <view class='img'>
     <image src="/image/joyin.png" class='imglogo'></image>
-    <image class='organizer_avatar' src='/image/actDemo.png'></image>
   </view>
+  <view class="logo"><open-data type="userAvatarUrl" class="userinfo" id="userinfo"></open-data></view>
 </view>

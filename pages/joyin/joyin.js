@@ -79,6 +79,18 @@ Page({
    */
   onLoad: function (options) {
     template.tabbar("tabBar", 0, this)//0表示第一个tabbar
+    // wx.cloud.callFunction({
+    //   // 云函数名称
+    //   name: 'myActivity',
+    //   // 传给云函数的参数
+    //   data: {
+    //   },
+    //   success: function (res) {
+    //     console.log(res.result) // 3
+    //   },
+    //   fail: console.error
+    // })
+
   },
 
   /**
@@ -128,5 +140,29 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+
+  toastmyapp:function(event) {
+    wx.navigateTo({
+      url: '../mine/mine',
+      success: function (res) {
+      },
+      fail: function () {
+      },
+      complete: function () {
+      }
+    })
+  },
+
+  toastapp: function (event) {
+    wx.navigateTo({
+      url: '../activity/activity',
+      success: function (res) {
+      },
+      fail: function () {
+      },
+      complete: function () {
+      }
+    })
   }
 })

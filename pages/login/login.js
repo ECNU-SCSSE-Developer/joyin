@@ -62,5 +62,17 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+
+  toastin: function (event) {
+    wx.navigateTo({
+      url: '../joyin/joyin',
+      success: function (res) {
+      },
+      fail: function () {
+      },
+      complete: function () {
+      }
+    })
   }
 })
