@@ -17,9 +17,9 @@ Page({
 
 
   toInfo: function (e) {
-    console.info(e)
+    console.info(e.currentTarget.dataset.name)
     // 把要传递的json对象转换成字符串
-    var info = JSON.stringify(this.data.activities[0]);
+    var info = JSON.stringify(this.data.activities[e.currentTarget.dataset.name]);
     wx.navigateTo({
       url: "../appointment3/appointment3?info=" + info
     })

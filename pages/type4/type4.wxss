@@ -1,0 +1,99 @@
+/* pages/type4/type4.wxss */
+
+.page {
+  margin-bottom: 100rpx;
+  background-color: #f0f9fa;
+}
+
+.title {
+  text-align: center;
+  font-size: 50rpx;
+  margin: 0 auto;
+}
+
+.back {
+  width: 100%;
+  position: fixed;
+  text-align: center;
+  bottom: 0;
+  height: 100rpx;
+  line-height: 100rpx; /*实现文字垂直居中*/
+  background: #557d8a;
+  font-size: 50rpx;
+  color: white;
+  box-shadow: 6rpx 6rpx 6rpx 6rpx #aaa;
+}
+
+.left_button {
+  width: 100%;
+  background-color: #7bd6ef;
+  color: white;
+  text-align: center;
+  font-size: 50rpx;
+  margin: 30rpx 100rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  border-radius: 10rpx;
+  box-shadow: 1rpx 1rpx 1rpx 1rpx #aaa;
+}
+
+
+.item_box{
+  width: 80%;
+  margin: 0 auto;
+  box-shadow: 1rpx 1rpx 1rpx 1rpx #aaa;
+}
+
+.item {
+  padding: 20rpx;
+  background-color: white;
+  border: 5rpx solid #557d8a;
+  border-bottom: 0;
+}
+
+.item:last-child {
+  border-bottom: 5rpx solid #557d8a;
+}
+
+.item_hd{
+  float: left;
+  margin-right: 20rpx;
+  color: #557d8a;
+}
+
+.organizer {
+  background-color: whitesmoke;
+  width: 70%;
+  padding: 20rpx;
+  margin: 30rpx auto;
+  display: flex;
+  border-radius: 20rpx;
+  box-shadow: 1rpx 1rpx 1rpx 1rpx #aaa;
+}
+
+.organizer_avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.org_left {
+  padding: 20rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.sex {
+  align-self: center;
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.org_name{
+  font-size: 50rpx;
+}
+
+.button_hover{
+  background-color: #eee;
+}

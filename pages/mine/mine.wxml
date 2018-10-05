@@ -3,20 +3,25 @@
 <template is="tabBar" data="{{tabBar:bindData.tabBar}}" />
 <view class='page'>
 
-
   <view class='item'>
     <view class='box1'>
       <view class='line1'>
         <text class='name'>昵称</text>
-        <text>test</text>
+        <text>{{my.nickname}}</text>
       </view>
       <view class='line2'>
         <text class='hd'>年级</text>
-        <text class='bd'>16级</text>
+        <text class='bd'>{{my.year}}</text>
         <text class='hd'>性别</text>
-        <text class='bd'>女</text>
+        <text class='bd'>
+          <block class='bd' wx:if="{{my.sex == 1}}">男</block>
+          <block class='bd' wx:elif="{{my.sex == 2}}">女</block>
+        </text>
         <text class='hd'>校区</text>
-        <text class='bd'>中北</text>
+        <text class='bd'>
+          <block wx:if="{{my.place == 1}}">闵行</block>
+          <block wx:elif="{{my.place == 2}}">中北</block>
+        </text>
       </view>
     </view>
   </view>
@@ -28,85 +33,74 @@
   <view class='box3'>
     <view class='list' bindtap="showItems1" hover-class='list_hover-class'>已收藏</view>
     <view class="list_item {{open1 ? 'list_item_show' : '' }}">
-      <block wx:for="{{list1}}">
-        <view class="cells {{open1 ? 'cells_show' : ''}}">
-          <view style='display:flex;align-items:center;margin:0 30rpx'>
-            <image src='/image/actDemo.png' class='item_image'></image>
-          </view>
-          <view style='height:100%;display:flex;flex-direction:column;justify-content:space-between;align-items:left;'>
-            <view class='item_title'>
-              {{item.title}}
-            </view>
-            <view class='item_place'>{{item.place}}</view>
-          </view>
-          <view class='item_date'>{{item.date}}</view>
+      <view wx:for="{{list1}}" class="cells {{open1 ? 'cells_show' : ''}}" bindtap="to1" data-name='{{index}}'>
+        <view style='display:flex;align-items:center;margin:0 30rpx'>
+          <image src='/image/actDemo.png' class='item_image'></image>
         </view>
-      </block>
+        <view style='height:100%;display:flex;flex-direction:column;justify-content:space-between;align-items:left;'>
+          <view class='item_title'>
+            {{item.name}}
+          </view>
+          <view class='item_place'>{{item.place_type}}</view>
+        </view>
+        <view class='item_date'>{{item.start_time}}</view>
+      </view>
     </view>
     <view class='list' bindtap="showItems2" hover-class='list_hover-class'>已报名</view>
     <view class="list_item {{open2 ? 'list_item_show' : '' }}">
-      <block wx:for="{{list2}}">
-        <view class="cells {{open2 ? 'cells_show' : ''}}">
-          <view style='display:flex;align-items:center;margin:0 30rpx'>
-            <image src='/image/actDemo.png' class='item_image'></image>
-          </view>
-          <view style='height:100%;display:flex;flex-direction:column;justify-content:space-between;align-items:left;'>
-            <view class='item_title'>
-              {{item.title}}
-            </view>
-            <view class='item_place'>{{item.place}}</view>
-          </view>
-          <view class='item_date'>{{item.date}}</view>
+      <view wx:for="{{list2}}" class="cells {{open2 ? 'cells_show' : ''}}" bindtap="to2" data-name='{{index}}'>
+        <view style='display:flex;align-items:center;margin:0 30rpx'>
+          <image src='/image/actDemo.png' class='item_image'></image>
         </view>
-      </block>
+        <view style='height:100%;display:flex;flex-direction:column;justify-content:space-between;align-items:left;'>
+          <view class='item_title'>
+            {{item.name}}
+          </view>
+          <view class='item_place'>{{item.place_type}}</view>
+        </view>
+        <view class='item_date'>{{item.start_time}}</view>
+      </view>
     </view>
     <view class='list' bindtap="showItems3" hover-class='list_hover-class'>已发布</view>
     <view class="list_item {{open3 ? 'list_item_show' : '' }}">
-      <block wx:for="{{list3}}">
-        <view class="cells {{open3 ? 'cells_show' : ''}}">
-          <view style='display:flex;align-items:center;margin:0 30rpx'>
-            <image src='/image/actDemo.png' class='item_image'></image>
-          </view>
-          <view style='height:100%;display:flex;flex-direction:column;justify-content:space-between;align-items:left;'>
-            <view class='item_title'>
-              {{item.title}}
-            </view>
-            <view class='item_place'>{{item.place}}</view>
-          </view>
-          <view class='item_date'>{{item.date}}</view>
+      <view wx:for="{{list3}}" class="cells {{open3 ? 'cells_show' : ''}}" bindtap="to3" data-name='{{index}}'>
+        <view style='display:flex;align-items:center;margin:0 30rpx'>
+          <image src='/image/actDemo.png' class='item_image'></image>
         </view>
-      </block>
+        <view style='height:100%;display:flex;flex-direction:column;justify-content:space-between;align-items:left;'>
+          <view class='item_title'>
+            {{item.name}}
+          </view>
+          <view class='item_place'>{{item.place_type}}</view>
+        </view>
+        <view class='item_date'>{{item.start_time}}</view>
+      </view>
     </view>
     <view bindtap="showItems4" hover-class='list_hover-class' style='color:#557d8a'>已参加</view>
     <view class="list_item {{open4 ? 'list_item_show' : '' }}">
-      <block wx:for="{{list4}}">
-        <view class="cells {{open4 ? 'cells_show' : ''}}">
-          <view style='display:flex;align-items:center;margin:0 30rpx'>
-            <image src='/image/actDemo.png' class='item_image'></image>
-          </view>
-          <view style='height:100%;display:flex;flex-direction:column;justify-content:space-between;align-items:left;'>
-            <view class='item_title'>
-              {{item.title}}
-            </view>
-            <view class='item_place'>{{item.place}}</view>
-          </view>
-          <view class='item_date'>{{item.date}}</view>
+      <view wx:for="{{list4}}" class="cells {{open4 ? 'cells_show' : ''}}" bindtap="to4" data-name='{{index}}'>
+        <view style='display:flex;align-items:center;margin:0 30rpx'>
+          <image src='/image/actDemo.png' class='item_image'></image>
         </view>
-      </block>
+        <view style='height:100%;display:flex;flex-direction:column;justify-content:space-between;align-items:left;'>
+          <view class='item_title'>
+            {{item.name}}
+          </view>
+          <view class='item_place'>{{item.place_type}}</view>
+        </view>
+        <view class='item_date'>{{item.start_time}}</view>
+      </view>
     </view>
   </view>
   <view class='box5'>
     <view class='box5_item' hover-class='box5_hover-class'>
-      <text>联系酌盈</text>
-      <text style='border-bottom: 3rpx solid #eee;'>www.baidu.com</text>
+      <text style='border-bottom: 3rpx solid #eee;height: 100rpx;line-height:100rpx;'>联系酌盈</text>
     </view>
     <view class='box5_item' hover-class='box5_hover-class'>
-      <text>使用指南</text>
-      <text style='border-bottom: 3rpx solid #eee;'>www.baidu.com</text>
+      <text style='border-bottom: 3rpx solid #eee;height: 100rpx;line-height:100rpx;'>使用指南</text>
     </view>
     <view class='box5_item' hover-class='box5_hover-class'>
-      <text>关于酌盈</text>
-      <text>www.baidu.com</text>
+      <text style='height: 100rpx;line-height:100rpx;'>关于酌盈</text>
     </view>
   </view>
 

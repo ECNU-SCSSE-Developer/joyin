@@ -16,34 +16,13 @@ Page({
     autoplay: true,
     interval: 5000,
     duration: 1000,
-    myList: [{
-      title: '狼人杀',
-      place: '闵行',
-      date: '2018年12月3日',
-      image: '',
-      condition: 1,
-    }, {
-      title: '三国杀',
-      place: '中北',
-      date: '2018年12月3日',
-      image: '',
-      condition: 2,
-    }],
-    waitList: [{
-      title: '狼人杀',
-      place: '闵行',
-      date: '2018年12月3日',
-      image: '',
-    }, {
-      title: '三国杀',
-      place: '中北',
-      date: '2018年12月3日',
-      image: '',
-    }]
+    myList: [],
+    waitList: []
   },
 
   //等你加入
   waitYouActivity: function(last_date){
+    var that = this;
     const db = wx.cloud.database();
     const _ = db.command;
     if(last_date == 0){
@@ -53,7 +32,10 @@ Page({
       .limit(10)
       .get()
       .then(function(res) {
-        return res.data;
+        console.info(res.data)
+        that.setData({
+          waitList: res.data
+        });
       })
       .catch(function(err) {
         console.error(err);
@@ -65,7 +47,10 @@ Page({
         .limit(10)
         .get()
         .then(function (res) {
-          return res.data;
+          console.info(res.data)
+          that.setData({
+            waitList: res.data
+          });
         })
         .catch(function (err) {
           console.error(err);
@@ -74,11 +59,40 @@ Page({
     
   },
 
+  toInfo: function (e) {
+    console.info(e.currentTarget.dataset.name)
+    // 把要传递的json对象转换成字符串
+    var info = JSON.stringify(this.data.waitList[e.currentTarget.dataset.name]);
+    wx.navigateTo({
+      url: "../appointment3/appointment3?info=" + info
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var that = this;
     template.tabbar("tabBar", 0, this)//0表示第一个tabbar
+    
+    //获取等你加入
+    this.waitYouActivity(0);
+  /*  
+    //获取我的邀约
+    wx.cloud.callFunction({
+      name: 'myActivity',
+      data:{
+        applyed_count: 2,
+      },
+      success: function (res) {
+        console.log(res.result)
+        that.setData({
+          myList: res.result
+        });
+      },
+      fail: console.error
+    });
+*/
   },
 
   /**

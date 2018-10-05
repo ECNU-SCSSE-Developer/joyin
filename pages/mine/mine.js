@@ -10,81 +10,126 @@ Page({
     open2: false,
     open3: false,
     open4: false,
-    list1: [{
-      title: '狼人杀1',
-      place: '闵行',
-      date: '2018年12月3日',
-      image: '',
-    }, {
-      title: '三国杀',
-      place: '中北',
-      date: '2018年12月3日',
-      image: '',
-    }],
-    list2: [{
-      title: '狼人杀2',
-      place: '闵行',
-      date: '2018年12月3日',
-      image: '',
-    }, {
-      title: '三国杀',
-      place: '中北',
-      date: '2018年12月3日',
-      image: '',
-    }],
-    list3: [{
-      title: '狼人杀3',
-      place: '闵行',
-      date: '2018年12月3日',
-      image: '',
-    }, {
-      title: '三国杀',
-      place: '中北',
-      date: '2018年12月3日',
-      image: '',
-    }],
-    list4: [{
-      title: '狼人杀4',
-      place: '闵行',
-      date: '2018年12月3日',
-      image: '',
-    }, {
-      title: '三国杀',
-      place: '中北',
-      date: '2018年12月3日',
-      image: '',
-    }]
+    my:[],
+    list1: [],
+    list2: [],
+    list3: [],
+    list4: []
   },
 
   showItems1: function (e){
-
-    var open1 = this.data.open1;
+    var that = this;
+    wx.cloud.callFunction({
+      name: 'myFavorited',
+      data:{
+        lastdate: 0
+      },
+      success: function (res) {
+        console.log(res.result)
+        that.setData({
+          list1: res.result
+        });
+        if (that.data.list2.length == 0) {
+          wx.showModal({
+            content: '还没有参加的活动哦',
+            showCancel: false,
+            confirmColor: "#557d8a",
+            confirmText: "知道啦",
+          });
+        }
+      },
+      fail: console.error
+    });
+    var open1 = that.data.open1;
     open1 = !open1;
-    this.setData({
+    that.setData({
       open1 : open1
     });
   },
   showItems2: function (e) {
-
-    var open2 = this.data.open2;
+    var that = this;
+    wx.cloud.callFunction({
+      name: 'myApplyed',
+      data: {
+        lastdate: 0
+      },
+      success: function (res) {
+        console.log(res.result)
+        that.setData({
+          list2: res.result
+        });
+        if (that.data.list2.length == 0){
+          wx.showModal({
+            content: '还没有报名的活动哦',
+            showCancel: false,
+            confirmColor: "#557d8a",
+            confirmText: "知道啦",
+          });
+        }
+      },
+      fail: console.error
+    });
+    var open2 = that.data.open2;
     open2 = !open2;
-    this.setData({
+    that.setData({
       open2: open2
     });
   },
   showItems3: function (e) {
-
-    var open3 = this.data.open3;
+    var that = this;
+    wx.cloud.callFunction({
+      name: 'myPublished',
+      data: {
+        lastdate: 0
+      },
+      success: function (res) {
+        console.log(res.result)
+        that.setData({
+          list3: res.result
+        });
+        if (that.data.list3.length == 0) {
+          wx.showModal({
+            content: '还没有发布的活动哦',
+            showCancel: false,
+            confirmColor: "#557d8a",
+            confirmText: "知道啦",
+          });
+        }
+      },
+      fail: console.error
+    });
+    var open3 = that.data.open3;
     open3 = !open3;
-    this.setData({
+    that.setData({
       open3: open3
     });
   },
   showItems4: function (e) {
-
-    var open4 = this.data.open4;
+    var that = this;
+    wx.cloud.callFunction({
+      name: 'myJoined',
+      data: {
+        lastdate: 0
+      },
+      success: function (res) {
+        console.log(res.result)
+        that.setData({
+          list4: res.result
+        });
+        if (that.data.list4.length == 0) {
+          wx.showModal({
+            content: '还没有参加的活动哦',
+            showCancel: false,
+            confirmColor: "#557d8a",
+            confirmText: "知道啦",
+          });
+        }
+      },
+      fail: console.error
+    });
+    var open4 = that.data.open4;
     open4 = !open4;
-    this.setData({
+    that.setData({
       open4: open4
     });
   },
@@ -93,11 +138,54 @@ Page({
       url: '/pages/calendar/calendar',
     })
   },
+  to1: function(e){
+    console.info(e.currentTarget.dataset.name)
+    // 把要传递的json对象转换成字符串
+    var info = JSON.stringify(this.data.list1[e.currentTarget.dataset.name]);
+    wx.navigateTo({
+      url: "../type1/type1?info=" + info
+    })
+  },
+  to2: function (e) {
+    //console.info(e.currentTarget.dataset.name)
+    // 把要传递的json对象转换成字符串
+    var info = JSON.stringify(this.data.list2[e.currentTarget.dataset.name]);
+    wx.navigateTo({
+      url: "../type2/type2?info=" + info
+    })
+  },
+  to3: function (e) {
+    //console.info(e.currentTarget.dataset.name)
+    // 把要传递的json对象转换成字符串
+    var info = JSON.stringify(this.data.list3[e.currentTarget.dataset.name]);
+    wx.navigateTo({
+      url: "../type3/type3?info=" + info
+    })
+  },
+  to4: function (e) {
+    //console.info(e.currentTarget.dataset.name)
+    // 把要传递的json对象转换成字符串
+    var info = JSON.stringify(this.data.list4[e.currentTarget.dataset.name]);
+    wx.navigateTo({
+      url: "../type4/type4?info=" + info
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    template.tabbar("tabBar", 2, this)
+    var that = this;
+    template.tabbar("tabBar", 2, this);
+    wx.cloud.callFunction({
+      name: 'myInfo',
+      success: function (res) {
+        console.log(res.result)
+        that.setData({
+          my: res.result
+        });
+      },
+      fail: console.error
+    });
   },
 
   /**
