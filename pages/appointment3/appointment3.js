@@ -28,7 +28,7 @@ Page({
   //收藏
   addFavorite: function (act_id) {
     const db = wx.cloud.database()
-    db.collection('join').add({
+    db.collection('favorite').add({
       data: {
         act_id: act_id,
       },
