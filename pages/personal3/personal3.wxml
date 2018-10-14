@@ -40,14 +40,15 @@
     <span>请评价一下该活动吧</span>
   </view>
   <view class='star_box'>
-    <image class='star' src='/image/star.png'></image>
-    <image class='star' src='/image/star.png'></image>
-    <image class='star' src='/image/star.png'></image>
-    <image class='star' src='/image/star.png'></image>
-    <image class='star' src='/image/star.png'></image>
+    <block wx:for="{{one_2}}" wx:key="index">
+      <image class='star' catchtap='giveStar' id='{{index+1}}' data-in='use_sc2' src='/image/star.png'></image>
+    </block>
+    <block wx:for="{{two_2}}" wx:key="index">
+      <image class='star' catchtap='giveStar' id='{{index+1}}' data-in='use_sc' src='/image/unstar.png'></image>
+    </block>
   </view>
-  <view class='comment'>
-    <input placeholder='说点什么吧'></input>
+  <view class='comment' >
+    <input placeholder='说点什么吧' style="word-break: break-all"></input>
   </view>
   <view class='button'>提交</view>
 </view>

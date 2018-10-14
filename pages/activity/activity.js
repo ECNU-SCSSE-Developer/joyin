@@ -16,13 +16,40 @@ Page({
   },
 
 
+
   toInfo: function (e) {
-    //console.info(e.currentTarget.dataset.name)
-    // 把要传递的json对象转换成字符串
-    var info = JSON.stringify(this.data.activities[e.currentTarget.dataset.name]);
-    wx.navigateTo({
-      url: "../appointment3/appointment3?info=" + info
-    })
+    //console.info(this.data.activities[e.currentTarget.dataset.name])
+
+    var that = this;
+
+    //请求发布者信息
+    wx.cloud.callFunction({
+      name: 'activityInfo',
+      data: {
+        act_id: that.data.activities[e.currentTarget.dataset.name]._id
+      },
+      success: function (res) {
+        //console.info("activityInfo")
+        //console.info(res.result)
+        if (res.result.is_publisher == true) {
+          // 把要传递的json对象转换成字符串
+          //console.info("是发布者")
+          var info = JSON.stringify(that.data.activities[e.currentTarget.dataset.name]);
+          wx.navigateTo({
+            url: "../type3/type3?info=" + info
+          })
+        }
+        else{
+          // 把要传递的json对象转换成字符串
+          //console.info("不是发布者")
+          var info = JSON.stringify(that.data.activities[e.currentTarget.dataset.name]);
+          wx.navigateTo({
+            url: "../appointment3/appointment3?info=" + info
+          })
+        }
+      },
+      fail: console.error
+    });
   },
 
   clickPlace: function() {
@@ -93,7 +120,7 @@ Page({
         .limit(10)
         .get()
         .then(function (res) {
-          //console.log(res.data);
+          console.info(res.data);
           that.setData({
             activities: res.data //把返回的数据放在activities中，然后通过activities去渲染页面
           });

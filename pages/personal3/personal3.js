@@ -19,9 +19,28 @@ Page({
       name:"名字",
       grade:"16级",
       area:"中北"
-    }
+    },
+    one_1: '',
+    two_1: '',
+    one_2: 0, //这个为实际给的星星
+    two_2: 5
   },
 
+  //打星
+  giveStar: function (e) {
+    var give = e.currentTarget.dataset.in;
+    var one_2;
+    if (give === 'use_sc2') {
+      one_2 = Number(e.currentTarget.id);
+    } else {
+      one_2 = Number(e.currentTarget.id) + this.data.one_2;
+    }
+    this.setData({
+      one_2: one_2,
+      two_2: 5 - one_2
+    })
+    console.info(one_2)
+  },
   /**
    * 生命周期函数--监听页面加载
    */

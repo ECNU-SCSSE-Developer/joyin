@@ -93,13 +93,13 @@
     </view>
   </view>
   <view class='box5'>
-    <view class='box5_item' hover-class='box5_hover-class'>
+    <view class='box5_item' hover-class='box5_hover-class' bindtap='conn'>
       <text style='border-bottom: 3rpx solid #eee;height: 100rpx;line-height:100rpx;'>联系酌盈</text>
     </view>
-    <view class='box5_item' hover-class='box5_hover-class'>
+    <view class='box5_item' hover-class='box5_hover-class' bindtap='help'>
       <text style='border-bottom: 3rpx solid #eee;height: 100rpx;line-height:100rpx;'>使用指南</text>
     </view>
-    <view class='box5_item' hover-class='box5_hover-class'>
+    <view class='box5_item' hover-class='box5_hover-class' bindtap='about'>
       <text style='height: 100rpx;line-height:100rpx;'>关于酌盈</text>
     </view>
   </view>

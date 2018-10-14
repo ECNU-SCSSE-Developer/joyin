@@ -6,7 +6,8 @@ Page({
    */
   data: {
     org:{},
-    dataInfo:{}
+    dataInfo:{},
+    
   },
 
   // 报名
@@ -20,6 +21,11 @@ Page({
         is_opinion: false,
       },
       complete: function (res) {
+        wx.showToast({
+          title: '已报名',
+          icon: 'success',
+          duration: 1000
+        });
         console.log(res)
       },
     })
@@ -33,6 +39,11 @@ Page({
         act_id: act_id,
       },
       complete: function (res) {
+        wx.showToast({
+          title: '已收藏',
+          icon: 'success',
+          duration: 1000
+        });
         console.log(res)
       }
     })
@@ -61,15 +72,16 @@ Page({
         that.setData({
           org : res.result.publisher_info
         });
-        console.info(that.data.org)
+        //console.info(that.data.org)
       },
       fail: console.error
     });
   },
 
   clickOrganizer: function(){
+    var info = JSON.stringify(this.data.org._openid);
     wx.navigateTo({
-      url: '/pages/personal1/personal1'
+      url: '/pages/personal1/personal1?info=' + info
     })
   },
 
@@ -129,11 +141,13 @@ Page({
 
   //报名按钮，调用addJoin函数
   signUp: function (){
-    this.addJoin();
+    var act_id = this.data.dataInfo._id;
+    this.addJoin(act_id);
   },
 
   //收藏按钮
   collect: function(){
-    this.addFavorite();
+    var act_id = this.data.dataInfo._id;
+    this.addFavorite(act_id);
   }
 })

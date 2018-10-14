@@ -29,9 +29,9 @@ Page({
         that.setData({
           list1: res.result
         });
-        if (that.data.list2.length == 0) {
+        if (that.data.list1.length == 0) {
           wx.showModal({
-            content: '还没有参加的活动哦',
+            content: '还没有收藏的活动哦',
             showCancel: false,
             confirmColor: "#557d8a",
             confirmText: "知道啦",
@@ -169,6 +169,30 @@ Page({
     wx.navigateTo({
       url: "../type4/type4?info=" + info
     })
+  },
+  conn: function(){
+    wx.showModal({
+      content: '这是酌盈的联系方式',
+      showCancel: false,
+      confirmColor: "#557d8a",
+      confirmText: "知道啦",
+    });
+  },
+  help: function(){
+    wx.showModal({
+      content: '这是酌盈的使用指南',
+      showCancel: false,
+      confirmColor: "#557d8a",
+      confirmText: "知道啦",
+    });
+  },
+  about: function(){
+    wx.showModal({
+      content: '关于酌盈',
+      showCancel: false,
+      confirmColor: "#557d8a",
+      confirmText: "知道啦",
+    });
   },
   /**
    * 生命周期函数--监听页面加载

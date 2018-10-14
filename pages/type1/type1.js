@@ -5,14 +5,16 @@ Page({
    * 页面的初始数据
    */
   data: {
-    org: {
-      name: "名字",
-      grade: "16级",
-      area: "中北",
-      img: "xxx",
-      sex: 1
-    },
+    org: {},
     dataInfo: {}
+  },
+
+  //点击进入发布者详情
+  clickOrganizer: function () {
+    var info = JSON.stringify(this.data.org._openid);
+    wx.navigateTo({
+      url: '/pages/personal1/personal1?info=' + info
+    })
   },
 
   // 报名
@@ -26,6 +28,11 @@ Page({
         is_opinion: false,
       },
       complete: function (res) {
+        wx.showToast({
+          title: '报名成功',
+          icon: 'success',
+          duration: 1000
+        });
         console.log(res)
       },
     })
@@ -35,27 +42,30 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // wx.cloud.callFunction({
-    //   name: 'myActivity',
-    //   data: {},
-    //   success: function(res) {
-    //     console.log("云函数")
-    //     console.log(res.result)
-    //   },
-    //   fail: function(res) {
-    //     console.log(res.errMsg)
-    //   }
-    // })
-
-    // this.addJoin("W7HPBN2AWotkUTBh")
-    // this.addJoin("W7HVI92AWotkUT6d")
-    // this.addJoin("W7HVLp25dhqgAKDO")
+    var that = this;
 
     // 把接收到的字符串转换成json对象
     var info = JSON.parse(options.info);
     console.log(info);
     this.setData({
       dataInfo: info
+    });
+
+    //请求发布者信息
+    wx.cloud.callFunction({
+      name: 'activityInfo',
+      data: {
+        act_id: that.data.dataInfo._id,
+      },
+      success: function (res) {
+        //console.info("activityInfo")
+        console.info(res.result)
+        that.setData({
+          org: res.result.publisher_info
+        });
+        console.info(that.data.org)
+      },
+      fail: console.error
     });
   },
 
@@ -115,6 +125,7 @@ Page({
 
   //报名按钮，调用addJoin函数
   signUp: function () {
-    this.addJoin();
+    var act_id = this.data.dataInfo._id;
+    this.addJoin(act_id);
   },
 })

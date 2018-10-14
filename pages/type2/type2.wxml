@@ -39,13 +39,13 @@
       <view>{{dataInfo.info}}</view>
     </view>
   </view>
-  <view class='organizer'>
+  <view class='organizer' bindtap='clickOrganizer'>
     <view>
       <image class='organizer_avatar' src='/image/actDemo.png'></image>
     </view>
     <view class='org_left'>
       <view style='display:flex'>
-        <view class='org_name'>{{org.name}}</view>
+        <view class='org_name'>{{org.nickname}}</view>
         <block wx:if="{{org.sex == 1}}">
           <image class='sex' src='/image/male.png'></image>
         </block>
@@ -54,8 +54,11 @@
         </block>
       </view>
       <view style='display:flex;font-size:30rpx'>
-        <view style='margin-right:50rpx'>{{org.grade}}</view>
-        <view>{{org.area}}</view>
+        <view style='margin-right:50rpx'>{{org.year}}</view>
+        <view>
+          <block wx:if="{{org.place == 1}}">闵行</block>
+          <block wx:elif="{{org.place == 2}}">中北</block>
+        </view>
       </view>
     </view>
   </view>
