@@ -6,9 +6,24 @@ Page({
    */
   data: {
     joiner: {},
-    dataInfo: {}
+    dataInfo: {},
+    agree: "同 意",
+    disagree: "拒 绝"
+  },
+  
+  agree: function(){
+    console.info("点击同意");
+    this.setData({
+      agree: "已 同 意"
+    });
   },
 
+  disagree: function(){
+    console.info("点击拒绝");
+    this.setData({
+      disagree: "已 拒 绝"
+    });
+  },
   //进入参与者详情页面
   toInfo: function (e) {
     var info = JSON.stringify(this.data.joiner[e.currentTarget.dataset.name]._openid);
