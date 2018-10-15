@@ -6,7 +6,8 @@ Page({
    */
   data: {
     org: {},
-    dataInfo: {}
+    dataInfo: {},
+    signClick: false
   },
 
   //点击进入发布者详情
@@ -127,5 +128,8 @@ Page({
   signUp: function () {
     var act_id = this.data.dataInfo._id;
     this.addJoin(act_id);
+    this.setData({
+      signClick: true
+    });
   },
 })

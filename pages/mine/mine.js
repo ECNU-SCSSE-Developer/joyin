@@ -157,6 +157,7 @@ Page({
   to3: function (e) {
     //console.info(e.currentTarget.dataset.name)
     // 把要传递的json对象转换成字符串
+    console.info(this.data.list3[e.currentTarget.dataset.name]);
     var info = JSON.stringify(this.data.list3[e.currentTarget.dataset.name]);
     wx.navigateTo({
       url: "../type3/type3?info=" + info

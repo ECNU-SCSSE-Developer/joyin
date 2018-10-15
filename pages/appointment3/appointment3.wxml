@@ -63,8 +63,8 @@
     </view>
   </view>
   <view style='display:flex;justify-content:space-between'>
-    <view class='left_button' hover-class='button_hover' bindtap='signUp'>报 名</view>
-    <view class='right_button' hover-class='button_hover' bindtap='collect'>收 藏</view>
+    <view class='left_button' hover-class='button_hover' bindtap="{{!signClick?'signUp':''}}">报 名</view>
+    <view class='right_button' hover-class='button_hover' bindtap="{{!collectClick?'collect':''}}">收 藏</view>
   </view>
   <view class='back' hover-class='button_hover' bindtap='clickBack'>返 回</view>
 </view>

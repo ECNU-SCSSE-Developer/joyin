@@ -17,36 +17,55 @@ Page({
 
 
 
-  toInfo: function (e) {
-    //console.info(this.data.activities[e.currentTarget.dataset.name])
+  toInfo: function(e) {
+    console.info(this.data.activities[e.currentTarget.dataset.name])
 
     var that = this;
 
-    //请求发布者信息
+    
     wx.cloud.callFunction({
       name: 'activityInfo',
       data: {
         act_id: that.data.activities[e.currentTarget.dataset.name]._id
       },
-      success: function (res) {
-        //console.info("activityInfo")
-        //console.info(res.result)
-        if (res.result.is_publisher == true) {
-          // 把要传递的json对象转换成字符串
-          //console.info("是发布者")
+      success: function(res) {
+        console.info(res.result)
+        
+        if (res.result.type == "favoriter"){
+          var info = JSON.stringify(that.data.activities[e.currentTarget.dataset.name]);
+          wx.navigateTo({
+            url: "../type1/type1?info=" + info
+          })
+        }
+          
+        if (res.result.type == "applyer"){
+          var info = JSON.stringify(that.data.activities[e.currentTarget.dataset.name]);
+          wx.navigateTo({
+            url: "../type2/type2?info=" + info
+          })
+        }
+          
+        if (res.result.type == "publisher"){
           var info = JSON.stringify(that.data.activities[e.currentTarget.dataset.name]);
           wx.navigateTo({
             url: "../type3/type3?info=" + info
           })
         }
-        else{
-          // 把要传递的json对象转换成字符串
-          //console.info("不是发布者")
+         
+        if (res.result.type == "joiner"){
+          var info = JSON.stringify(that.data.activities[e.currentTarget.dataset.name]);
+          wx.navigateTo({
+            url: "../type4/type4?info=" + info
+          })
+        }
+         
+        if (res.result.type == "stranger"){
           var info = JSON.stringify(that.data.activities[e.currentTarget.dataset.name]);
           wx.navigateTo({
             url: "../appointment3/appointment3?info=" + info
           })
         }
+          
       },
       fail: console.error
     });
@@ -108,44 +127,44 @@ Page({
   },
 
   //获取活动信息
-  getActivities: function (last_date) {
+  getActivities: function(last_date) {
     var that = this;
 
     const db = wx.cloud.database();
     const _ = db.command;
     if (last_date == 0) {
       db.collection('activity').where({
-        end_time: _.gt(new Date().getTime())
-      }).orderBy('end_time', 'asc')
+          end_time: _.gt(new Date().getTime())
+        }).orderBy('end_time', 'asc')
         .limit(10)
         .get()
-        .then(function (res) {
+        .then(function(res) {
           console.info(res.data);
           that.setData({
             activities: res.data //把返回的数据放在activities中，然后通过activities去渲染页面
           });
         })
-        .catch(function (err) {
+        .catch(function(err) {
           console.error(err);
         });
     } else {
       db.collection('activity').where({
-        end_time: _.gt(last_date)
-      }).orderBy('end_time', 'asc')
+          end_time: _.gt(last_date)
+        }).orderBy('end_time', 'asc')
         .limit(10)
         .get()
-        .then(function (res) {
+        .then(function(res) {
           //console.log(res.data);
           that.setData({
             activities: res.data //把返回的数据放在activities中，然后通过activities去渲染页面
           });
         })
-        .catch(function (err) {
+        .catch(function(err) {
           console.error(err);
         });
     }
   },
-  
+
   /**
    * 生命周期函数--监听页面加载
    */

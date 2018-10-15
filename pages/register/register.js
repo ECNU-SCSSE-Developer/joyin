@@ -52,7 +52,20 @@ Page({
         phone: phone
       },
       success: function(res) {
-        console.log(res)
+        wx.showModal({//成功发布时弹出的提示框
+          content: '您已成功注册',
+          showCancel: false,
+          confirmColor: "#557d8a",
+          confirmText: "JoyIn",
+          success: function (res) {
+            if (res.confirm) {
+              console.log('用户点击确定')
+              wx.navigateTo({
+                url: '/pages/joyin/joyin'
+              })
+            }
+          }
+        });
       }
     })
   },
@@ -110,11 +123,6 @@ Page({
    */
   onShareAppMessage: function () {
   
-  },
-  toSchool: function () {
-    wx.navigateTo({
-      url: '/pages/school/school'
-    })
   },
 
   bindCasPickerChange: function (e) {

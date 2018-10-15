@@ -6,20 +6,9 @@ Page({
    */
   data: {
     /*绑定第一个卡片上的数据 */
-    activity:{
-      title:"三国杀",
-      place:"中北",
-      date:"2018年8月20日",
-      img:"xxx"
-    },
+    activity:{},
     /* 绑定第二个卡片上的数据*/
-    organizer:{
-      img:"/image/actDemo.png",
-      sex:2,/*1为男2为女 */
-      name:"名字",
-      grade:"16级",
-      area:"中北"
-    },
+    org:{},
     one_1: '',
     two_1: '',
     one_2: 0, //这个为实际给的星星
@@ -41,11 +30,59 @@ Page({
     })
     console.info(one_2)
   },
+
+  //添加评价  参数act_id活动id，star星星数，info评价文字，publisher_id这个活动发布者id
+  addOpinion: function (act_id, star, info, publisher_id) {
+    const db = wx.cloud.database()
+    db.collection('opinion').add({
+      data: {
+        act_id: act_id,
+        star: star,
+        info: info,
+        publisher_id: publisher_id,
+        time: new Date().getTime()
+      },
+      complete: function (res) {
+        console.log(res)
+      }
+    })
+  },
+
+  //点击提交按钮
+  formSubmit: function (e) {
+    console.log('form发生了submit事件，携带数据为：', e.detail.value);
+    let { info } = e.detail.value;
+    this.addOpinion( this.activity._id,this.data.one_2, info, this.activity._openid);
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    var that = this;
+
+    // 把接收到的字符串转换成json对象
+    var info = JSON.parse(options.info);
+    console.log(info);
+    this.setData({
+      activity: info
+    });
+
+    //请求发布者信息
+    wx.cloud.callFunction({
+      name: 'activityInfo',
+      data: {
+        act_id: that.data.dataInfo._id,
+      },
+      success: function (res) {
+        //console.info("activityInfo")
+        console.info(res.result)
+        that.setData({
+          org: res.result.publisher_info
+        });
+        console.info(that.data.org)
+      },
+      fail: console.error
+    });
   },
 
   /**

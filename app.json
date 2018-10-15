@@ -1,6 +1,7 @@
 {
   "cloud": true,
   "pages": [
+        "pages/appointment2/appointment2",
     "pages/mine/mine",
     "pages/type1/type1",
     "pages/type2/type2",
@@ -10,7 +11,7 @@
     "pages/activity/activity",
     "pages/appointment3/appointment3",
     "pages/joyin/joyin",
-    "pages/appointment2/appointment2",
+
     "pages/welcome/welcome",
     "pages/personal4/personal4",
     "pages/calendar/calendar",
