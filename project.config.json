@@ -34,7 +34,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 13,
+			"current": 15,
 			"list": [
 				{
 					"id": -1,
@@ -111,13 +111,25 @@
 				{
 					"id": -1,
 					"name": "个人信息2",
-					"pathName": "pages/personal1/personal1",
+					"pathName": "pages/register/register",
 					"query": ""
 				},
 				{
 					"id": -1,
-					"name": "个人信息2",
-					"pathName": "pages/register/register",
+					"name": "type1",
+					"pathName": "pages/type1/type1",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "信息",
+					"pathName": "pages/personal4/personal4",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "评价",
+					"pathName": "pages/personal3/personal3",
 					"query": ""
 				}
 			]
