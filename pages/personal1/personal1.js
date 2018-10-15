@@ -18,6 +18,51 @@ Page({
     })
   },
 
+  //获得账户信息  参数openid
+  accountInfo: function (openid) {
+    const db = wx.cloud.database();
+    db.collection('account').where({
+      _openid: openid
+    })
+    .get()
+    .then(function(res){
+      return res.data.shift();
+    })
+    .catch(function(err){
+      console.log(err);
+    })
+  },
+
+  //获得账户评价 参数openid
+  accountOpinion: function (openid) {
+    const db = wx.cloud.database();
+    var account_opinion = [];
+
+    const opinion = db.collection('opinion').where({
+      publisher_id: openid,
+    });
+    
+    opinion.count().then(function(res){
+      const opinion_count = res.total;
+    }).catch(function(err){
+      console.log(err);
+    });
+
+    if (opinion_count > 0) {
+      opinion.orderBy('time', 'desc').get().then(function(res){
+        const opinions = res.data;
+      }).catch(function(err){
+        console.log(err);
+      });
+      opinions.data.forEach(function (item) {
+        console.log(item);
+        account_opinion.push(item);
+      });
+    }
+
+    return account_opinion;
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
