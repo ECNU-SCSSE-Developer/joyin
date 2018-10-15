@@ -39,6 +39,35 @@ Page({
     })
   },
 
+  //取消收藏
+  cancel: function(){
+    var that = this;
+
+    wx.cloud.callFunction({
+      name: 'cancelFavorite',
+      data: {
+        act_id: that.data.dataInfo._id,
+      },
+      success: function (res) {
+        console.info("success")
+        wx.showModal({
+          content: '取消成功',
+          showCancel: false,
+          confirmColor: "#557d8a",
+          confirmText: "知道啦",
+          success: function (res) {
+            if (res.confirm) {
+              wx.navigateTo({
+                url: '/pages/mine/mine'
+              })
+            }
+          }
+        });
+        
+      },
+      fail: console.error
+    });
+  },
   /**
    * 生命周期函数--监听页面加载
    */

@@ -3,21 +3,29 @@
   <view class='top'>
     <view class='top1'>
       <text class='name'>昵称</text>
-      <text>需要后端</text>
+      <text>{{acc.nickname}}</text>
       <view class='infor'>
         <view class='sex'>性别：
-          <text>{{sex}}</text>
+          <block wx:if="{{acc.sex == 1}}">
+            <text>男</text>
+          </block>
+          <block wx:if="{{acc.sex == 2}}">
+            <text>女</text>
+          </block>
         </view>
         <view class='grade'>年级:
-          <text>{{grade}}</text>
+          <text>{{acc.year}}</text>
         </view>
         <view class='area'>校区:
-          <text>{{area}}</text>
+          <text>
+          <block wx:if="{{acc.place == 1}}">闵行</block>
+          <block wx:elif="{{acc.place == 2}}">中北</block>
+          </text>
         </view>
       </view>
       <view class='chat' hidden='{{chathidden}}'>
         <view class='number'>联系方式:
-          <text>{{phoneNumber}}</text>
+          <text>{{acc.phone}}</text>
         </view>
       </view>
       <!-- 

@@ -23,13 +23,16 @@ Page({
 
   //获得账户信息  参数openid
   accountInfo: function (openid) {
+    var that = this;
     const db = wx.cloud.database();
     db.collection('account').where({
       _openid: openid
     })
     .get()
     .then(function(res){
-      return res.data.shift();
+      that.setData({
+        acc: res.data.shift()
+      });
     })
     .catch(function(err){
       console.log(err);
@@ -79,8 +82,10 @@ Page({
       openid: info
     });
 
-    //需要一个传openid然后返回这个账户信息的云函数
-
+    //请求账户信息
+    console.info("传入的openid:", that.data.openid)
+    this.accountInfo(that.data.openid)
+    
     //请求评价信息，写入comments
     wx.cloud.callFunction({
       name: 'myOpinion',
@@ -88,8 +93,8 @@ Page({
         openid: that.data.openid,
       },
       success: function (res) {
-        console.info("comments")
-        console.info(res.result)
+        //console.info("comments")
+        //console.info(res.result)
         that.setData({
           comments: res.result
         });

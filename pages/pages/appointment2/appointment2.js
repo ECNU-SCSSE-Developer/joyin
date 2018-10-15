@@ -100,7 +100,58 @@ Page({
     let end_time = endTime;
     let place_type = placeType;
     //console.log(place_type);
-    this.addActivity(name, start_time, end_time, place_type, place, people_num, money, duration, info);
+    if (e.detail.value.name.length == 0) {
+      wx.showModal({
+        content: '邀约主题不能为空！',
+        showCancel: false,
+        confirmColor: "#557d8a",
+        confirmText: "知道啦",
+      });
+    } else if (e.detail.value.place.length == 0) {
+      wx.showModal({
+        content: '邀约地点不能为空！',
+        showCancel: false,
+        confirmColor: "#557d8a",
+        confirmText: "知道啦",
+      });
+    } else if (start_time == 0) {
+      wx.showModal({
+        content: '邀约开始时间不能为空！',
+        showCancel: false,
+        confirmColor: "#557d8a",
+        confirmText: "知道啦",
+      });
+    } else if (end_time == 0) {
+      wx.showModal({
+        content: '邀约结束时间不能为空！',
+        showCancel: false,
+        confirmColor: "#557d8a",
+        confirmText: "知道啦",
+      });
+    } else if (e.detail.value.people_num.length == 0) {
+      wx.showModal({
+        content: '所需人数不能为空！',
+        showCancel: false,
+        confirmColor: "#557d8a",
+        confirmText: "知道啦",
+      });
+    }  else if (e.detail.value.money.length == 0) {
+      wx.showModal({
+        content: '预计人均开销不能为空！',
+        showCancel: false,
+        confirmColor: "#557d8a",
+        confirmText: "知道啦",
+      });
+    } else if (e.detail.value.duration.length == 0) {
+      wx.showModal({
+        content: '预计活动时长不能为空！',
+        showCancel: false,
+        confirmColor: "#557d8a",
+        confirmText: "知道啦",
+      });
+    } else {
+      this.addActivity(name, start_time, end_time, place_type, place, people_num, money, duration, info);
+    }
   },
 
   /**

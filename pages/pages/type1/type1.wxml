@@ -41,7 +41,12 @@
   </view>
   <view class='organizer' bindtap='clickOrganizer'>
     <view>
-      <image class='organizer_avatar' src='/image/actDemo.png'></image>
+      <block wx:if="{{org.sex == 1}}">
+        <image class='organizer_avatar' src='/image/boy.png'></image>
+      </block>
+      <block wx:if="{{org.sex == 2}}">
+        <image class='organizer_avatar' src='/image/girl.png'></image>
+      </block>
     </view>
     <view class='org_left'>
       <view style='display:flex'>
@@ -64,6 +69,7 @@
   </view>
   <view style='display:flex;align-items:center;'>
     <view class='left_button' hover-class='button_hover' bindtap="{{!signClick?'signUp':''}}">报 名</view>
+    <view class='right_button' hover-class='button_hover' bindtap="cancel">取 消</view>
   </view>
   <view class='back' hover-class='button_hover' bindtap='clickBack'>返 回</view>
 </view>
