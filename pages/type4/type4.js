@@ -1,4 +1,4 @@
-
+var time = require('../../utils/util.js');
 Page({
 
   /**

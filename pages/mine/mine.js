@@ -1,5 +1,6 @@
 // pages/mine/mine.js
 var template = require('../../template/template.js');
+var time = require('../../utils/util.js');
 Page({
 
   /**
@@ -26,6 +27,13 @@ Page({
       },
       success: function (res) {
         console.log(res.result)
+        //时间戳转化
+        for (var i = 0, len = res.result.length; i < len; i++) {
+          //console.info(time.formatTimeTwo(res.result[i].end_time))
+          res.result[i].start_time = time.formatTimeTwo(res.result[i].start_time)
+          res.result[i].end_time = time.formatTimeTwo(res.result[i].end_time)
+          //console.info(res.result[i].end_time)
+        }
         that.setData({
           list1: res.result
         });
@@ -55,6 +63,13 @@ Page({
       },
       success: function (res) {
         console.log(res.result)
+        //时间戳转化
+        for (var i = 0, len = res.result.length; i < len; i++) {
+          //console.info(time.formatTimeTwo(res.result[i].end_time))
+          res.result[i].start_time = time.formatTimeTwo(res.result[i].start_time)
+          res.result[i].end_time = time.formatTimeTwo(res.result[i].end_time)
+          //console.info(res.result[i].end_time)
+        }
         that.setData({
           list2: res.result
         });
@@ -84,6 +99,13 @@ Page({
       },
       success: function (res) {
         console.log(res.result)
+        //时间戳转化
+        for (var i = 0, len = res.result.length; i < len; i++) {
+          //console.info(time.formatTimeTwo(res.result[i].end_time))
+          res.result[i].start_time = time.formatTimeTwo(res.result[i].start_time)
+          res.result[i].end_time = time.formatTimeTwo(res.result[i].end_time)
+          //console.info(res.result[i].end_time)
+        }
         that.setData({
           list3: res.result
         });
@@ -113,6 +135,13 @@ Page({
       },
       success: function (res) {
         console.log(res.result)
+        //时间戳转化
+        for (var i = 0, len = res.result.length; i < len; i++) {
+          //console.info(time.formatTimeTwo(res.result[i].end_time))
+          res.result[i].start_time = time.formatTimeTwo(res.result[i].start_time)
+          res.result[i].end_time = time.formatTimeTwo(res.result[i].end_time)
+          //console.info(res.result[i].end_time)
+        }
         that.setData({
           list4: res.result
         });

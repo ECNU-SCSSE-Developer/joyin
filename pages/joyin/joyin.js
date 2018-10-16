@@ -1,5 +1,6 @@
 // pages/joyin/joyin.js
 var template = require('../../template/template.js');
+var time = require('../../utils/util.js');
 Page({
 
   /**

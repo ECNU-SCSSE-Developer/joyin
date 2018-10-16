@@ -1,5 +1,6 @@
 // pages/activity/activity.js
 var template = require('../../template/template.js');
+var time = require('../../utils/util.js');
 Page({
 
   /**
@@ -22,7 +23,7 @@ Page({
 
     var that = this;
 
-    
+
     wx.cloud.callFunction({
       name: 'activityInfo',
       data: {
@@ -30,42 +31,42 @@ Page({
       },
       success: function(res) {
         console.info(res.result)
-        
-        if (res.result.type == "favoriter"){
+
+        if (res.result.type == "favoriter") {
           var info = JSON.stringify(that.data.activities[e.currentTarget.dataset.name]);
           wx.navigateTo({
             url: "../type1/type1?info=" + info
           })
         }
-          
-        if (res.result.type == "applyer"){
+
+        if (res.result.type == "applyer") {
           var info = JSON.stringify(that.data.activities[e.currentTarget.dataset.name]);
           wx.navigateTo({
             url: "../type2/type2?info=" + info
           })
         }
-          
-        if (res.result.type == "publisher"){
+
+        if (res.result.type == "publisher") {
           var info = JSON.stringify(that.data.activities[e.currentTarget.dataset.name]);
           wx.navigateTo({
             url: "../type3/type3?info=" + info
           })
         }
-         
-        if (res.result.type == "joiner"){
+
+        if (res.result.type == "joiner") {
           var info = JSON.stringify(that.data.activities[e.currentTarget.dataset.name]);
           wx.navigateTo({
             url: "../type4/type4?info=" + info
           })
         }
-         
-        if (res.result.type == "stranger"){
+
+        if (res.result.type == "stranger") {
           var info = JSON.stringify(that.data.activities[e.currentTarget.dataset.name]);
           wx.navigateTo({
             url: "../appointment3/appointment3?info=" + info
           })
         }
-          
+
       },
       fail: console.error
     });
@@ -139,7 +140,14 @@ Page({
         .limit(10)
         .get()
         .then(function(res) {
-          console.info(res.data);
+          //console.info(res.data);
+          //时间戳转化
+          for (var i = 0, len = res.data.length; i < len; i++) {
+            //console.info(time.formatTimeTwo(res.data[i].end_time))
+            res.data[i].start_time = time.formatTimeTwo(res.data[i].start_time)
+            res.data[i].end_time = time.formatTimeTwo(res.data[i].end_time)
+            //console.info(res.data[i].end_time)
+          }
           that.setData({
             activities: res.data //把返回的数据放在activities中，然后通过activities去渲染页面
           });
@@ -171,6 +179,7 @@ Page({
   onLoad: function(options) {
     template.tabbar("tabBar", 1, this);
     this.getActivities(0);
+
   },
 
   /**

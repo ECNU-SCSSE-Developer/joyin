@@ -1,4 +1,5 @@
 // pages/personal3/personal3.js
+var time = require('../../utils/util.js');
 Page({
 
   /**
