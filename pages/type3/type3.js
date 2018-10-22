@@ -66,64 +66,46 @@ Page({
   agreeApply: function(act_id, acc_id, max_num) {
     const db = wx.cloud.database();
     db.collection('join').where({
-        act_id: act_id,
-        is_reply: true,
-        is_agree: true
-      }).count()
-      .then(function(res) {
-        if (res.total >= max_num) {
-          return false;
-        }
-      })
-      .catch(function(err) {
-        return err;
-      });
-    var id;
-    db.collection('join').where({
-        _openid: acc_id,
+      act_id: act_id,
+      is_reply: true,
+      is_agree: true
+    }).count()
+    .then(function(res){
+      if(res.total >= max_num){
+        return false;
+      }
+    })
+    .catch(function(err){
+      return err;
+    });
+    wx.cloud.callFunction({
+      name: 'agreeApply',
+      data: {
+        openid: acc_id,
         act_id: act_id
-      }).get()
-      .then(function(res) {
-        id = res.data.shift()._id;
-      })
-      .catch(function(err) {
-        return err;
-      });
-    db.collection('join').doc(id).update({
-        data: {
-          is_reply: true,
-          is_agree: true
-        }
-      }).then(console.log)
-      .catch(function(err) {
-        return err;
-      });
-    return true;
+      }
+    }).then(function(res){
+      return true;
+    }).catch(function(err){
+      console.log(err);
+      return err;
+    })
   },
 
   //拒绝申请 参数act_id,acc_id 申请者的id
-  refuseApply: function(act_id, acc_id) {
-    var id;
-    db.collection('join').where({
-        _openid: acc_id,
+  refuseApply: function (act_id, acc_id) {
+    wx.cloud.callFunction({
+      name: 'refuseApply',
+      data: {
+        openid: acc_id,
         act_id: act_id
-      }).get()
-      .then(function(res) {
-        id = res.data.shift()._id;
-      })
-      .catch(function(err) {
-        return err;
-      });
-    db.collection('join').doc(id).update({
-        data: {
-          is_reply: true,
-          is_agree: false
-        }
-      }).then(console.log)
-      .catch(function(err) {
-        return err;
-      });
-    return true;
+      }
+    }).then(function (res) {
+      return true;
+    }).catch(function (err) {
+      console.log(err);
+      return err;
+    })
   },
   /**
    * 生命周期函数--监听页面加载
