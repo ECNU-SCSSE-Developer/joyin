@@ -14,6 +14,11 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
+const formatTimeTwo = date => {
+  return new Date(date).getFullYear().toString() + "年" + new Date(date).getMonth().toString() + "月" + new Date(date).getDate().toString() + "日"
+}
+
 module.exports = {
-  formatTime: formatTime
+  formatTime: formatTime,
+  formatTimeTwo: formatTimeTwo
 }

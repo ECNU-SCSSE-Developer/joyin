@@ -60,7 +60,11 @@ exports.main = async (event, context) => {
     if(join.length > 0){  //不是stranger
       const user_type = join.shift();
       if (user_type.is_reply == true && user_type.is_agree == true) {
-        act_info.type = "joiner";   //是参加者
+        if(user_type.is_opinion == true){
+          act_info.type = "over";  //是已评价者
+        }else{
+          act_info.type = "joiner";   //是参加者
+        }
       } else if (user_type.is_reply == false && user_type.is_agree == false) {
         act_info.type = "applyer";  //是报名者
       } else {
