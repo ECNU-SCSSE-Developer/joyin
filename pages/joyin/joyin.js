@@ -97,7 +97,7 @@ Page({
       wx.navigateTo({
         url: "../type3/type3?info=" + info
       })
-    if (this.data.myList[e.currentTarget.dataset.name].type == "已参加")
+    if (this.data.myList[e.currentTarget.dataset.name].type == "已确认")
       wx.navigateTo({
         url: "../type4/type4?info=" + info
       })
