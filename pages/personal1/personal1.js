@@ -10,7 +10,11 @@ Page({
     grade:"16级",
     area:"中北",
     phoneNumber:"12345678945",
-    times:"10"
+    times:"10",
+    openid:0,
+    acc:{},
+    comments:{},
+    hasComment: false,
   },
 
   clickBack: function () {
@@ -20,13 +24,16 @@ Page({
 
   //获得账户信息  参数openid
   accountInfo: function (openid) {
+    var that = this;
     const db = wx.cloud.database();
     db.collection('account').where({
       _openid: openid
     })
     .get()
     .then(function(res){
-      return res.data.shift();
+      that.setData({
+        acc: res.data.shift()
+      });
     })
     .catch(function(err){
       console.log(err);
@@ -67,7 +74,37 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    var that = this;
+
+    // 把接收到的字符串转换成json对象
+    var info = JSON.parse(options.info);
+    console.log(info);
+    this.setData({
+      openid: info
+    });
+
+    //请求账户信息
+    console.info("传入的openid:", that.data.openid)
+    this.accountInfo(that.data.openid)
+    
+    //请求评价信息，写入comments
+    wx.cloud.callFunction({
+      name: 'myOpinion',
+      data: {
+        openid: that.data.openid,
+      },
+      success: function (res) {
+        //console.info("comments")
+        //console.info(res.result)
+        if (res.result.length != 0){
+          that.setData({
+            hasComment: true,
+            comments: res.result
+          })
+        }
+      },
+      fail: console.error
+    });
   },
 
   /**

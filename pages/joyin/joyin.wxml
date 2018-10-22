@@ -34,7 +34,7 @@
       <view>
         <view wx:for="{{myList}}" wx:for-index="idx" wx:for-item="activity" bindtap='toInfo1' data-name='{{idx}}'>
           <view class='item' hover-class='item_hover-class'>
-            <view style='height:100%;display:flex;align-items:center;margin:0 30rpx'>
+            <view style='height:100%;display:flex;align-items:center;margin:0 0 0 30rpx'>
               <image src='/image/actDemo.png' class='item_image'></image>
             </view>
             <view style='height:100%;display:flex;flex-direction: column;justify-content:space-between'>
@@ -63,7 +63,7 @@
                   <view class="triangle_border_left" style='border-color: transparent #fc0 transparent transparent'></view>
                 </block>-->
               </view>
-              <view class='item_date'>{{activity.date}}</view>
+              <view class='item_date'>{{activity.end_time}}</view>
             </view>
           </view>
         </view>
@@ -83,7 +83,7 @@
       <view>
         <view wx:for="{{waitList}}" wx:for-index="idx" wx:for-item="activity" bindtap='toInfo2' data-name='{{idx}}'>
           <view class='item' hover-class='item_hover-class'>
-            <view style='height:100%;display:flex;align-items:center;margin:0 30rpx'>
+            <view style='height:100%;display:flex;align-items:center;margin:0 0 0 30rpx'>
               <image src='/image/actDemo.png' class='item_image'></image>
             </view>
             <view style='height:100%;display:flex;flex-direction: column;justify-content:space-between'>
@@ -93,7 +93,7 @@
               <view class='item_place'>{{activity.place}}</view>
             </view>
             <view style='height:100%;display:flex;flex-direction: column;justify-content:flex-end'>
-              <view class='item_date'>{{activity.date}}</view>
+              <view class='item_date'>{{activity.end_time}}</view>
             </view>
           </view>
         </view>

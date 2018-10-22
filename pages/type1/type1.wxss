@@ -25,7 +25,7 @@
 }
 
 .left_button {
-  width: 100%;
+  width: 40%;
   background-color: #7bd6ef;
   color: white;
   text-align: center;
@@ -37,7 +37,20 @@
   box-shadow: 1rpx 1rpx 1rpx 1rpx #aaa;
 }
 
-.item_box{
+.right_button {
+  width: 40%;
+  color: white;
+  text-align: center;
+  font-size: 50rpx;
+  margin: 30rpx 100rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  border-radius: 10rpx;
+  background-color: #fbb9c9;
+  box-shadow: 1rpx 1rpx 1rpx 1rpx #aaa;
+}
+
+.item_box {
   width: 80%;
   margin: 0 auto;
   box-shadow: 1rpx 1rpx 1rpx 1rpx #aaa;
@@ -54,7 +67,7 @@
   border-bottom: 5rpx solid #557d8a;
 }
 
-.item_hd{
+.item_hd {
   float: left;
   margin-right: 20rpx;
   color: #557d8a;
@@ -89,10 +102,10 @@
   height: 40rpx;
 }
 
-.org_name{
+.org_name {
   font-size: 50rpx;
 }
 
-.button_hover{
+.button_hover {
   background-color: #eee;
 }

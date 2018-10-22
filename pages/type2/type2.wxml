@@ -20,15 +20,15 @@
     </view>
     <view class='item'>
       <view class='item_hd'>活动人数</view>
-      <view>{{dataInfo.people_num}}</view>
+      <view>{{dataInfo.people_num}}人</view>
     </view>
     <view class='item'>
       <view class='item_hd'>预计开销</view>
-      <view>{{dataInfo.money}}</view>
+      <view>{{dataInfo.money}}元</view>
     </view>
     <view class='item'>
       <view class='item_hd'>预计时长</view>
-      <view>{{dataInfo.duration}}</view>
+      <view>{{dataInfo.duration}}小时</view>
     </view>
     <view class='item'>
       <view class='item_hd'>过期时间</view>
@@ -39,13 +39,18 @@
       <view>{{dataInfo.info}}</view>
     </view>
   </view>
-  <view class='organizer'>
+  <view class='organizer' bindtap='clickOrganizer'>
     <view>
-      <image class='organizer_avatar' src='/image/actDemo.png'></image>
+      <block wx:if="{{org.sex == 1}}">
+        <image class='organizer_avatar' src='/image/boy.png'></image>
+      </block>
+      <block wx:if="{{org.sex == 2}}">
+        <image class='organizer_avatar' src='/image/girl.png'></image>
+      </block>
     </view>
     <view class='org_left'>
       <view style='display:flex'>
-        <view class='org_name'>{{org.name}}</view>
+        <view class='org_name'>{{org.nickname}}</view>
         <block wx:if="{{org.sex == 1}}">
           <image class='sex' src='/image/male.png'></image>
         </block>
@@ -54,13 +59,16 @@
         </block>
       </view>
       <view style='display:flex;font-size:30rpx'>
-        <view style='margin-right:50rpx'>{{org.grade}}</view>
-        <view>{{org.area}}</view>
+        <view style='margin-right:50rpx'>{{org.year}}</view>
+        <view>
+          <block wx:if="{{org.place == 1}}">闵行</block>
+          <block wx:elif="{{org.place == 2}}">中北</block>
+        </view>
       </view>
     </view>
   </view>
   <view style='display:flex;justify-content:space-between'>
-    <view class='left_button' hover-class='button_hover' bindtap='cancel'>取 消</view>
+    <button class='left_button' hover-class='button_hover' bindtap='cancel' disabled='true'>已 报 名</button>
   </view>
   <view class='back' hover-class='button_hover' bindtap='clickBack'>返 回</view>
 </view>

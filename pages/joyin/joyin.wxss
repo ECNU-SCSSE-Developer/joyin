@@ -41,6 +41,7 @@
   border-radius: 20rpx;
   /*border: 3rpx solid #eee;*/
   margin-top: 20rpx;
+  justify-content: space-between;
   /*box-shadow: 1rpx 1rpx 1rpx 1rpx #aaa;*/
 }
 
@@ -91,7 +92,7 @@
   width: 130rpx;
   padding: 40rpx 5rpx;
   align-self: flex-start;
-  font-size: 15rpx;
+  font-size: 20rpx;
   color: #7bd6ef;
 }
 

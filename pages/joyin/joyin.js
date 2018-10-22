@@ -1,5 +1,6 @@
 // pages/joyin/joyin.js
 var template = require('../../template/template.js');
+var time = require('../../utils/util.js');
 Page({
 
   /**
@@ -33,6 +34,16 @@ Page({
       .get()
       .then(function(res) {
         //console.info(res.data)
+        //时间戳转化
+        for (var i = 0, len = res.data.length; i < len; i++) {
+          //console.info(time.formatTimeTwo(res.data[i].end_time))
+          res.data[i].start_time = time.formatTimeTwo(res.data[i].start_time)
+          res.data[i].end_time = time.formatTimeTwo(res.data[i].end_time)
+          //console.info(res.data[i].end_time)
+          if (res.data[i].info == "") {
+            res.data[i].info = "无";
+          }
+        }
         that.setData({
           waitList: res.data
         });
@@ -48,6 +59,16 @@ Page({
         .get()
         .then(function (res) {
           //console.info(res.data)
+          //时间戳转化
+          for (var i = 0, len = res.data.length; i < len; i++) {
+            //console.info(time.formatTimeTwo(res.data[i].end_time))
+            res.data[i].start_time = time.formatTimeTwo(res.data[i].start_time)
+            res.data[i].end_time = time.formatTimeTwo(res.data[i].end_time)
+            //console.info(res.data[i].end_time)
+            if (res.data[i].info == "") {
+              res.data[i].info = "无";
+            }
+          }
           that.setData({
             waitList: res.data
           });
@@ -83,12 +104,57 @@ Page({
   },
 
   toInfo2: function (e) {
-    console.info(e.currentTarget.dataset.name)
-    // 把要传递的json对象转换成字符串
-    var info = JSON.stringify(this.data.waitList[e.currentTarget.dataset.name]);
-    wx.navigateTo({
-      url: "../appointment3/appointment3?info=" + info
-    })
+    //console.info(this.data.waitList[e.currentTarget.dataset.name])
+
+    var that = this;
+
+
+    wx.cloud.callFunction({
+      name: 'activityInfo',
+      data: {
+        act_id: that.data.waitList[e.currentTarget.dataset.name]._id
+      },
+      success: function (res) {
+        //console.info(res.result)
+
+        if (res.result.type == "favoriter") {
+          var info = JSON.stringify(that.data.waitList[e.currentTarget.dataset.name]);
+          wx.navigateTo({
+            url: "../type1/type1?info=" + info
+          })
+        }
+
+        if (res.result.type == "applyer") {
+          var info = JSON.stringify(that.data.waitList[e.currentTarget.dataset.name]);
+          wx.navigateTo({
+            url: "../type2/type2?info=" + info
+          })
+        }
+
+        if (res.result.type == "publisher") {
+          var info = JSON.stringify(that.data.waitList[e.currentTarget.dataset.name]);
+          wx.navigateTo({
+            url: "../type3/type3?info=" + info
+          })
+        }
+
+        if (res.result.type == "joiner") {
+          var info = JSON.stringify(that.data.waitList[e.currentTarget.dataset.name]);
+          wx.navigateTo({
+            url: "../type4/type4?info=" + info
+          })
+        }
+
+        if (res.result.type == "stranger") {
+          var info = JSON.stringify(that.data.waitList[e.currentTarget.dataset.name]);
+          wx.navigateTo({
+            url: "../appointment3/appointment3?info=" + info
+          })
+        }
+
+      },
+      fail: console.error
+    });
   },
 
   /**
@@ -105,7 +171,15 @@ Page({
     wx.cloud.callFunction({
       name: 'myActivity',
       success: function (res) {
-        console.log(res.result)
+        //console.log(res.result)
+        //时间戳转化
+        for (var i = 0, len = res.result.length; i < len; i++) {
+          res.result[i].start_time = time.formatTimeTwo(res.result[i].start_time)
+          res.result[i].end_time = time.formatTimeTwo(res.result[i].end_time)
+          if (res.result[i].info == "") {
+            res.result[i].info = "无";
+          }
+        }
         that.setData({
           myList: res.result
         });

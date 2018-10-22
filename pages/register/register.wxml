@@ -19,13 +19,13 @@
           <view class="weui-label" name="grade">年级</view>
         </view>
         <view class="weui-cell__bd">
-         <view class="row-wrap" >
-     <picker bindchange="bindCasPickerChange" value="{{casIndex1}}" range="{{casArray}}" >
-      <view>
-       <text>{{casArray[casIndex]}}</text>
-      </view>
-     </picker>
-         </view>
+          <view class="row-wrap">
+            <picker bindchange="bindCasPickerChange" value="{{casIndex1}}" range="{{casArray}}">
+              <view>
+                <text>{{casArray[casIndex]}}</text>
+              </view>
+            </picker>
+          </view>
         </view>
       </view>
 
@@ -58,8 +58,8 @@
         </view>
       </view>
 
-   
-  </view>
+
+    </view>
 
     <view class="weui-cells weui-cells_after-title">
       <view class="weui-cell weui-cell_input">
@@ -86,23 +86,25 @@
           <input name='phone' class="weui-input" />
         </view>
       </view>
- 
+
       <view class="weui-cell weui-cell_input">
         <view class="my">
-          <view class="weui-cell__hd" >
-              <view class="weui-label_pic">校园卡信息页清晰照</view>
+          <view class="weui-cell__hd">
+            <view class="weui-label_pic">校园卡信息页清晰照</view>
           </view>
           <view class="weui-uploader__input-box">
 
-              <view class="weui-uploader__input" bindtap="chooseImage"></view>
-            
+            <view class="weui-uploader__input" bindtap="chooseImage"></view>
+
           </view>
         </view>
       </view>
-  
+
     </view>
 
-    <text class='protocol'>第二部分真实信息仅作安全保障使用，我们将严格保护您的隐私安全，请放心填写。联系方式在用户确认后仅活动人员可见，请阅读</text><text class="href" bindtap="showProtocol">《xx规定》</text><text class='protocol'>提交则默认同意</text>
+    <text class='protocol'>第二部分真实信息仅作安全保障使用，我们将严格保护您的隐私安全，请放心填写。联系方式在用户确认后仅活动人员可见，请阅读</text>
+    <text class="href" bindtap="showProtocol">《xx规定》</text>
+    <text class='protocol'>提交则默认同意</text>
     <view class="btn" hover-class='button_hover'>
       <button form-type="submit">注 册</button>
     </view>

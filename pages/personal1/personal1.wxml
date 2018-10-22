@@ -1,84 +1,76 @@
 <!--pages/personal1/personal1.wxml-->
 <view class='page'>
   <view class='top'>
-  <view class='top1'>
-    <text class='name'>昵称</text>
-    <text>需要后端</text>
-    <view class='infor'>
-      <view class='sex'>性别：<text>{{sex}}</text></view>
-      <view class='grade'>年级: <text>{{grade}}</text></view>
-      <view class='area'>校区: <text>{{area}}</text></view>
-    </view>
-    <view class='chat' hidden='{{chathidden}}'>
-      <view class='number'>联系方式: <text>{{phoneNumber}}</text></view>
-    </view>
+    <view class='top1'>
+      <text class='name'>昵称</text>
+      <text>{{acc.nickname}}</text>
+      <view class='infor'>
+        <view class='sex'>性别：
+          <block wx:if="{{acc.sex == 1}}">
+            <text>男</text>
+          </block>
+          <block wx:if="{{acc.sex == 2}}">
+            <text>女</text>
+          </block>
+        </view>
+        <view class='grade'>年级:
+          <text>{{acc.year}}</text>
+        </view>
+        <view class='area'>校区:
+          <text>
+          <block wx:if="{{acc.place == 1}}">闵行</block>
+          <block wx:elif="{{acc.place == 2}}">中北</block>
+          </text>
+        </view>
+      </view>
+      <view class='chat' hidden='{{chathidden}}'>
+        <view class='number'>联系方式:
+          <text>{{acc.phone}}</text>
+        </view>
+      </view>
+      <!-- 
     <view class='times'>顺利邀约次数: <text>{{times}}</text></view>
-  
-  </view>
+    -->
+
+    </view>
   </view>
   <view class='commentlist'>
     <view class='comment'>收到的评价</view>
-
-    <view class='detail'>
-      <view class='star_board'>
-        <block wx:if="{{star > 0}}">
-          <image class='star' src='/image/star.png'></image>
-          <image class='star' src='/image/star.png'></image>
-          <image class='star' src='/image/star.png'></image>
-          <image class='star' src='/image/star.png'></image>
-          <image class='star' src='/image/star.png'></image>
-        </block>
+    <view class='comment_none' hidden='{{hasComment}}'>暂无任何评价哦</view>
+    <view wx:for="{{comments}}" wx:for-index="idx" wx:for-item="comment">
+      <view class='detail'>
+        <view class='star_board'>
+          <block wx:if="{{comment.star == 1}}">
+            <image class='star' src='/image/star.png'></image>
+          </block>
+          <block wx:elif="{{comment.star == 2}}">
+            <image class='star' src='/image/star.png'></image>
+            <image class='star' src='/image/star.png'></image>
+          </block>
+          <block wx:elif="{{comment.star == 3}}">
+            <image class='star' src='/image/star.png'></image>
+            <image class='star' src='/image/star.png'></image>
+            <image class='star' src='/image/star.png'></image>
+          </block>
+          <block wx:elif="{{comment.star == 4}}">
+            <image class='star' src='/image/star.png'></image>
+            <image class='star' src='/image/star.png'></image>
+            <image class='star' src='/image/star.png'></image>
+            <image class='star' src='/image/star.png'></image>
+          </block>
+          <block wx:elif="{{comment.star == 5}}">
+            <image class='star' src='/image/star.png'></image>
+            <image class='star' src='/image/star.png'></image>
+            <image class='star' src='/image/star.png'></image>
+            <image class='star' src='/image/star.png'></image>
+            <image class='star' src='/image/star.png'></image>
+          </block>
+        </view>
+        <view class='text'>{{comment.info}}</view>
       </view>
-      <view class='text'>goooooooooooooooooooooooooooooood</view>
+
     </view>
 
-    <view class='detail'>
-      <view class='star_board'>
-        <block wx:if="{{star > 0}}">
-          <image class='star' src='/image/star.png'></image>
-          <image class='star' src='/image/star.png'></image>
-          <image class='star' src='/image/star.png'></image>
-          <image class='star' src='/image/star.png'></image>
-          <image class='star' src='/image/star.png'></image>
-        </block>
-      </view>
-    </view>
-
-    <view class='detail'>
-      <view class='star_board'>
-        <block wx:if="{{star > 0}}">
-          <image class='star' src='/image/star.png'></image>
-          <image class='star' src='/image/star.png'></image>
-          <image class='star' src='/image/star.png'></image>
-          <image class='star' src='/image/star.png'></image>
-          <image class='star' src='/image/star.png'></image>
-        </block>
-      </view>
-    </view>
-
-    <view class='detail'>
-      <view class='star_board'>
-        <block wx:if="{{star > 0}}">
-          <image class='star' src='/image/star.png'></image>
-          <image class='star' src='/image/star.png'></image>
-          <image class='star' src='/image/star.png'></image>
-          <image class='star' src='/image/star.png'></image>
-          <image class='star' src='/image/star.png'></image>
-        </block>
-      </view>
-    </view>
-
-    <view class='detail'>
-      <view class='star_board'>
-        <block wx:if="{{star > 0}}">
-          <image class='star' src='/image/star.png'></image>
-          <image class='star' src='/image/star.png'></image>
-          <image class='star' src='/image/star.png'></image>
-          <image class='star' src='/image/star.png'></image>
-          <image class='star' src='/image/star.png'></image>
-        </block>
-      </view>
-    </view>
 
   </view>
   <view class='back' bindtap='clickBack'>返 回</view>

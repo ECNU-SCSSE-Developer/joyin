@@ -82,6 +82,9 @@ Page({
           success: function (res) {
             if (res.confirm) {
               console.log('用户点击确定')
+              wx.redirectTo({
+                url: '/pages/activity/activity'
+              })
             }
           }
         });
@@ -97,16 +100,64 @@ Page({
     let end_time = endTime;
     let place_type = placeType;
     //console.log(place_type);
-    this.addActivity(name, start_time, end_time, place_type, place, people_num, money, duration, info);
+    if (e.detail.value.name.length == 0) {
+      wx.showModal({
+        content: '邀约主题不能为空！',
+        showCancel: false,
+        confirmColor: "#557d8a",
+        confirmText: "知道啦",
+      });
+    } else if (e.detail.value.place.length == 0) {
+      wx.showModal({
+        content: '邀约地点不能为空！',
+        showCancel: false,
+        confirmColor: "#557d8a",
+        confirmText: "知道啦",
+      });
+    } else if (start_time == 0) {
+      wx.showModal({
+        content: '邀约开始时间不能为空！',
+        showCancel: false,
+        confirmColor: "#557d8a",
+        confirmText: "知道啦",
+      });
+    } else if (end_time == 0) {
+      wx.showModal({
+        content: '邀约结束时间不能为空！',
+        showCancel: false,
+        confirmColor: "#557d8a",
+        confirmText: "知道啦",
+      });
+    } else if (e.detail.value.people_num.length == 0) {
+      wx.showModal({
+        content: '所需人数不能为空！',
+        showCancel: false,
+        confirmColor: "#557d8a",
+        confirmText: "知道啦",
+      });
+    }  else if (e.detail.value.money.length == 0) {
+      wx.showModal({
+        content: '预计人均开销不能为空！',
+        showCancel: false,
+        confirmColor: "#557d8a",
+        confirmText: "知道啦",
+      });
+    } else if (e.detail.value.duration.length == 0) {
+      wx.showModal({
+        content: '预计活动时长不能为空！',
+        showCancel: false,
+        confirmColor: "#557d8a",
+        confirmText: "知道啦",
+      });
+    } else {
+      this.addActivity(name, start_time, end_time, place_type, place, people_num, money, duration, info);
+    }
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    // this.addActivity('狼人杀', '2018-9-27', '2018-9-28', '中北', '华东师范大学中山北路', 6, 2500, 2000, '测试1')
-    // this.addActivity('狼人杀', '2018-9-28', '2018-9-29', '中北', '华东师范大学中山北路', 6, 2500, 2000, '测试2')
-    // this.addActivity('狼人杀', '2018-9-29', '2018-9-30', '中北', '华东师范大学中山北路', 6, 2500, 2000, '测试3')
     //console.log(new Date('2018-9-27').getTime())
   },
 

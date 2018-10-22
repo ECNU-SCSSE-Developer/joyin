@@ -52,7 +52,20 @@ Page({
         phone: phone
       },
       success: function(res) {
-        console.log(res)
+        wx.showModal({//成功发布时弹出的提示框
+          content: '您已成功注册',
+          showCancel: false,
+          confirmColor: "#557d8a",
+          confirmText: "JoyIn",
+          success: function (res) {
+            if (res.confirm) {
+              console.log('用户点击确定')
+              wx.navigateTo({
+                url: '/pages/joyin/joyin'
+              })
+            }
+          }
+        });
       }
     })
   },
@@ -111,11 +124,6 @@ Page({
   onShareAppMessage: function () {
   
   },
-  toSchool: function () {
-    wx.navigateTo({
-      url: '/pages/school/school'
-    })
-  },
 
   bindCasPickerChange: function (e) {
     console.log(e.detail.value);
@@ -145,60 +153,38 @@ Page({
     }
   },
 
-  formSubmit:function(e){
+  formSubmit: function (e) {
     console.log('form发生了submit事件，携带数据为：', e.detail.value);
     let myear = year;
-    let {nickname, sex, place, name, stu_id, phone} = e.detail.value;
+    let { nickname, sex, place, name, stu_id, phone } = e.detail.value;
     console.log(myear);
-    this.addAccount(nickname, myear, sex, place, name, stu_id, phone);
-    /*if(e.detail.value.phone.length==0){
-      wx.showToast({
-        title:'手机号码并不能为空！',
-        icon:'loading',
-        duration:1500
-      })
-      setTimeout(function(){
-        wx.hideToast()
-      },2000)
-    }else if(e.detail.value.phone.length>0&&e.detail.value.phone.length!=11){
-      wx.showToast({
-        title:'请输入11位手机号码!',
-        icon:'loading',
-        duration:1500
-      })
-      setTimeout(function(){
-        wx.hideToast()
-      },2000)
-    } else if (e.detail.value.nickname.length < 4 || e.detail.value.nickname.length>8){
-      wx.showToast({
-        title:'请输入4-8位昵称!',
-        icon:'loading',
-        duration:1500
-      })
-      setTimeout(function(){
-        wx.hideToast()
-      },2000)
-    } else if (!(/^[\u4E00-\u9FA5A-Za-z]+$/.test(e.detail.value.nickname))){
-      wx.showToast({
-        title:'昵称有误!',
-        icon:'loading',
-        duration:1500
-      })
-      setTimeout(function(){
-        wx.hideToast()
-      },2000)
+    if (e.detail.value.phone.length == 0) {
+      wx.showModal({
+        title: '手机号码并不能为空！',
+        showCancel: false,
+        confirmColor: "#557d8a",
+        confirmText: '知道啦',
+      });
+    } else if (e.detail.value.phone.length > 0 && e.detail.value.phone.length != 11) {
+      wx.showModal({
+        title: '请输入11位手机号码!',
+        showCancel: false,
+        confirmColor: "#557d8a",
+        confirmText: '知道啦',
+      });
+
+    } else if (e.detail.value.nickname.length < 4 || e.detail.value.nickname.length > 8) {
+      wx.showModal({
+        title: '请输入4-8位昵称!',
+        showCancel: false,
+        confirmColor: "#557d8a",
+        confirmText: '知道啦',
+      });
+
     }
-    else{
-      this.addAccount({
-        nickname:e.detail.value.nickname,
-        year:e.detail.value.grade,
-        gender:e.detail.value.sex,
-        place:e.detail.value.area,
-        name:e.detail.value.name2,
-        stu_id:e.detail.value.stu_id,
-        phone:e.detail.value.num2,
-      })
-    }*/
+    else {
+      this.addAccount(nickname, myear, sex, place, name, stu_id, phone);
+    }
   },
 //页面跳转
   toastin: function (event) {

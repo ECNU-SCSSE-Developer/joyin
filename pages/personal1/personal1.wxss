@@ -132,3 +132,7 @@
   width: 10%;
   white-space:pre-line;
 }
+
+.comment_none{
+  text-align: center;
+}

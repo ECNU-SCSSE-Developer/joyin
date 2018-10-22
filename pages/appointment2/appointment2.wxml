@@ -69,14 +69,14 @@
     </view>
     <view>
       <view class='item_hd'>
-        <text style='color:red'>★</text>预计人均开销</view>
+        <text style='color:red'>★</text>预计人均开销(元)</view>
       <view class='item_bd'>
         <input name='money' />
       </view>
     </view>
     <view>
       <view class='item_hd'>
-        <text style='color:red'>★</text>预计活动时长</view>
+        <text style='color:red'>★</text>预计活动时长(小时)</view>
       <view class='item_bd'>
         <input name='duration' />
       </view>

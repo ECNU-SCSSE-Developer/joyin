@@ -1,5 +1,4 @@
-/* pages/type3/type3.wxss */
-
+/* pages/type5/type5.wxss */
 .page {
   margin-bottom: 100rpx;
   background-color: #f0f9fa;
@@ -66,7 +65,6 @@
   padding: 20rpx;
   margin: 30rpx auto;
   display: flex;
-  flex-direction: column;
   border-radius: 20rpx;
   box-shadow: 1rpx 1rpx 1rpx 1rpx #aaa;
 }

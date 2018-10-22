@@ -1,12 +1,15 @@
 // pages/appointment3/appointment3.js
+var time = require('../../utils/util.js');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    org:{},
-    dataInfo:{}
+    org: {},
+    dataInfo: {},
+    signClick: false,
+    collectClick: false
   },
 
   // 报名
@@ -19,34 +22,44 @@ Page({
         is_agree: false,
         is_opinion: false,
       },
-      complete: function (res) {
-        console.log(res)
+      complete: function(res) {
+        wx.showToast({
+          title: '已报名',
+          icon: 'success',
+          duration: 1000
+        });
+        //console.log(res)
       },
     })
   },
 
   //收藏
-  addFavorite: function (act_id) {
+  addFavorite: function(act_id) {
     const db = wx.cloud.database()
     db.collection('favorite').add({
       data: {
         act_id: act_id,
       },
-      complete: function (res) {
-        console.log(res)
+      complete: function(res) {
+        wx.showToast({
+          title: '已收藏',
+          icon: 'success',
+          duration: 1000
+        });
+        //console.log(res)
       }
     })
   },
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function(options) {
     var that = this;
     // 把接收到的字符串转换成json对象
     var info = JSON.parse(options.info);
-    //console.log(info);
+    console.log(info);
     that.setData({
-      dataInfo : info
+      dataInfo: info
     });
 
     //请求发布者信息
@@ -55,85 +68,93 @@ Page({
       data: {
         act_id: that.data.dataInfo._id,
       },
-      success: function (res) {
+      success: function(res) {
         //console.info("activityInfo")
-        console.info(res.result)
+        //console.info(res.result)
         that.setData({
-          org : res.result.publisher_info
+          org: res.result.publisher_info
         });
-        console.info(that.data.org)
+        //console.info(that.data.org)
       },
       fail: console.error
     });
   },
 
-  clickOrganizer: function(){
+  clickOrganizer: function() {
+    var info = JSON.stringify(this.data.org._openid);
     wx.navigateTo({
-      url: '/pages/personal1/personal1'
+      url: '/pages/personal1/personal1?info=' + info
     })
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
-  
+  onReady: function() {
+
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
-  
+  onShow: function() {
+
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
-  
+  onHide: function() {
+
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
-  
+  onUnload: function() {
+
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
-  
+  onPullDownRefresh: function() {
+
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
-  
+  onReachBottom: function() {
+
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-  
+  onShareAppMessage: function() {
+
   },
 
-  clickBack: function () {
-    wx.navigateBack({
-    })
+  clickBack: function() {
+    wx.navigateBack({})
   },
 
   //报名按钮，调用addJoin函数
-  signUp: function (){
-    this.addJoin();
+  signUp: function() {
+    var act_id = this.data.dataInfo._id;
+    this.addJoin(act_id);
+    this.setData({
+      signClick: true
+    });
   },
 
   //收藏按钮
-  collect: function(){
-    this.addFavorite();
+  collect: function() {
+    var act_id = this.data.dataInfo._id;
+    this.addFavorite(act_id);
+    this.setData({
+      collectClick: true
+    });
   }
 })

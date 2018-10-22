@@ -142,6 +142,8 @@
   transform: translateY(-50%);
   -webkit-transition: 0.3s;
   transition: 0.3s;
+  display: flex;
+  justify-content: space-between;
 }
 
 .cells_show {
