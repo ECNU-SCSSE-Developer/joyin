@@ -32,28 +32,11 @@ Page({
     console.info(one_2)
   },
 
-  //添加评价  参数act_id活动id，star星星数，info评价文字，publisher_id这个活动发布者id
-  addOpinion: function (act_id, star, info, publisher_id) {
-    const db = wx.cloud.database()
-    db.collection('opinion').add({
-      data: {
-        act_id: act_id,
-        star: star,
-        info: info,
-        publisher_id: publisher_id,
-        time: new Date().getTime()
-      },
-      complete: function (res) {
-        console.log(res)
-      }
-    })
-  },
-
   //点击提交按钮
   formSubmit: function (e) {
     console.log('form发生了submit事件，携带数据为：', e.detail.value);
     let { info } = e.detail.value;
-    this.addOpinion( this.activity._id,this.data.one_2, info, this.activity._openid);
+    this.addOpinion( this.data.activity._id,this.data.one_2, info, this.data.activity._openid);
   },
 
   //添加评价  参数act_id活动id，star星星数，info评价文字，publisher_id这个活动发布者id
@@ -92,7 +75,7 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
-
+    console.info(options.info)
     // 把接收到的字符串转换成json对象
     var info = JSON.parse(options.info);
     console.log(info);
@@ -104,7 +87,7 @@ Page({
     wx.cloud.callFunction({
       name: 'activityInfo',
       data: {
-        act_id: that.data.dataInfo._id,
+        act_id: that.data.activity._id,
       },
       success: function (res) {
         //console.info("activityInfo")
@@ -165,5 +148,10 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+
+  clickBack: function () {
+    wx.navigateBack({
+    })
   }
 })

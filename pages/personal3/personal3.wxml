@@ -18,7 +18,12 @@
   <view class='org_title'>发起人:</view>
   <view class='organizer'>
     <view>
-      <image class='organizer_avatar' src='/image/actDemo.png'></image>
+      <block wx:if="{{org.sex == 1}}">
+        <image class='organizer_avatar' src='/image/boy.png'></image>
+      </block>
+      <block wx:if="{{org.sex == 2}}">
+        <image class='organizer_avatar' src='/image/girl.png'></image>
+      </block>
     </view>
     <view class='org_left'>
       <view style='display:flex'>
@@ -59,4 +64,4 @@
   </form>
 
 </view>
-<view class='back'>返 回</view>
+<view class='back' bindtap='clickBack'>返 回</view>

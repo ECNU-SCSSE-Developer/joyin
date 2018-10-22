@@ -106,9 +106,10 @@ Page({
   //评价按钮
   comment: function () {
     console.info("点击评价按钮");
-    var info = JSON.stringify(this.data.dataInfo._id);
+    var info = JSON.stringify(this.data.dataInfo);
+    console.info(info)
     wx.navigateTo({
-      url: '/pages/personal3/personal3?info' + info,
+      url: '/pages/personal3/personal3?info=' + info,
     })
   }
 })
