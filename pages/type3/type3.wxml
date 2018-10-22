@@ -19,15 +19,15 @@
     </view>
     <view class='item'>
       <view class='item_hd'>活动人数</view>
-      <view>{{dataInfo.people_num}}</view>
+      <view>{{dataInfo.people_num}}人</view>
     </view>
     <view class='item'>
       <view class='item_hd'>预计开销</view>
-      <view>{{dataInfo.money}}</view>
+      <view>{{dataInfo.money}}元</view>
     </view>
     <view class='item'>
       <view class='item_hd'>预计时长</view>
-      <view>{{dataInfo.duration}}</view>
+      <view>{{dataInfo.duration}}小时</view>
     </view>
     <view class='item'>
       <view class='item_hd'>过期时间</view>
@@ -44,7 +44,12 @@
     <view class='organizer'>
       <view style='display: flex'>
         <view>
-          <image class='organizer_avatar' src='/image/actDemo.png'></image>
+          <block wx:if="{{joiner.sex == 1}}">
+            <image class='organizer_avatar' src='/image/boy.png'></image>
+          </block>
+          <block wx:if="{{joiner.sex == 2}}">
+            <image class='organizer_avatar' src='/image/girl.png'></image>
+          </block>
         </view>
         <view class='org_left'>
           <view style='display:flex'>

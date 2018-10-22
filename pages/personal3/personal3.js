@@ -68,7 +68,20 @@ Page({
         time: new Date().getTime()
       },
       complete: function (res) {
-        console.log(res)
+        wx.showModal({//成功发布时弹出的提示框
+          content: '发布成功',
+          showCancel: false,
+          confirmColor: "#557d8a",
+          confirmText: "确定",
+          success: function (res) {
+            if (res.confirm) {
+              console.log('用户点击确定')
+              wx.redirectTo({
+                url: '/pages/activity/activity'
+              })
+            }
+          }
+        });
       }
     })
   },

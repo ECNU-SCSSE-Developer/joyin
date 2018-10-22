@@ -34,6 +34,13 @@ Page({
       .get()
       .then(function(res) {
         //console.info(res.data)
+        //时间戳转化
+        for (var i = 0, len = res.data.length; i < len; i++) {
+          //console.info(time.formatTimeTwo(res.data[i].end_time))
+          res.data[i].start_time = time.formatTimeTwo(res.data[i].start_time)
+          res.data[i].end_time = time.formatTimeTwo(res.data[i].end_time)
+          //console.info(res.data[i].end_time)
+        }
         that.setData({
           waitList: res.data
         });
@@ -49,6 +56,16 @@ Page({
         .get()
         .then(function (res) {
           //console.info(res.data)
+          //时间戳转化
+          for (var i = 0, len = res.data.length; i < len; i++) {
+            //console.info(time.formatTimeTwo(res.data[i].end_time))
+            res.data[i].start_time = time.formatTimeTwo(res.data[i].start_time)
+            res.data[i].end_time = time.formatTimeTwo(res.data[i].end_time)
+            //console.info(res.data[i].end_time)
+            if (res.data[i].info == "") {
+              res.data[i].info = "无";
+            }
+          }
           that.setData({
             waitList: res.data
           });
@@ -106,7 +123,15 @@ Page({
     wx.cloud.callFunction({
       name: 'myActivity',
       success: function (res) {
-        console.log(res.result)
+        //console.log(res.result)
+        //时间戳转化
+        for (var i = 0, len = res.result.length; i < len; i++) {
+          res.result[i].start_time = time.formatTimeTwo(res.result[i].start_time)
+          res.result[i].end_time = time.formatTimeTwo(res.result[i].end_time)
+          if (res.result[i].info == "") {
+            res.result[i].info = "无";
+          }
+        }
         that.setData({
           myList: res.result
         });

@@ -147,6 +147,9 @@ Page({
             res.data[i].start_time = time.formatTimeTwo(res.data[i].start_time)
             res.data[i].end_time = time.formatTimeTwo(res.data[i].end_time)
             //console.info(res.data[i].end_time)
+            if (res.data[i].info == ""){
+              res.data[i].info = "无";
+            }
           }
           that.setData({
             activities: res.data //把返回的数据放在activities中，然后通过activities去渲染页面

@@ -145,8 +145,8 @@ Page({
         act_id: that.data.dataInfo._id,
       },
       success: function(res) {
-        console.info("get join and apply")
-        console.info(res.result)
+        //console.info("get join and apply")
+        //console.info(res.result)
         that.setData({
           joiner: res.result.joiner_info,
           applyer: res.result.applyer_info
