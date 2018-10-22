@@ -75,7 +75,7 @@
 
   <view wx:for="{{applyer}}" wx:for-index="idx" wx:for-item="applyer" bindtap='toInfo' data-name='{{idx}}'>
     <view class='organizer'>
-      <view style='display: flex'>
+      <view style='display: flex;'>
         <view>
           <block wx:if="{{applyer.sex == 1}}">
             <image class='organizer_avatar' src='/image/boy.png'></image>
@@ -94,15 +94,16 @@
               <image class='sex' src='/image/female.png'></image>
             </block>
           </view>
-          <view style='display:flex;font-size:30rpx'>
+          <view style='display:flex;font-size:30rpx;'>
             <view style='margin-right:50rpx'>{{applyer.year}}</view>
             <view>
               <block wx:if="{{applyer.place == 1}}">闵行</block>
               <block wx:elif="{{applyer.place == 2}}">中北</block>
             </view>
           </view>
-          <view style='display: flex'>
+          <view style='display: flex;flex-direction: row;justify-content: space-between;'>
             <button style='background-color: #2f97fc;color:white;box-shadow: 1rpx 1rpx 1rpx 1rpx #aaa;' hover-class='button_hover' catchtap='agree' data-name='{{idx}}'>{{agree}}</button>
+            <view style='margin:0 20rpx'></view>
             <button style='background-color: #ff2366;color:white;box-shadow: 1rpx 1rpx 1rpx 1rpx #aaa;' hover-class='button_hover' catchtap='disagree' data-name='{{idx}}'>{{disagree}}</button>
           </view>
         </view>

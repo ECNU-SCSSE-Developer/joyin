@@ -101,6 +101,7 @@ Page({
       wx.navigateTo({
         url: "../type4/type4?info=" + info
       })
+      
   },
 
   toInfo2: function (e) {
@@ -149,6 +150,13 @@ Page({
           var info = JSON.stringify(that.data.waitList[e.currentTarget.dataset.name]);
           wx.navigateTo({
             url: "../appointment3/appointment3?info=" + info
+          })
+        }
+
+        if (res.result.type == "over") {
+          var info = JSON.stringify(that.data.activities[e.currentTarget.dataset.name]);
+          wx.navigateTo({
+            url: "../type5/type5?info=" + info
           })
         }
 
