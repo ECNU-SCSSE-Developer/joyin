@@ -13,7 +13,8 @@ Page({
     times:"10",
     openid:0,
     acc:{},
-    comments:{}
+    comments:{},
+    hasComment: false,
   },
 
   clickBack: function () {
@@ -95,9 +96,12 @@ Page({
       success: function (res) {
         //console.info("comments")
         //console.info(res.result)
-        that.setData({
-          comments: res.result
-        });
+        if (res.result.length != 0){
+          that.setData({
+            hasComment: true,
+            comments: res.result
+          })
+        }
       },
       fail: console.error
     });

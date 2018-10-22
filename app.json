@@ -1,18 +1,18 @@
 {
   "cloud": true,
   "pages": [
-
-    "pages/appointment2/appointment2",
     "pages/mine/mine",
+    "pages/welcome/welcome",
+    "pages/appointment2/appointment2",
     "pages/type1/type1",
     "pages/type2/type2",
     "pages/type3/type3",
     "pages/type4/type4",
+    "pages/type5/type5",
     "pages/register/register",
     "pages/activity/activity",
     "pages/appointment3/appointment3",
     "pages/joyin/joyin",
-    "pages/welcome/welcome",
     "pages/personal4/personal4",
     "pages/calendar/calendar",
     "pages/personal3/personal3",

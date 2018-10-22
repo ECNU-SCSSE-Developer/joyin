@@ -28,7 +28,7 @@ Page({
           icon: 'success',
           duration: 1000
         });
-        console.log(res)
+        //console.log(res)
       },
     })
   },
@@ -46,7 +46,7 @@ Page({
           icon: 'success',
           duration: 1000
         });
-        console.log(res)
+        //console.log(res)
       }
     })
   },
@@ -70,7 +70,7 @@ Page({
       },
       success: function(res) {
         //console.info("activityInfo")
-        console.info(res.result)
+        //console.info(res.result)
         that.setData({
           org: res.result.publisher_info
         });

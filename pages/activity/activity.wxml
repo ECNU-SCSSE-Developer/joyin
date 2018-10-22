@@ -50,8 +50,8 @@
       </view>
       <view style='height:100%;display:flex;flex-direction: column;justify-content:space-between'>
         <view style='height:100%;display:flex;flex-direction: row;'>
-          <view class='item_type' hidden="true">已收藏</view>
-          <view class="triangle_border_left" hidden="true">
+          <view class='item_type' hidden='true'>{{activity.type}}</view>
+          <view class="triangle_border_left" hidden='true'>
           </view>
         </view>
         <view class='item_date'>{{activity.end_time}}</view>

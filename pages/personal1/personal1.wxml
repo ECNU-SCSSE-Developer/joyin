@@ -36,7 +36,7 @@
   </view>
   <view class='commentlist'>
     <view class='comment'>收到的评价</view>
-
+    <view class='comment_none' hidden='{{hasComment}}'>暂无任何评价哦</view>
     <view wx:for="{{comments}}" wx:for-index="idx" wx:for-item="comment">
       <view class='detail'>
         <view class='star_board'>
