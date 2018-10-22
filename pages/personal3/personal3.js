@@ -41,7 +41,13 @@ Page({
 
   //添加评价  参数act_id活动id，star星星数，info评价文字，publisher_id这个活动发布者id
   addOpinion: function (act_id, star, info, publisher_id) {
-    const db = wx.cloud.database()
+    wx.cloud.callFunction({
+      name: 'setOpinion',
+      data: {
+        act_id: act_id
+      }
+    });
+    const db = wx.cloud.database();
     db.collection('opinion').add({
       data: {
         act_id: act_id,

@@ -1,8 +1,8 @@
 {
   "cloud": true,
   "pages": [
-    "pages/mine/mine",
     "pages/welcome/welcome",
+    "pages/mine/mine",
     "pages/appointment2/appointment2",
     "pages/type1/type1",
     "pages/type2/type2",
