@@ -147,3 +147,8 @@
   background: #f0f9fa;
   padding: 0 20px;
 }
+
+.bottom_block{
+  height: 100rpx;
+  background-color: #f0f9fa;
+}

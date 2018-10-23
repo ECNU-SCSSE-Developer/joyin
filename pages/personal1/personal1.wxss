@@ -14,7 +14,7 @@
   z-index: -1;
 }
 
-.top1{
+.top1 {
   width: 80%;
   border-radius: 20rpx;
   background-color: white;
@@ -40,7 +40,7 @@
   color: #557d8a;
 }
 
-.sex text{
+.sex text {
   color: black;
 }
 
@@ -49,7 +49,7 @@
   color: #557d8a;
 }
 
-.grade text{
+.grade text {
   color: black;
 }
 
@@ -58,7 +58,7 @@
   color: #557d8a;
 }
 
-.area text{
+.area text {
   color: black;
 }
 
@@ -67,7 +67,7 @@
   color: #557d8a;
 }
 
-.number text{
+.number text {
   color: black;
 }
 
@@ -76,7 +76,7 @@
   color: #557d8a;
 }
 
-.times text{
+.times text {
   color: black;
 }
 
@@ -129,10 +129,16 @@
 
 .text {
   margin: 0 20rpx;
-  width: 10%;
-  white-space:pre-line;
+  white-space: pre-line;
+  width: 95%;
+  word-break: break-all;
 }
 
-.comment_none{
+.comment_none {
   text-align: center;
+}
+
+.bottom_block{
+  height: 100rpx;
+  background-color: #f0f9fa;
 }

@@ -20,9 +20,9 @@
         </view>
         <view class="weui-cell__bd">
           <view class="row-wrap">
-            <picker bindchange="bindCasPickerChange" value="{{casIndex1}}" range="{{casArray}}">
+            <picker bindchange="bindCasPickerChange" value="{{casIndex}}" range="{{casArray}}">
               <view>
-                <text>{{casArray[casIndex]}}</text>
+                <text style='color:grey'>{{casArray[casIndex]}}</text>
               </view>
             </picker>
           </view>
@@ -37,7 +37,7 @@
         <view class="weui-cell__bd">
           <radio-group name="sex">
             <label class="weui-input">
-              <radio value="1" />男</label>
+              <radio value="1" checked='true'/>男</label>
             <label>
               <radio value="2" style='margin-right:30rpx' />女</label>
           </radio-group>
@@ -51,7 +51,7 @@
         <view class="weui-cell__bd">
           <radio-group name="place">
             <label class="weui-input">
-              <radio value="2" />中北</label>
+              <radio value="2"  checked='true'/>中北</label>
             <label>
               <radio value="1" />闵行</label>
           </radio-group>
@@ -92,10 +92,13 @@
           <view class="weui-cell__hd">
             <view class="weui-label_pic">校园卡信息页清晰照</view>
           </view>
-          <view class="weui-uploader__input-box">
-
+          <block wx:for="{{files}}" wx:key="*this">
+            <view class="weui-uploader__file" bindtap="previewImage" id="{{item}}">
+              <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
+            </view>
+          </block>
+          <view class="weui-uploader__input-box" hidden='{{hasImg}}'>
             <view class="weui-uploader__input" bindtap="chooseImage"></view>
-
           </view>
         </view>
       </view>

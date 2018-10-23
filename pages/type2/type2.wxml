@@ -70,5 +70,6 @@
   <view style='display:flex;justify-content:space-between'>
     <button class='left_button' hover-class='button_hover' bindtap='cancel' disabled='true'>已 报 名</button>
   </view>
+  <view class='bottom_block'></view>
   <view class='back' hover-class='button_hover' bindtap='clickBack'>返 回</view>
 </view>

@@ -58,10 +58,11 @@
 
   <form bindsubmit="formSubmit" bindreset="formReset">
     <view class='comment'>
-      <input name="info" placeholder='说点什么吧' style="word-break: break-all"></input>
+      <textarea name="info" placeholder='说点什么吧' style='width:100%'/>
     </view>
     <button class="button" form-type="submit">提 交</button>
   </form>
 
 </view>
+<view class='bottom_block'></view>
 <view class='back' bindtap='clickBack'>返 回</view>

@@ -1,14 +1,15 @@
 // pages/appointment1/appointment1.js
 var startTime='';
 var endTime='';
-var placeType='';
+var placeType='中北';
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    area:["中北","闵行","校外"],
+    casArray:["中北","闵行","校外"],
+    casIndex: 0,
     isAgree:false
   },
   showProtocol: function () {
@@ -41,15 +42,24 @@ Page({
       fEndTime: e.detail.value 
     })
   },
-  bindTypeChange: function (e) {
+  bindCasPickerChange: function (e) {
     if (e.detail.value == 0) {
       placeType = "中北";
+      this.setData({
+        casIndex: 0
+      })
     }
-    if(e.detail.value==1){
+    if (e.detail.value == 1) {
       placeType = "闵行";
+      this.setData({
+        casIndex: 1
+      })
     }
     if (e.detail.value == 2) {
       placeType = "校外";
+      this.setData({
+        casIndex: 2
+      })
     }
   },
   clickBack: function(){
@@ -100,16 +110,16 @@ Page({
     let end_time = endTime;
     let place_type = placeType;
     //console.log(place_type);
-    if (e.detail.value.name.length == 0) {
+    if ( this.data.isAgree == false) {
       wx.showModal({
-        content: '邀约主题不能为空！',
+        content: '要先阅读填写须知哦！',
         showCancel: false,
         confirmColor: "#557d8a",
         confirmText: "知道啦",
       });
-    } else if (e.detail.value.place.length == 0) {
+    } else if (e.detail.value.name.length == 0) {
       wx.showModal({
-        content: '邀约地点不能为空！',
+        content: '邀约主题不能为空！',
         showCancel: false,
         confirmColor: "#557d8a",
         confirmText: "知道啦",
@@ -124,6 +134,13 @@ Page({
     } else if (end_time == 0) {
       wx.showModal({
         content: '邀约结束时间不能为空！',
+        showCancel: false,
+        confirmColor: "#557d8a",
+        confirmText: "知道啦",
+      });
+    } else if (e.detail.value.place.length == 0) {
+      wx.showModal({
+        content: '邀约地点不能为空！',
         showCancel: false,
         confirmColor: "#557d8a",
         confirmText: "知道啦",

@@ -68,10 +68,8 @@
         </view>
         <view class='text'>{{comment.info}}</view>
       </view>
-
     </view>
-
-
   </view>
+  <view class='bottom_block'></view>
   <view class='back' bindtap='clickBack'>返 回</view>
 </view>

@@ -46,7 +46,7 @@
         <view class='item_title'>
           {{activity.name}}
         </view>
-        <view class='item_place'>{{activity.place}}</view>
+        <view class='item_place'>{{activity.place_type}}</view>
       </view>
       <view style='height:100%;display:flex;flex-direction: column;justify-content:space-between'>
         <view style='height:100%;display:flex;flex-direction: row;'>

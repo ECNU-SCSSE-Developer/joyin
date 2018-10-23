@@ -69,5 +69,6 @@
   <view style='display:flex;justify-content:space-between'>
     <view class='left_button' hover-class='button_hover' bindtap='comment'>评 价</view>
   </view>
+  <view class='bottom_block'></view>
   <view class='back' hover-class='button_hover' bindtap='clickBack'>返 回</view>
 </view>
