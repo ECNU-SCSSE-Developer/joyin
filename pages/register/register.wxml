@@ -112,4 +112,5 @@
       <button form-type="submit">注 册</button>
     </view>
   </form>
+  <view class='bottom_block'></view>
 </view>

@@ -188,3 +188,7 @@
   font-size: 20rpx;
   color: #557d8a;
 }
+
+.bottom_block{
+  height: 100rpx;
+}

@@ -109,3 +109,7 @@
   width: 100%;
   background-color: #f0f9fa;
 }
+
+.bottom_block{
+  height: 100rpx;
+}

@@ -102,6 +102,7 @@
       <view class='line'></view>
     </view>
   </view>
+  <view class='bottom_block'></view>
   <view>
     <template is="tabBar" data="{{tabBar:bindData.tabBar}}" />
   </view>

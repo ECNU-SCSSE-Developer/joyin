@@ -140,5 +140,5 @@
 
 .bottom_block{
   height: 100rpx;
-  background-color: #f0f9fa;
+  background-color: white;
 }

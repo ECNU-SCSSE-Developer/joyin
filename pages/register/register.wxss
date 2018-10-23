@@ -100,3 +100,8 @@ radio-group {
 .weui-cell_input{
   text-align: center;
 }
+
+.bottom_block{
+  height: 100rpx;
+  background-color: #f0f9fa;
+}

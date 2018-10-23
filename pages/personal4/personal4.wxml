@@ -45,4 +45,6 @@
 
   <view style='backgroud:#f0f9fa;height:1rpx;'></view>
 </view>
+
+<view class='bottom_block'></view>
 <view class='back' hover-class='button_hover'>返 回</view>

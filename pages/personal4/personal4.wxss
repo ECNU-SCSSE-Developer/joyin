@@ -199,3 +199,8 @@
   border-right: 26px solid #7bd6ef;
   border-bottom: 13px solid transparent;
 }
+
+.bottom_block{
+  height: 100rpx;
+  background-color: #f0f9fa;
+}

@@ -104,9 +104,8 @@
       <text style='height: 100rpx;line-height:100rpx;'>关于酌盈</text>
     </view>
   </view>
-
-
 </view>
+<view class='bottom_block'></view>
 <view>
   <template is="tabBar" data="{{tabBar:bindData.tabBar}}" />
 </view>

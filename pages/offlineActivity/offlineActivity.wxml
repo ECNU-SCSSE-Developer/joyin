@@ -9,4 +9,5 @@
   <view class='right_button' hover-class='button_hover'>收 藏</view>
 </view>
 </view>
+<view class='bottom_block'></view>
 <view class='back' hover-class='button_hover'>返 回</view>

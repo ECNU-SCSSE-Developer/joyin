@@ -160,3 +160,7 @@
   font-size: 20rpx;
   color: #7bd6ef;
 }
+
+.bottom_block{
+  height: 100rpx;
+}
