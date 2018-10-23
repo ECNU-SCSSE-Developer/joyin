@@ -154,7 +154,7 @@ Page({
         }
 
         if (res.result.type == "over") {
-          var info = JSON.stringify(that.data.activities[e.currentTarget.dataset.name]);
+          var info = JSON.stringify(that.data.waitList[e.currentTarget.dataset.name]);
           wx.navigateTo({
             url: "../type5/type5?info=" + info
           })
