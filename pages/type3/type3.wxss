@@ -25,7 +25,6 @@
 }
 
 .left_button {
-  width: 100%;
   background-color: #7bd6ef;
   color: white;
   text-align: center;
@@ -71,6 +70,17 @@
   box-shadow: 1rpx 1rpx 1rpx 1rpx #aaa;
 }
 
+.joiner{
+  background-color: whitesmoke;
+  width: 70%;
+  padding: 20rpx;
+  margin: 30rpx auto;
+  display: flex;
+  height: 260rpx;
+  flex-direction: column;
+  border-radius: 20rpx;
+  box-shadow: 1rpx 1rpx 1rpx 1rpx #aaa;
+}
 .organizer_avatar {
   width: 128rpx;
   height: 128rpx;

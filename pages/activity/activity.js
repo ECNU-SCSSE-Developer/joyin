@@ -34,6 +34,7 @@ Page({
 
         if (res.result.type == "favoriter") {
           var info = JSON.stringify(that.data.activities[e.currentTarget.dataset.name]);
+          console.info("to favorite")
           wx.navigateTo({
             url: "../type1/type1?info=" + info
           })
@@ -62,6 +63,7 @@ Page({
 
         if (res.result.type == "stranger") {
           var info = JSON.stringify(that.data.activities[e.currentTarget.dataset.name]);
+          console.info("to stranger")
           wx.navigateTo({
             url: "../appointment3/appointment3?info=" + info
           })

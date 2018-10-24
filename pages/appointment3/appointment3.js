@@ -46,7 +46,7 @@ Page({
           icon: 'success',
           duration: 1000
         });
-        //console.log(res)
+        console.log(res)
       }
     })
   },

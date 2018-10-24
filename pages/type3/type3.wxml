@@ -42,7 +42,7 @@
 
   <view wx:for="{{joiner}}" wx:for-index="idx" wx:for-item="joiner" bindtap='toInfo' data-name='{{idx}}'>
     <view class='organizer'>
-      <view style='display: flex'>
+      <view style='display: flex;height:100%'>
         <view>
           <block wx:if="{{joiner.sex == 1}}">
             <image class='organizer_avatar' src='/image/boy.png'></image>
@@ -74,7 +74,7 @@
   </view>
 
   <view wx:for="{{applyer}}" wx:for-index="idx" wx:for-item="applyer" bindtap='toInfo' data-name='{{idx}}'>
-    <view class='organizer'>
+    <view class='joiner'>
       <view style='display: flex;'>
         <view>
           <block wx:if="{{applyer.sex == 1}}">
@@ -101,18 +101,18 @@
               <block wx:elif="{{applyer.place == 2}}">中北</block>
             </view>
           </view>
-          <view style='display: flex;flex-direction: row;justify-content: space-between;'>
-            <button style='background-color: #2f97fc;color:white;box-shadow: 1rpx 1rpx 1rpx 1rpx #aaa;' hover-class='button_hover' catchtap='agree' data-name='{{idx}}'>{{agree}}</button>
-            <view style='margin:0 20rpx'></view>
-            <button style='background-color: #ff2366;color:white;box-shadow: 1rpx 1rpx 1rpx 1rpx #aaa;' hover-class='button_hover' catchtap='disagree' data-name='{{idx}}'>{{disagree}}</button>
+          <view style='hight:100rpx;display: flex;flex-direction: row;justify-content: space-between;'>
+            <button style='hight:100rpx;background-color: #2f97fc;color:white;' hover-class='button_hover' catchtap='agree' data-name='{{idx}}'>{{agree}}</button>
+            <view style='hight:100rpx;margin:0 20rpx'></view>
+            <button style='hight:100rpx;background-color: #ff2366;color:white;' hover-class='button_hover' catchtap='disagree' data-name='{{idx}}'>{{disagree}}</button>
           </view>
         </view>
       </view>
     </view>
   </view>
-  <view style='display:flex;justify-content:space-between'>
+  
     <button class='left_button' hover-class='button_hover' bindtap='cancel' disabled='true'>已 发 布</button>
-  </view>
+  
   <view class='bottom_block'></view>
   <view class='back' hover-class='button_hover' bindtap='clickBack'>返 回</view>
 </view>
