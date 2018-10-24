@@ -112,3 +112,10 @@
   height: 100rpx;
   background-color: #f0f9fa;
 }
+
+.agree_and_disagree{
+  height:100rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
