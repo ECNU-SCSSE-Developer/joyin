@@ -67,17 +67,16 @@ exports.main = async (event, context) => {
         }
       } else if (user_type.is_reply == false && user_type.is_agree == false) {
         act_info.type = "applyer";  //是报名者
-      } else {
-        var is_favorite = (await db.collection('favorite').where({
-          _openid: openId,
-          act_id: act_id
-        }).count()).total;
-        if (is_favorite > 0) {
-          act_info.type = "favoriter";  //是已收藏者
-        }
+      }
+    }else{
+      var is_favorite = (await db.collection('favorite').where({
+        _openid: openId,
+        act_id: act_id
+      }).count()).total;
+      if (is_favorite > 0) {
+        act_info.type = "favoriter";  //是已收藏者
       }
     }
-    
     
     const publisher_info = (await db.collection('account').where({
       _openid: act_info._openid
