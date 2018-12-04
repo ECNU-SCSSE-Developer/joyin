@@ -37,6 +37,7 @@
 }
 
 .item_bd{
+  height: 60rpx;
   width: 60%;
   padding: 10rpx;
   border-radius: 10rpx;
