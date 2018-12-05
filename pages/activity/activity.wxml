@@ -29,8 +29,11 @@
 
       <view class="area_box">
         <view class="type_select" hidden="{{selectTypeH}}">
-          <view class="select_one" bindtap="selectType" data-me="狼人杀">狼人杀</view>
-          <view class="select_one" bindtap="selectType" data-me="三国杀">三国杀</view>
+          <view class="select_one" bindtap="selectType" data-me="0">学习</view>
+          <view class="select_one" bindtap="selectType" data-me="1">娱乐</view>
+          <view class="select_one" bindtap="selectType" data-me="2">出游</view>
+          <view class="select_one" bindtap="selectType" data-me="3">竞赛组队</view>
+          <view class="select_one" bindtap="selectType" data-me="4">其他</view>
         </view>
       </view>
     </view>

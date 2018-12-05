@@ -16,6 +16,10 @@
       <view>{{dataInfo.place_type}}</view>
     </view>
     <view class='item'>
+      <view class='item_hd'>活动类型</view>
+      <view>{{dataInfo.activity_type}}</view>
+    </view>
+    <view class='item'>
       <view class='item_hd'>活动地点</view>
       <view style='width: 95%;word-break: break-all;'>{{dataInfo.place}}</view>
     </view>

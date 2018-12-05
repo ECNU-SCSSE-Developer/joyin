@@ -6,7 +6,8 @@ Page({
    */
   data: {
     org: {},
-    dataInfo: {}
+    dataInfo: {},
+    status: "已 报 名",
   },
 
   //点击进入发布者详情

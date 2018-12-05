@@ -14,6 +14,10 @@
       <view>{{dataInfo.place_type}}</view>
     </view>
     <view class='item'>
+      <view class='item_hd'>活动类型</view>
+      <view>{{dataInfo.activity_type}}</view>
+    </view>
+    <view class='item'>
       <view class='item_hd'>活动地点</view>
       <view style='width: 95%;word-break: break-all;'>{{dataInfo.place}}</view>
     </view>
@@ -101,10 +105,10 @@
               <block wx:elif="{{applyer.place == 2}}">中北</block>
             </view>
           </view>
-          <view style='hight:100rpx;display: flex;flex-direction: row;justify-content: space-between;'>
-            <button style='hight:100rpx;background-color: #2f97fc;color:white;' hover-class='button_hover' catchtap='agree' data-name='{{idx}}'>{{agree}}</button>
-            <view style='hight:100rpx;margin:0 20rpx'></view>
-            <button style='hight:100rpx;background-color: #ff2366;color:white;' hover-class='button_hover' catchtap='disagree' data-name='{{idx}}'>{{disagree}}</button>
+          <view class='agree_and_disagree'>
+            <button style='width:150rpx;height:90rpx;background-color: #2f97fc;color:white;' hover-class='button_hover' catchtap='agree' data-name='{{idx}}'>{{agree}}</button>
+            <view style='height:90rpx;margin:0 20rpx'></view>
+            <button style='width:150rpx;height:90rpx;background-color: #ff2366;color:white;' hover-class='button_hover' catchtap='disagree' data-name='{{idx}}'>{{disagree}}</button>
           </view>
         </view>
       </view>

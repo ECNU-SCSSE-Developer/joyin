@@ -1,48 +1,51 @@
 // pages/appointment1/appointment1.js
-var startTime='';
-var endTime='';
-var placeType='中北';
+var startTime = '';
+var endTime = '';
+var placeType = '中北';
+var activityType = "学习";
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    casArray:["中北","闵行","校外"],
+    casArray: ["中北", "闵行", "校外"],
     casIndex: 0,
-    isAgree:false
+    actTypeArray: ["学习", "娱乐", "出游", "竞赛组队", "其他"],
+    actIndex: 0,
+    isAgree: false
   },
-  showProtocol: function () {
+  showProtocol: function() {
     wx.showModal({
       content: 'xxx规定',
       showCancel: false,
       confirmColor: "#557d8a",
       confirmText: "知道啦",
-      success: function (res) {
+      success: function(res) {
         if (res.confirm) {
           console.log('用户点击确定')
         }
       }
     });
   },
-  bindAgreeChange: function (e) {
+  bindAgreeChange: function(e) {
     this.setData({
       isAgree: !!e.detail.value.length
     });
   },
-  bindStartTimeChange: function (e) {
+  bindStartTimeChange: function(e) {
     startTime = e.detail.value;
     this.setData({
       fStartTime: e.detail.value
     })
   },
-  bindEndTimeChange: function (e) {
+  bindEndTimeChange: function(e) {
     endTime = e.detail.value;
     this.setData({
-      fEndTime: e.detail.value 
+      fEndTime: e.detail.value
     })
   },
-  bindCasPickerChange: function (e) {
+  bindCasPickerChange: function(e) {
     if (e.detail.value == 0) {
       placeType = "中北";
       this.setData({
@@ -62,13 +65,44 @@ Page({
       })
     }
   },
-  clickBack: function(){
-    wx.navigateBack({
-    })
+  bindActTypePickerChange: function(e) {
+    if (e.detail.value == 0) {
+      placeType = "学习";
+      this.setData({
+        actIndex: 0
+      })
+    }
+    if (e.detail.value == 1) {
+      placeType = "娱乐";
+      this.setData({
+        actIndex: 1
+      })
+    }
+    if (e.detail.value == 2) {
+      placeType = "出游";
+      this.setData({
+        actIndex: 2
+      })
+    }
+    if (e.detail.value == 3) {
+      placeType = "竞赛组队";
+      this.setData({
+        actIndex: 2
+      })
+    }
+    if (e.detail.value == 4) {
+      placeType = "其他";
+      this.setData({
+        actIndex: 2
+      })
+    }
+  },
+  clickBack: function() {
+    wx.navigateBack({})
   },
 
   // 在数据库中添加活动
-  addActivity: function (name, start_time, end_time, place_type, place, people_num, money, duration, info) {
+  addActivity: function(name, start_time, end_time, place_type, activity_type, place, people_num, money, duration, info) {
     const db = wx.cloud.database()
     db.collection('activity').add({
       data: {
@@ -76,20 +110,21 @@ Page({
         start_time: new Date(start_time).getTime(),
         end_time: new Date(end_time).getTime(),
         place_type: place_type,
+        activity_type: activity_type,
         place: place,
         people_num: people_num,
         money: money,
         duration: duration,
         info: info
       },
-      complete: function (res) {
+      complete: function(res) {
         console.log(res)
-        wx.showModal({//成功发布时弹出的提示框
+        wx.showModal({ //成功发布时弹出的提示框
           content: '发布成功',
           showCancel: false,
           confirmColor: "#557d8a",
           confirmText: "确定",
-          success: function (res) {
+          success: function(res) {
             if (res.confirm) {
               console.log('用户点击确定')
               wx.redirectTo({
@@ -103,14 +138,22 @@ Page({
   },
 
   //表单提交时触发的函数，调用addActivity函数
-  formSubmit: function (e) {
+  formSubmit: function(e) {
     //console.log('form发生了submit事件，携带数据为：', e.detail.value);
-    let { name, place, people_num, money, duration, info } = e.detail.value;
+    let {
+      name,
+      place,
+      people_num,
+      money,
+      duration,
+      info
+    } = e.detail.value;
     let start_time = startTime;
     let end_time = endTime;
     let place_type = placeType;
+    let activity_type = activityType;
     //console.log(place_type);
-    if ( this.data.isAgree == false) {
+    if (this.data.isAgree == false) {
       wx.showModal({
         content: '要先阅读填写须知哦！',
         showCancel: false,
@@ -152,7 +195,7 @@ Page({
         confirmColor: "#557d8a",
         confirmText: "知道啦",
       });
-    }  else if (e.detail.value.money.length == 0) {
+    } else if (e.detail.value.money.length == 0) {
       wx.showModal({
         content: '预计人均开销不能为空！',
         showCancel: false,
@@ -167,7 +210,7 @@ Page({
         confirmText: "知道啦",
       });
     } else {
-      this.addActivity(name, start_time, end_time, place_type, place, people_num, money, duration, info);
+      this.addActivity(name, start_time, end_time, place_type, activity_type, place, people_num, money, duration, info);
     }
   },
 
@@ -181,7 +224,7 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
+  onReady: function() {
 
   },
 
