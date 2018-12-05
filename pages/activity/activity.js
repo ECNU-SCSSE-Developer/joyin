@@ -76,6 +76,13 @@ Page({
           })
         }
 
+        if (res.result.type == "banner") {
+          var info = JSON.stringify(that.data.activities[e.currentTarget.dataset.name]);
+          wx.navigateTo({
+            url: "../type6/type6?info=" + info
+          })
+        }
+
       },
       fail: console.error
     });
@@ -98,7 +105,10 @@ Page({
 
   //点击切换
   selectArea: function(e) {
+    const place_type = e.target.dataset.me;
+    this.getActivities(0, place_type, null);
     this.setData({
+      activityType: '活动类型',
       area: e.target.dataset.me,
       selectAreaH: true,
       areaList: false,
@@ -122,7 +132,10 @@ Page({
 
   //点击切换
   selectType: function(e) {
+    const act_type = e.target.dataset.me
+    this.getActivities(0, null, act_type);
     this.setData({
+      area: '地点',
       activityType: e.target.dataset.me,
       selectTypeH: true,
       typeList: false,
@@ -137,52 +150,53 @@ Page({
   },
 
   //获取活动信息
-  getActivities: function(last_date) {
+  getActivities: function(last_date, place_type, act_type) {
     var that = this;
-
     const db = wx.cloud.database();
     const _ = db.command;
-    if (last_date == 0) {
-      db.collection('activity').where({
-          end_time: _.gt(new Date().getTime())
-        }).orderBy('end_time', 'asc')
-        .limit(10)
-        .get()
-        .then(function(res) {
-          //console.info(res.data);
-          //时间戳转化
-          for (var i = 0, len = res.data.length; i < len; i++) {
-            //console.info(time.formatTimeTwo(res.data[i].end_time))
-            res.data[i].start_time = time.formatTimeTwo(res.data[i].start_time)
-            res.data[i].end_time = time.formatTimeTwo(res.data[i].end_time)
-            //console.info(res.data[i].end_time)
-            if (res.data[i].info == ""){
-              res.data[i].info = "无";
-            }
-          }
-          that.setData({
-            activities: res.data //把返回的数据放在activities中，然后通过activities去渲染页面
-          });
-        })
-        .catch(function(err) {
-          console.error(err);
-        });
-    } else {
-      db.collection('activity').where({
-          end_time: _.gt(last_date)
-        }).orderBy('end_time', 'asc')
-        .limit(10)
-        .get()
-        .then(function(res) {
-          //console.log(res.data);
-          that.setData({
-            activities: res.data //把返回的数据放在activities中，然后通过activities去渲染页面
-          });
-        })
-        .catch(function(err) {
-          console.error(err);
-        });
+
+    var getRequest = db.collection('activity').orderBy('end_time', 'asc');
+    if(place_type != null) {
+      getRequest = getRequest.where({
+        place_type: place_type
+      });
     }
+    if(act_type != null) {
+      getRequest = getRequest.where({
+        activity_type: act_type
+      });
+    }
+    if(last_date == 0) {
+      getRequest = getRequest.where({
+        end_time: _.gt(new Date().getTime())
+      });
+    } else {
+      getRequest = getRequest.where({
+        end_time: _.gt(last_date)
+      });
+    }
+    getRequest.get().then(function(res) {
+      that.handleData(res.data);
+    }).catch(function(err) {
+      console.error(err);
+      return 1;
+    })
+    
+
+  },
+
+  //数据处理
+  handleData: function(data) {
+    for (var i = 0, len = data.length; i < len; i++) {
+      data[i].start_time = time.formatTimeTwo(data[i].start_time)
+      data[i].end_time = time.formatTimeTwo(data[i].end_time)
+      if (data[i].info == "") {
+        data[i].info = "无";
+      }
+    }
+    this.setData({
+      activities: data
+    });
   },
 
   /**
@@ -190,7 +204,7 @@ Page({
    */
   onLoad: function(options) {
     template.tabbar("tabBar", 1, this);
-    this.getActivities(0);
+    this.getActivities(0, null, null);
 
   },
 

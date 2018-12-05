@@ -13,7 +13,6 @@ exports.main = async (event, context) => {
 
   const applyed = await db.collection('join').where({
     _openid: openId,
-    is_reply: false,
     is_agree: false,
     is_opinion: false
   });

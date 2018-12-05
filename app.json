@@ -19,7 +19,8 @@
     "pages/offlineActivity/offlineActivity",
     "pages/personal1/personal1",
     "pages/login/login",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/type6/type6"
   ],
   "window": {
     "backgroundTextStyle": "light",

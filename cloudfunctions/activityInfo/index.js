@@ -67,6 +67,8 @@ exports.main = async (event, context) => {
         }
       } else if (user_type.is_reply == false && user_type.is_agree == false) {
         act_info.type = "applyer";  //是报名者
+      } else if (user_type.is_reply == true && user_type.is_agree == false) {
+        act_info.type = "banner";   //被拒绝了
       }
     }else{
       var is_favorite = (await db.collection('favorite').where({

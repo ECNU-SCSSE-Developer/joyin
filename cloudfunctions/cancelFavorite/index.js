@@ -11,7 +11,7 @@ exports.main = async (event, context) => {
   var act_id = event.act_id;
 
   
-  db.collection('favorite').where({
+  await db.collection('favorite').where({
     _openid: openId,
     act_id: act_id
   }).remove(); 

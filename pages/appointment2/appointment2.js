@@ -67,33 +67,33 @@ Page({
   },
   bindActTypePickerChange: function(e) {
     if (e.detail.value == 0) {
-      placeType = "学习";
+      activityType = "学习";
       this.setData({
         actIndex: 0
       })
     }
     if (e.detail.value == 1) {
-      placeType = "娱乐";
+      activityType = "娱乐";
       this.setData({
         actIndex: 1
       })
     }
     if (e.detail.value == 2) {
-      placeType = "出游";
+      activityType = "出游";
       this.setData({
         actIndex: 2
       })
     }
     if (e.detail.value == 3) {
-      placeType = "竞赛组队";
+      activityType = "竞赛组队";
       this.setData({
-        actIndex: 2
+        actIndex: 3
       })
     }
     if (e.detail.value == 4) {
-      placeType = "其他";
+      activityType = "其他";
       this.setData({
-        actIndex: 2
+        actIndex: 4
       })
     }
   },

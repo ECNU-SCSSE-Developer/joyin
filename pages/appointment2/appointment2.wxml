@@ -49,7 +49,7 @@
       <view class='item_hd'>
         <text style='color:red'>★</text>邀约类型
       </view>
-      <view class='item_bd' style='width:20%'>
+      <view class='item_bd' style='width:30%'>
           <view class="weui-cell__bd">
             <view class="row-wrap">
               <picker bindchange="bindActTypePickerChange" value="{{actIndex}}" range="{{actTypeArray}}">

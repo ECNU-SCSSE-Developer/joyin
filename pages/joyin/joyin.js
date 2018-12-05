@@ -160,6 +160,13 @@ Page({
           })
         }
 
+        if (res.result.type == "banner") {
+          var info = JSON.stringify(that.data.waitList[e.currentTarget.dataset.name]);
+          wx.navigateTo({
+            url: "../type6/type6?info=" + info
+          })
+        }
+
       },
       fail: console.error
     });
