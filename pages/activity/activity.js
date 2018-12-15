@@ -168,7 +168,7 @@ Page({
     }
     if(last_date == 0) {
       getRequest = getRequest.where({
-        end_time: _.gt(new Date().getTime())
+        end_time: _.gt(new Date().getTime()-1000*60*60*24)
       });
     } else {
       getRequest = getRequest.where({

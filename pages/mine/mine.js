@@ -327,15 +327,17 @@ Page({
   },
   conn: function(){
     wx.showModal({
-      content: '这是酌盈的联系方式',
+      content: '非常抱歉哟~由于目前小程序暂未开发出客服功能，如有疑问、建议或投诉，请添加酌盈君微信dcy1225848868或拨打13648484307，我们将第一时间为您解决。',
       showCancel: false,
       confirmColor: "#557d8a",
       confirmText: "知道啦",
     });
   },
   help: function(){
+    const help = "目前小程序仅支持华东师范大学学生使用。\n你可以在这里发布邀约或参与他人邀约，如果参与他人邀约，需等待发布者选择同意或拒绝。为了妥善保护用户隐私，只有在发布者点击同意后，你才可以看见TA的手机号码获得具体联系方式哦~\n为了提高邀约成功率，快去完善你的个人资料吧~";
+    console.log(help);
     wx.showModal({
-      content: '这是酌盈的使用指南',
+      content: "目前小程序仅支持华东师范大学学生使用。\n你可以在这里发布邀约或参与他人邀约，如果参与他人邀约，需等待发布者选择同意或拒绝。为了妥善保护用户隐私，只有在发布者点击同意后，你才可以看见TA的手机号码获得具体联系方式哦~\n为了提高邀约成功率，快去完善你的个人资料吧~",
       showCancel: false,
       confirmColor: "#557d8a",
       confirmText: "知道啦",
@@ -343,7 +345,7 @@ Page({
   },
   about: function(){
     wx.showModal({
-      content: '关于酌盈',
+      content: '我们是来自华东师范大学2016级的学生创业团队，有一天负责人作为追星狗突然觉得每次去演唱会都找不到人非常烦恼，所以一群人说干就干有了今天的酌盈。希望它能帮助大家天冷有人陪吃饭，天热有人陪跑步，清晨有人陪学习，深夜有人陪电影^_^',
       showCancel: false,
       confirmColor: "#557d8a",
       confirmText: "知道啦",

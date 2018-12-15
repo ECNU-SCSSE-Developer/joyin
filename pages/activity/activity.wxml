@@ -13,6 +13,7 @@
         <view class="area_select" hidden="{{selectAreaH}}">
           <view class="select_one" bindtap="selectArea" data-me="中北">中北</view>
           <view class="select_one" bindtap="selectArea" data-me="闵行">闵行</view>
+          <view class="select_one" bindtap="selectArea" data-me="校外">校外</view>
         </view>
       </view>
     </view>

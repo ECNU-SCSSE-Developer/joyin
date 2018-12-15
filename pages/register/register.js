@@ -62,7 +62,7 @@ Page({
           success: function(res) {
             if (res.confirm) {
               console.log('用户点击确定')
-              wx.navigateTo({
+              wx.redirectTo({
                 url: '/pages/joyin/joyin'
               })
             }
