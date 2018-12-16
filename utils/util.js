@@ -15,7 +15,7 @@ const formatNumber = n => {
 }
 
 const formatTimeTwo = date =>  {
-  return new Date(date).getFullYear().toString() + "年" + new Date(date).getMonth().toString() + "月" + new Date(date).getDate().toString() + "日"
+  return new Date(date).getFullYear().toString() + "年" + (new Date(date).getMonth()+1).toString() + "月" + new Date(date).getDate().toString() + "日"
 }
 
 module.exports = {
