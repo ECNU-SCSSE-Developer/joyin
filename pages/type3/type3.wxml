@@ -77,7 +77,7 @@
     </view>
   </view>
 
-  <view wx:for="{{applyer}}" wx:for-index="idx" wx:for-item="applyer" bindtap='toInfo' data-name='{{idx}}'>
+  <view wx:for="{{applyer}}" wx:for-index="idx" wx:for-item="applyer" bindtap='toApplerInfo' data-name='{{idx}}'>
     <view class='joiner'>
       <view style='display: flex;'>
         <view>

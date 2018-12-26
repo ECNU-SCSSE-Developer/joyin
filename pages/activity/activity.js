@@ -156,12 +156,12 @@ Page({
     const _ = db.command;
 
     var getRequest = db.collection('activity').orderBy('end_time', 'asc');
-    if(place_type != null) {
+    if (place_type != null && place_type != '全部') {
       getRequest = getRequest.where({
         place_type: place_type
       });
     }
-    if(act_type != null) {
+    if (act_type != null && act_type != '全部') {
       getRequest = getRequest.where({
         activity_type: act_type
       });

@@ -11,6 +11,7 @@
 
       <view class="area_box">
         <view class="area_select" hidden="{{selectAreaH}}">
+          <view class="select_one" bindtap="selectArea" data-me="全部">全部</view>
           <view class="select_one" bindtap="selectArea" data-me="中北">中北</view>
           <view class="select_one" bindtap="selectArea" data-me="闵行">闵行</view>
           <view class="select_one" bindtap="selectArea" data-me="校外">校外</view>
@@ -30,6 +31,7 @@
 
       <view class="area_box">
         <view class="type_select" hidden="{{selectTypeH}}">
+          <view class="select_one" bindtap="selectType" data-me="全部">全部</view>
           <view class="select_one" bindtap="selectType" data-me="学习">学习</view>
           <view class="select_one" bindtap="selectType" data-me="娱乐">娱乐</view>
           <view class="select_one" bindtap="selectType" data-me="出游">出游</view>

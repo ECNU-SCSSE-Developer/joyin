@@ -36,6 +36,14 @@ Page({
     })
   },
 
+  //进入申请者详情
+  toApplerInfo: function (e) {
+    var info = JSON.stringify(this.data.applyer[e.currentTarget.dataset.name]._openid);
+    wx.navigateTo({
+      url: '/pages/personal1/personal1?info=' + info
+    })
+  },
+
   //同意申请 参数act_id,acc_id 申请者的id,max_num 活动人数  若参加人数已满会返回false
   agreeApply: function(act_id, acc_id, max_num) {
     var that = this;

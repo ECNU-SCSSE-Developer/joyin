@@ -15,7 +15,6 @@ exports.main = async (event, context) => {
     _openid: openId,
     is_reply: true,
     is_agree: true,
-    is_opinion: false
   });
   const joined_count = (await joined.count()).total;
 
