@@ -184,50 +184,7 @@ Page({
       open4: open4
     });
   },
-  showItems5: function (e) {
-    var that = this;
-    /*wx.cloud.callFunction({
-      name: 'xxx',
-      data: {
-        lastdate: 0
-      },
-      success: function (res) {
-        console.log(res.result)
-        //时间戳转化
-        for (var i = 0, len = res.result.length; i < len; i++) {
-          //console.info(time.formatTimeTwo(res.result[i].end_time))
-          res.result[i].start_time = time.formatTimeTwo(res.result[i].start_time)
-          res.result[i].end_time = time.formatTimeTwo(res.result[i].end_time)
-          //console.info(res.result[i].end_time)
-          if (res.result[i].info == "") {
-            res.result[i].info = "无";
-          }
-        }
-        that.setData({
-          list5: res.result
-        });
-        if (that.data.list5.length == 0) {
-          wx.showModal({
-            content: '还没有评价的活动哦',
-            showCancel: false,
-            confirmColor: "#557d8a",
-            confirmText: "知道啦",
-          });
-        }
-      },
-      fail: console.error
-    });*/
-    var open5 = that.data.open5;
-    open5 = !open5;
-    that.setData({
-      open5: open5
-    });
-  },
-  goToCalendar: function(){
-    wx.navigateTo({
-      url: '/pages/calendar/calendar',
-    })
-  },
+
   to1: function(e){
     console.info(e.currentTarget.dataset.name)
     // 把要传递的json对象转换成字符串
@@ -311,12 +268,69 @@ Page({
     })
   },
   to4: function (e) {
-    //console.info(e.currentTarget.dataset.name)
-    // 把要传递的json对象转换成字符串
-    var info = JSON.stringify(this.data.list4[e.currentTarget.dataset.name]);
-    wx.navigateTo({
-      url: "../type4/type4?info=" + info
-    })
+    var that = this;
+    wx.cloud.callFunction({
+      name: 'activityInfo',
+      data: {
+        act_id: that.data.list4[e.currentTarget.dataset.name]._id
+      },
+      success: function (res) {
+        console.info(res.result)
+
+        if (res.result.type == "favoriter") {
+          var info = JSON.stringify(that.data.list4[e.currentTarget.dataset.name]);
+          console.info("to favorite")
+          wx.navigateTo({
+            url: "../type1/type1?info=" + info
+          })
+        }
+
+        if (res.result.type == "applyer") {
+          var info = JSON.stringify(that.data.list4[e.currentTarget.dataset.name]);
+          wx.navigateTo({
+            url: "../type2/type2?info=" + info
+          })
+        }
+
+        if (res.result.type == "publisher") {
+          var info = JSON.stringify(that.data.list4[e.currentTarget.dataset.name]);
+          wx.navigateTo({
+            url: "../type3/type3?info=" + info
+          })
+        }
+
+        if (res.result.type == "joiner") {
+          var info = JSON.stringify(that.data.list4[e.currentTarget.dataset.name]);
+          wx.navigateTo({
+            url: "../type4/type4?info=" + info
+          })
+        }
+
+        if (res.result.type == "stranger") {
+          var info = JSON.stringify(that.data.list4[e.currentTarget.dataset.name]);
+          console.info("to stranger")
+          wx.navigateTo({
+            url: "../appointment3/appointment3?info=" + info
+          })
+        }
+
+        if (res.result.type == "over") {
+          var info = JSON.stringify(that.data.list4[e.currentTarget.dataset.name]);
+          wx.navigateTo({
+            url: "../type5/type5?info=" + info
+          })
+        }
+
+        if (res.result.type == "banner") {
+          var info = JSON.stringify(that.data.list4[e.currentTarget.dataset.name]);
+          wx.navigateTo({
+            url: "../type6/type6?info=" + info
+          })
+        }
+
+      },
+      fail: console.error
+    });
   },
   to5: function (e) {
     //console.info(e.currentTarget.dataset.name)
