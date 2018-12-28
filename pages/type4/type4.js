@@ -12,8 +12,9 @@ Page({
   //点击进入发布者详情
   clickOrganizer: function () {
     var info = JSON.stringify(this.data.org._openid);
+    var join = JSON.stringify("1")
     wx.navigateTo({
-      url: '/pages/personal1/personal1?info=' + info
+      url: '/pages/personal1/personal1?info=' + info + '&join=' + join
     })
   },
 

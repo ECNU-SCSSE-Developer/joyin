@@ -63,7 +63,7 @@
                   <view class="triangle_border_left" style='border-color: transparent #fc0 transparent transparent'></view>
                 </block>-->
               </view>
-              <view class='item_date'>{{activity.end_time}}</view>
+              <view class='item_date'>{{activity.start_time}}</view>
             </view>
           </view>
         </view>
@@ -93,7 +93,7 @@
               <view class='item_place'>{{activity.place_type}}</view>
             </view>
             <view style='height:100%;display:flex;flex-direction: column;justify-content:flex-end'>
-              <view class='item_date'>{{activity.end_time}}</view>
+              <view class='item_date'>{{activity.start_time}}</view>
             </view>
           </view>
         </view>

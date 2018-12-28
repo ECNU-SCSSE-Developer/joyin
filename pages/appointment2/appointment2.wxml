@@ -24,7 +24,7 @@
     </view>
     <view>
       <view class='item_hd'>
-        <text style='color:red'>★</text>邀约开始时间</view>
+        <text style='color:red'>★</text>活动时间</view>
       <view class='item_bd'>
         <picker mode="date" start="2018-09-01" end="2100-09-01" bindchange="bindStartTimeChange">
           <view style='height:60rpx;padding:10rpx;text-align: center;'>
@@ -35,7 +35,7 @@
     </view>
     <view>
       <view class='item_hd'>
-        <text style='color:red'>★</text>邀约结束时间</view>
+        <text style='color:red'>★</text>报名截止时间</view>
       <view class='item_bd'>
         <picker mode="date" start="2018-09-01" end="2100-09-01" bindchange="bindEndTimeChange">
           <view style='height:60rpx;padding:10rpx;text-align: center;'>

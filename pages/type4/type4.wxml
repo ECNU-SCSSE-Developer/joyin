@@ -60,6 +60,7 @@
         <block wx:if="{{org.sex == 2}}">
           <image class='sex' src='/image/female.png'></image>
         </block>
+        <view style='margin:auto 0;font-size:20rpx'>发布者</view>
       </view>
       <view style='display:flex;font-size:30rpx'>
         <view style='margin-right:50rpx'>{{org.year}}</view>

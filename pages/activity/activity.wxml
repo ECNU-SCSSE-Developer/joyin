@@ -60,7 +60,7 @@
           <view class="triangle_border_left" hidden='true'>
           </view>
         </view>
-        <view class='item_date'>{{activity.end_time}}</view>
+        <view class='item_date'>{{activity.start_time}}</view>
       </view>
     </view>
   </view>

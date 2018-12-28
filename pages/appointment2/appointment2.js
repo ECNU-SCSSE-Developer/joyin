@@ -9,6 +9,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    rules: "1.活动时间请填写邀约当天的时间(小例子：如果你想看12.31的电影，请填写20xx年12月31日)\n2.报名截止时间请填写最晚接受他人报名的时间。(小例子：如果你觉得12.30都没有人报名就不想约了，请填写20xx年12月30日。此后这个活动将不会在邀约页面显示)\n3.由于小程序不具备留言及回复功能，请务必将邀约信息填写清楚，以免他人产生疑惑而停下报名的手。(小例子：如果你想看12.31的电影，请在具体信息里写明你当天有空的时间)\n4.请务必诚信邀约，杜绝无故爽约行为，若遭到投诉，核实为真后将注销失信用户。",
     casArray: ["中北", "闵行", "校外"],
     casIndex: 0,
     actTypeArray: ["学习", "娱乐", "出游", "竞赛组队", "其他"],
@@ -17,7 +18,7 @@ Page({
   },
   showProtocol: function() {
     wx.showModal({
-      content: 'xxx规定',
+      content: this.data.rules,
       showCancel: false,
       confirmColor: "#557d8a",
       confirmText: "知道啦",
@@ -169,14 +170,35 @@ Page({
       });
     } else if (start_time == 0) {
       wx.showModal({
-        content: '邀约开始时间不能为空！',
+        content: '活动时间不能为空！',
+        showCancel: false,
+        confirmColor: "#557d8a",
+        confirmText: "知道啦",
+      });
+    } else if (new Date(start_time) <= new Date(new Date().toLocaleDateString()).getTime()) { //后者返回当日零点时间
+      wx.showModal({
+        content: '活动时间不能为过去时间！',
         showCancel: false,
         confirmColor: "#557d8a",
         confirmText: "知道啦",
       });
     } else if (end_time == 0) {
       wx.showModal({
-        content: '邀约结束时间不能为空！',
+        content: '报名截止时间不能为空！',
+        showCancel: false,
+        confirmColor: "#557d8a",
+        confirmText: "知道啦",
+      });
+    } else if (new Date(end_time) <= new Date(new Date().toLocaleDateString()).getTime()) { //后者返回当日零点时间
+      wx.showModal({
+        content: '截止时间不能为过去时间！',
+        showCancel: false,
+        confirmColor: "#557d8a",
+        confirmText: "知道啦",
+      });
+    } else if (new Date(end_time) > new Date(start_time)) {
+      wx.showModal({
+        content: '截止时间不能晚于开始时间！',
         showCancel: false,
         confirmColor: "#557d8a",
         confirmText: "知道啦",
