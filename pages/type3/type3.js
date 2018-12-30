@@ -23,10 +23,6 @@ Page({
     console.info("点击拒绝");
     //console.info(this.data.applyer[e.currentTarget.dataset.name]._openid)
     this.refuseApply(this.data.dataInfo._id, this.data.applyer[e.currentTarget.dataset.name]._openid)
-    var info = JSON.stringify(this.data.dataInfo);
-    wx.redirectTo({
-      url: "../type3/type3?info=" + info
-    })
   },
   //进入参与者详情页面
   toInfo: function(e) {
@@ -103,6 +99,7 @@ Page({
 
   //拒绝申请 参数act_id,acc_id 申请者的id
   refuseApply: function(act_id, acc_id) {
+    var that = this;
     wx.cloud.callFunction({
       name: 'refuseApply',
       data: {
@@ -110,7 +107,10 @@ Page({
         act_id: act_id
       }
     }).then(function(res) {
-      console.info("拒绝成功")
+      var info = JSON.stringify(that.data.dataInfo);
+      wx.redirectTo({
+        url: "../type3/type3?info=" + info
+      })
       return true;
     }).catch(function(err) {
       console.log(err);

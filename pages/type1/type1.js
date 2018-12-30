@@ -20,7 +20,8 @@ Page({
 
   // 报名
   addJoin: function (act_id) {
-    const db = wx.cloud.database()
+    var that = this;
+    const db = wx.cloud.database();
     db.collection('join').add({
       data: {
         act_id: act_id,
@@ -34,7 +35,12 @@ Page({
           icon: 'success',
           duration: 1000
         });
-        console.log(res)
+        setTimeout(function () {
+          var info = JSON.stringify(that.data.dataInfo);
+          wx.redirectTo({
+            url: "../type2/type2?info=" + info
+          });
+        }, 1000);
       },
     })
   },
@@ -57,8 +63,8 @@ Page({
           confirmText: "知道啦",
           success: function (res) {
             if (res.confirm) {
-              wx.navigateTo({
-                url: '/pages/mine/mine'
+              wx.navigateBack({
+                delta: 1
               })
             }
           }

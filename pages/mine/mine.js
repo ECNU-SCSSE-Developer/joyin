@@ -186,12 +186,69 @@ Page({
   },
 
   to1: function(e){
-    console.info(e.currentTarget.dataset.name)
-    // 把要传递的json对象转换成字符串
-    var info = JSON.stringify(this.data.list1[e.currentTarget.dataset.name]);
-    wx.navigateTo({
-      url: "../type1/type1?info=" + info
-    })
+    var that = this;
+    wx.cloud.callFunction({
+      name: 'activityInfo',
+      data: {
+        act_id: that.data.list1[e.currentTarget.dataset.name]._id
+      },
+      success: function (res) {
+        console.info(res.result)
+
+        if (res.result.type == "favoriter") {
+          var info = JSON.stringify(that.data.list1[e.currentTarget.dataset.name]);
+          console.info("to favorite")
+          wx.navigateTo({
+            url: "../type1/type1?info=" + info
+          })
+        }
+
+        if (res.result.type == "applyer") {
+          var info = JSON.stringify(that.data.list1[e.currentTarget.dataset.name]);
+          wx.navigateTo({
+            url: "../type2/type2?info=" + info
+          })
+        }
+
+        if (res.result.type == "publisher") {
+          var info = JSON.stringify(that.data.list1[e.currentTarget.dataset.name]);
+          wx.navigateTo({
+            url: "../type3/type3?info=" + info
+          })
+        }
+
+        if (res.result.type == "joiner") {
+          var info = JSON.stringify(that.data.list1[e.currentTarget.dataset.name]);
+          wx.navigateTo({
+            url: "../type4/type4?info=" + info
+          })
+        }
+
+        if (res.result.type == "stranger") {
+          var info = JSON.stringify(that.data.list1[e.currentTarget.dataset.name]);
+          console.info("to stranger")
+          wx.navigateTo({
+            url: "../appointment3/appointment3?info=" + info
+          })
+        }
+
+        if (res.result.type == "over") {
+          var info = JSON.stringify(that.data.list1[e.currentTarget.dataset.name]);
+          wx.navigateTo({
+            url: "../type5/type5?info=" + info
+          })
+        }
+
+        if (res.result.type == "banner") {
+          var info = JSON.stringify(that.data.list1[e.currentTarget.dataset.name]);
+          wx.navigateTo({
+            url: "../type6/type6?info=" + info
+          })
+        }
+
+      },
+      fail: console.error
+    });
   },
   to2: function (e) {
     var that = this;

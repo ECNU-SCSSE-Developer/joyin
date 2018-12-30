@@ -109,7 +109,7 @@ Page({
     console.info("点击评价按钮");
     var info = JSON.stringify(this.data.dataInfo);
     console.info(info)
-    wx.navigateTo({
+    wx.redirectTo({
       url: '/pages/personal3/personal3?info=' + info,
     })
   }

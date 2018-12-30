@@ -14,6 +14,7 @@ Page({
 
   // 报名
   addJoin: function(act_id) {
+    var that = this;
     const db = wx.cloud.database()
     db.collection('join').add({
       data: {
@@ -28,6 +29,12 @@ Page({
           icon: 'success',
           duration: 1000
         });
+        setTimeout(function () {
+          var info = JSON.stringify(that.data.dataInfo);
+          wx.redirectTo({
+            url: "../type2/type2?info=" + info
+          });
+        }, 1000)
         //console.log(res)
       },
     })
@@ -35,6 +42,7 @@ Page({
 
   //收藏
   addFavorite: function(act_id) {
+    var that = this;
     const db = wx.cloud.database()
     db.collection('favorite').add({
       data: {
@@ -46,6 +54,12 @@ Page({
           icon: 'success',
           duration: 1000
         });
+        setTimeout(function () {
+          var info = JSON.stringify(that.data.dataInfo);
+          wx.redirectTo({
+            url: "../type1/type1?info=" + info
+          });
+        }, 1000)
         console.log(res)
       }
     })

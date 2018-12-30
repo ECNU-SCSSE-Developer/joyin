@@ -82,10 +82,10 @@ Page({
           confirmText: "确定",
           success: function(res) {
             if (res.confirm) {
-              console.log('用户点击确定')
-              wx.redirectTo({
-                url: '/pages/activity/activity'
-              })
+              console.log('用户点击确定');
+              wx.navigateBack({
+                delta: 1
+              });
             }
           }
         });
